@@ -1,0 +1,51 @@
+{
+  "id": "m8-l1-security-cases",
+  "frontmatter": {
+    "id": "m8-l1-security-cases",
+    "title": "Security Case Studies & OWASP Top 10",
+    "module": "Module 8 \u2014 Case Studies & Ethics",
+    "xp": 180,
+    "durationMinutes": 40,
+    "isPremium": true,
+    "labPresets": [
+      {
+        "id": "lab-8-security-cases",
+        "preset": "Oracle - Secure Sandbox",
+        "initialPrompt": "Review this case study: A chatbot was manipulated into revealing private medical data. Identify the vulnerability and propose one defensive measure.\n"
+      }
+    ],
+    "examples": [
+      "Analyze a prompt injection case study where an LLM revealed system instructions.",
+      "Study a jailbreak case where Developer Mode was exploited."
+    ],
+    "quiz": [
+      {
+        "q": "True or False: The OWASP Top 10 for LLMs provides a framework for identifying the most critical security risks.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which of these is NOT part of the OWASP Top 10 for LLMs?",
+        "type": "mcq",
+        "choices": [
+          "Prompt injection",
+          "Data exfiltration",
+          "Jailbreaks",
+          "Token embedding optimization"
+        ],
+        "answer": "Token embedding optimization"
+      }
+    ],
+    "references": [
+      {
+        "title": "OWASP Top 10 for LLMs",
+        "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
+      },
+      {
+        "title": "PromptForge Compendium \u2014 Security Case Studies",
+        "url": "https://promptforgeai.internal/compendium#securitycases"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

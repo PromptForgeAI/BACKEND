@@ -1,0 +1,111 @@
+---
+id: "m1-l1-intro"
+title: "Introduction to Prompt Engineering"
+module: "Module 1 — The Basics of Prompting"
+xp: 50
+durationMinutes: 12
+isPremium: false
+labPresets:
+  - id: "lab-1-simple-oracle"
+    preset: "Oracle - Quick Upgrade (Sandbox)"
+    initialPrompt: |
+      You are PromptForge Oracle — convert the user's intent into a clear, copy-paste prompt that will produce **concise, structured, and actionable** output from a large language model. Return only the upgraded prompt inside triple backticks.
+      User intent: "Explain chain-of-thought (CoT) in 3 bullet points for a beginner and give one tiny example."
+examples:
+  - "Explain the difference between zero-shot and few-shot prompting in 2 sentences."
+  - "Create a role prompt where the assistant acts as a strict code reviewer."
+quiz:
+  - q: "True or False: Few-shot prompting always requires fine-tuning the model."
+    type: "tf"
+    answer: false
+  - q: "Which technique adds example inputs & outputs to the prompt to guide behavior?"
+    type: "mcq"
+    choices: ["Context Windowing","Few-shot prompting","Token pruning","Model ensembling"]
+    answer: "Few-shot prompting"
+references:
+  - title: "Brown et al., 2020 — Language Models are Few-Shot Learners"
+    url: "https://arxiv.org/abs/2005.14165"
+  - title: "Prompting Basics — Compendium"
+    url: "https://promptforgeai.internal/compendium#prompting-basics"
+---
+
+<LessonHeader title="Introduction to Prompt Engineering" xp={50} duration={12} belt="White" />
+
+## Explainer
+
+Prompt engineering is the discipline of crafting inputs that guide a large language model (LLM) to produce effective, reliable, and structured outputs. It is not simply about asking questions — it is about designing precise instructions and contextual cues that optimize model behavior.
+
+The foundation of modern prompt engineering is **In-Context Learning (ICL)**. This is the capability of LLMs to adapt to tasks by observing examples and instructions provided directly in the prompt, without retraining or modifying the model’s weights. The landmark paper by Brown et al. (2020) demonstrated that scaling language models unlocks powerful few-shot learning abilities, transforming how we design and interact with AI systems.
+
+There are three fundamental strategies:
+- **Zero-shot prompting**: Direct instructions without examples. Effective for simple, general tasks.
+- **One-shot prompting**: A single demonstration is added to clarify expectations.
+- **Few-shot prompting**: Multiple examples (typically 2–5) are provided, enabling the model to infer more nuanced patterns and structures.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Zero-shot
+Classify the sentiment of the following text as positive, negative, or neutral.
+Text: I think the vacation was okay.
+Sentiment:
+
+# One-shot
+Translate English to French.
+English: "sea otter" -> French: "loutre de mer"
+English: "cheese" -> French:
+
+# Few-shot
+A good day to sail is when the wind is low and the sun is out.
+[Input]: Wind: 2 knots, Sun: Yes
+[Output]: Good day to sail
+
+A bad day to sail is when the wind is high or it is raining.
+[Input]: Wind: 15 knots, Rain: Yes
+[Output]: Bad day to sail
+
+[Input]: Wind: 5 knots, Rain: No, Sun: Yes
+[Output]:
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Use the Oracle to transform an informal user request into a refined, structured prompt.
+
+1. Open **OraclePlayground** with preset `lab-1-simple-oracle`.
+2. Input this intent:  
+   `Explain chain-of-thought (CoT) in 3 bullet points for a beginner and give one tiny example.`
+3. Run the Oracle to generate a refined version of the prompt.
+4. Copy the refined prompt and execute it as a final test.
+5. Review the output for clarity, structure (3 bullet points), and presence of one concise example.
+
+**Completion Criteria:** The output includes exactly 3 bullet points and one example.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Design a prompt that instructs the model to output **exactly three numbered steps** explaining how to create a few-shot example, followed by one demonstration for a sentiment analysis task.
+
+**Acceptance Criteria:**
+- Output includes steps labeled `1.`, `2.`, `3.`
+- Ends with a brief demonstration example.
+- No additional commentary outside the steps and example.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** Few-shot prompting always requires fine-tuning the model. → **False**
+2. **MCQ:** Which technique adds example inputs & outputs to the prompt to guide behavior? → **Few-shot prompting**
+
+---
+
+## References
+
+- Brown et al., 2020 — *Language Models are Few-Shot Learners*.  
+- Prompting Basics — Academy Compendium.

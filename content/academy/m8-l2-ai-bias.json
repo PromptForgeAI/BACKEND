@@ -1,0 +1,51 @@
+{
+  "id": "m8-l2-ai-bias",
+  "frontmatter": {
+    "id": "m8-l2-ai-bias",
+    "title": "AI Awareness & Bias",
+    "module": "Module 8 \u2014 Case Studies & Ethics",
+    "xp": 160,
+    "durationMinutes": 35,
+    "isPremium": true,
+    "labPresets": [
+      {
+        "id": "lab-8-bias",
+        "preset": "Oracle - Ethical Sandbox",
+        "initialPrompt": "Analyze this prompt: \u201cGenerate a list of top 10 CEOs.\u201d Identify any potential bias in gender or geography and propose a correction.\n"
+      }
+    ],
+    "examples": [
+      "Evaluate bias in a hiring assistant prompt that favors certain universities.",
+      "Analyze bias in product reviews where only Western markets are represented."
+    ],
+    "quiz": [
+      {
+        "q": "True or False: AI systems can inherit and amplify biases present in training data.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which of the following is an example of bias in AI outputs?",
+        "type": "mcq",
+        "choices": [
+          "Balanced coverage of global leaders",
+          "Consistently excluding women from leadership lists",
+          "Accurate numerical calculation",
+          "Summarizing a dataset"
+        ],
+        "answer": "Consistently excluding women from leadership lists"
+      }
+    ],
+    "references": [
+      {
+        "title": "PromptForge Compendium \u2014 AI Bias",
+        "url": "https://promptforgeai.internal/compendium#bias"
+      },
+      {
+        "title": "Mehrabi et al., 2021 \u2014 A Survey on Bias and Fairness in AI",
+        "url": "https://arxiv.org/abs/1908.09635"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

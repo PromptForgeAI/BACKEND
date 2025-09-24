@@ -1,0 +1,90 @@
+---
+id: "m6-l4-promptfile"
+title: "PromptFile Sequences for SaaS Apps"
+module: "Module 6 — Dynamic & Meta Prompting"
+xp: 150
+durationMinutes: 35
+isPremium: true
+labPresets:
+  - id: "lab-6-promptfile"
+    preset: "Oracle - Full Upgrade"
+    initialPrompt: |
+      Create a PromptFile sequence that first extracts customer feedback themes, then generates a summary report.
+examples:
+  - "PromptFile: Step 1 — Extract entities from reviews; Step 2 — Summarize results in JSON."
+  - "PromptFile: Step 1 — Analyze bug reports; Step 2 — Generate prioritized task list."
+quiz:
+  - q: "True or False: PromptFile sequences allow chaining multiple prompts into workflows."
+    type: "tf"
+    answer: true
+  - q: "What is the primary benefit of PromptFile sequences in SaaS apps?"
+    type: "mcq"
+    choices: ["Token compression","Chaining structured tasks","Automatic fine-tuning","Replacing user interfaces"]
+    answer: "Chaining structured tasks"
+references:
+  - title: "PromptForge Compendium — PromptFile Sequences"
+    url: "https://promptforgeai.internal/compendium#promptfile"
+  - title: "OpenAI Cookbook — Prompt Chaining"
+    url: "https://github.com/openai/openai-cookbook"
+---
+
+<LessonHeader title="PromptFile Sequences for SaaS Apps" xp={150} duration={35} belt="Red" />
+
+## Explainer
+
+PromptFile sequences are structured workflows where multiple prompts are chained together to perform multi-step tasks. Instead of relying on a single complex prompt, tasks are broken into modular steps that build on one another.
+
+In SaaS applications, PromptFile sequences enable automation of processes like customer support analysis, bug triaging, and report generation. They enhance reliability, reusability, and scalability for enterprise use cases.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Example 1: Reviews analysis
+PromptFile: Step 1 — Extract entities from reviews; Step 2 — Summarize results in JSON.
+
+# Example 2: Bug reports
+PromptFile: Step 1 — Analyze bug reports; Step 2 — Generate prioritized task list.
+
+# Example 3: Feedback themes
+Create a PromptFile sequence that first extracts customer feedback themes, then generates a summary report.
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Learn to design and run PromptFile sequences for SaaS workflows.
+
+1. Open **OraclePlayground** with preset `lab-6-promptfile`.
+2. Run the customer feedback example.
+3. Observe how multiple steps are chained into a coherent workflow.
+4. Modify with your own SaaS workflow (e.g., onboarding emails, churn prediction).
+
+**Completion Criteria:** Model executes a PromptFile sequence with at least two steps and produces structured outputs.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Build a PromptFile sequence for HR automation: Step 1 — Parse resumes to extract skills; Step 2 — Match skills to job requirements; Step 3 — Output a shortlist in JSON format.
+
+**Acceptance Criteria:**
+- Workflow has at least 3 sequential steps.
+- Outputs are structured and actionable.
+- Learner can explain how each step contributes to the final result.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** PromptFile sequences allow chaining multiple prompts into workflows. → **True**
+2. **MCQ:** What is the primary benefit of PromptFile sequences in SaaS apps? → “Chaining structured tasks.”
+
+---
+
+## References
+
+- PromptForge Compendium — PromptFile Sequences.  
+- OpenAI Cookbook — Prompt Chaining.

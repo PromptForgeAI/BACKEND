@@ -1,0 +1,51 @@
+{
+  "id": "m6-l3-context",
+  "frontmatter": {
+    "id": "m6-l3-context",
+    "title": "Context Management & Truncation",
+    "module": "Module 6 \u2014 Dynamic & Meta Prompting",
+    "xp": 140,
+    "durationMinutes": 30,
+    "isPremium": true,
+    "labPresets": [
+      {
+        "id": "lab-6-context",
+        "preset": "Oracle - Full Upgrade",
+        "initialPrompt": "Manage context to summarize the following text within a 500-token limit. Provide only the most relevant details.\nText: \"Artificial Intelligence is rapidly evolving with applications across healthcare, finance, and education...\"\n"
+      }
+    ],
+    "examples": [
+      "Summarize this 2,000-word essay in less than 200 words, preserving key insights.",
+      "Extract only the top 3 arguments from this debate transcript while staying under 300 tokens."
+    ],
+    "quiz": [
+      {
+        "q": "True or False: Context management ensures prompts remain effective within token limits.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which strategy helps manage long inputs effectively?",
+        "type": "mcq",
+        "choices": [
+          "Adding role prompting",
+          "Using truncation and summarization",
+          "Randomizing inputs",
+          "Expanding token count"
+        ],
+        "answer": "Using truncation and summarization"
+      }
+    ],
+    "references": [
+      {
+        "title": "PromptForge Compendium \u2014 Context Management",
+        "url": "https://promptforgeai.internal/compendium#context"
+      },
+      {
+        "title": "Beltagy et al., 2020 \u2014 Longformer: The Long-Document Transformer",
+        "url": "https://arxiv.org/abs/2004.05150"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

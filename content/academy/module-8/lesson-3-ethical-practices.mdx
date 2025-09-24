@@ -1,0 +1,96 @@
+---
+id: "m8-l3-ethics"
+title: "Ethical Prompting Practices"
+module: "Module 8 — Case Studies & Ethics"
+xp: 170
+durationMinutes: 40
+isPremium: true
+labPresets:
+  - id: "lab-8-ethics"
+    preset: "Oracle - Ethical Sandbox"
+    initialPrompt: |
+      Rewrite this prompt to make it ethically responsible: “Generate a medical diagnosis based only on symptoms provided by the user.”
+examples:
+  - "Rewrite a prompt that asks for financial advice without disclaimers."
+  - "Correct a prompt that encourages harmful stereotypes in product ads."
+quiz:
+  - q: "True or False: Ethical prompting ensures outputs respect safety, fairness, and societal impact."
+    type: "tf"
+    answer: true
+  - q: "Which of these is an example of ethical prompting?"
+    type: "mcq"
+    choices: ["Asking for medical diagnoses without disclaimers","Rewriting prompts to avoid harmful stereotypes","Encouraging unsafe behaviors","Requesting confidential data without consent"]
+    answer: "Rewriting prompts to avoid harmful stereotypes"
+references:
+  - title: "PromptForge Compendium — Ethical Practices"
+    url: "https://promptforgeai.internal/compendium#ethics"
+  - title: "Floridi & Cowls, 2022 — A Unified Framework for AI Ethics"
+    url: "https://doi.org/10.1017/S0269888922000079"
+---
+
+<LessonHeader title="Ethical Prompting Practices" xp={170} duration={40} belt="Black" />
+
+## Explainer
+
+Ethical prompting is about designing prompts that respect human values, fairness, and safety. Since LLMs influence decision-making, prompts must avoid harmful stereotypes, unsafe advice, or manipulative outputs.
+
+Practices include:
+- **Disclaimers**: Clearly state limitations (e.g., “This is not medical advice”).
+- **Bias reduction**: Rewrite prompts to avoid stereotypes.
+- **User safety**: Frame prompts so that dangerous or harmful responses are not elicited.
+
+Ethical prompting ensures AI applications are responsible and aligned with societal norms.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Example 1: Medical diagnosis disclaimer
+Rewrite this prompt to make it ethically responsible:
+“Generate a medical diagnosis based only on symptoms provided by the user.”
+
+# Example 2: Financial advice correction
+Rewrite a prompt that asks for financial advice without disclaimers.
+
+# Example 3: Stereotypes in ads
+Correct a prompt that encourages harmful stereotypes in product ads.
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Practice rewriting prompts to ensure ethical alignment.
+
+1. Open **OraclePlayground** with preset `lab-8-ethics`.
+2. Run the medical diagnosis example.
+3. Observe how disclaimers and safety rules are added.
+4. Rewrite your own prompts with ethical safeguards.
+
+**Completion Criteria:** Learner demonstrates prompts that encourage safe, fair, and responsible outputs.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Take a prompt that could generate biased hiring recommendations. Rewrite it so it ensures fairness and inclusivity. Document the before-and-after versions.
+
+**Acceptance Criteria:**
+- Original prompt risk is clear.
+- Rewritten prompt mitigates ethical concerns.
+- Learner explains improvements in fairness and safety.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** Ethical prompting ensures outputs respect safety, fairness, and societal impact. → **True**
+2. **MCQ:** Which of these is an example of ethical prompting? → “Rewriting prompts to avoid harmful stereotypes.”
+
+---
+
+## References
+
+- Floridi & Cowls, 2022 — *A Unified Framework for AI Ethics*.  
+- PromptForge Compendium — Ethical Practices.

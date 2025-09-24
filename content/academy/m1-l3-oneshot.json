@@ -1,0 +1,51 @@
+{
+  "id": "m1-l3-oneshot",
+  "frontmatter": {
+    "id": "m1-l3-oneshot",
+    "title": "One-Shot Prompting",
+    "module": "Module 1 \u2014 The Basics of Prompting",
+    "xp": 70,
+    "durationMinutes": 15,
+    "isPremium": false,
+    "labPresets": [
+      {
+        "id": "lab-3-oneshot",
+        "preset": "Oracle - Quick Upgrade (Sandbox)",
+        "initialPrompt": "Translate English to French.\nEnglish: \"sea otter\" -> French: \"loutre de mer\"\nEnglish: \"cheese\" -> French:\n"
+      }
+    ],
+    "examples": [
+      "Translate English to French. English: 'book' -> French:",
+      "Classify this review as Positive, Neutral, or Negative. Example: Text: 'I love this product' -> Positive. Text: 'The food was average' ->"
+    ],
+    "quiz": [
+      {
+        "q": "True or False: One-shot prompting involves providing multiple examples within the prompt.",
+        "type": "tf",
+        "answer": false
+      },
+      {
+        "q": "What is the key benefit of one-shot prompting over zero-shot prompting?",
+        "type": "mcq",
+        "choices": [
+          "Lower token usage",
+          "Clarifying task expectations",
+          "Eliminating fine-tuning",
+          "Guaranteeing correctness"
+        ],
+        "answer": "Clarifying task expectations"
+      }
+    ],
+    "references": [
+      {
+        "title": "Brown et al., 2020 \u2014 Language Models are Few-Shot Learners",
+        "url": "https://arxiv.org/abs/2005.14165"
+      },
+      {
+        "title": "Prompting Basics \u2014 Compendium",
+        "url": "https://promptforgeai.internal/compendium#oneshot"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

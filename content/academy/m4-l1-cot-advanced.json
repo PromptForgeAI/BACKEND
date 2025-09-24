@@ -1,0 +1,51 @@
+{
+  "id": "m4-l1-cot-advanced",
+  "frontmatter": {
+    "id": "m4-l1-cot-advanced",
+    "title": "Chain-of-Thought Advanced",
+    "module": "Module 4 \u2014 Advanced Prompting Strategies",
+    "xp": 100,
+    "durationMinutes": 25,
+    "isPremium": true,
+    "labPresets": [
+      {
+        "id": "lab-4-cot-advanced",
+        "preset": "Oracle - Full Upgrade",
+        "initialPrompt": "Solve this reasoning task step by step and provide confidence scoring for each step.\nTask: A farmer has 17 cows. All but 8 run away. How many cows are left?\n"
+      }
+    ],
+    "examples": [
+      "If there are 12 pencils and I give away 5, how many are left? Explain step by step with confidence levels.",
+      "A shopkeeper buys 3 pens at $2 each and sells them for $10 total. What is the profit? Walk through the reasoning step by step."
+    ],
+    "quiz": [
+      {
+        "q": "True or False: Advanced Chain-of-Thought often includes confidence scoring or self-verification steps.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which advanced feature enhances CoT prompting for improved reliability?",
+        "type": "mcq",
+        "choices": [
+          "Confidence scoring",
+          "Role prompting",
+          "Random token pruning",
+          "Translation"
+        ],
+        "answer": "Confidence scoring"
+      }
+    ],
+    "references": [
+      {
+        "title": "Wei et al., 2022 \u2014 Chain-of-Thought Prompting Elicits Reasoning",
+        "url": "https://arxiv.org/abs/2201.11903"
+      },
+      {
+        "title": "Kojima et al., 2022 \u2014 Large Language Models are Zero-Shot Reasoners",
+        "url": "https://arxiv.org/abs/2205.11916"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

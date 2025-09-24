@@ -1,0 +1,51 @@
+{
+  "id": "m2-l3-cot-basics",
+  "frontmatter": {
+    "id": "m2-l3-cot-basics",
+    "title": "Chain-of-Thought (CoT) Basics",
+    "module": "Module 2 \u2014 Getting More from Your Prompts",
+    "xp": 80,
+    "durationMinutes": 20,
+    "isPremium": false,
+    "labPresets": [
+      {
+        "id": "lab-2-cot",
+        "preset": "Oracle - Quick Upgrade (Sandbox)",
+        "initialPrompt": "Solve this math problem step by step: If a train travels 60 km at 30 km/h, how long does it take?\n"
+      }
+    ],
+    "examples": [
+      "What is 17 multiplied by 12? Let's think step by step.",
+      "A store sells pencils at 3 for $1. How many pencils can I buy with $5? Think it through step by step."
+    ],
+    "quiz": [
+      {
+        "q": "True or False: Chain-of-Thought prompting instructs the model to explain reasoning before giving the final answer.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which of the following phrases can trigger Chain-of-Thought reasoning?",
+        "type": "mcq",
+        "choices": [
+          "Translate into Spanish.",
+          "Let's think step by step.",
+          "Summarize in one sentence.",
+          "Provide a bulleted list."
+        ],
+        "answer": "Let's think step by step."
+      }
+    ],
+    "references": [
+      {
+        "title": "Wei et al., 2022 \u2014 Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+        "url": "https://arxiv.org/abs/2201.11903"
+      },
+      {
+        "title": "Prompting Basics \u2014 Compendium",
+        "url": "https://promptforgeai.internal/compendium#cot"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

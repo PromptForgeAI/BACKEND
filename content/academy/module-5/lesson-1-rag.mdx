@@ -1,0 +1,90 @@
+---
+id: "m5-l1-rag"
+title: "Retrieval-Augmented Generation (RAG)"
+module: "Module 5 — Augmenting LLMs"
+xp: 120
+durationMinutes: 25
+isPremium: true
+labPresets:
+  - id: "lab-5-rag"
+    preset: "Oracle - Full Upgrade"
+    initialPrompt: |
+      Retrieve relevant information about climate change from the knowledge base and generate a structured summary in 3 bullet points.
+examples:
+  - "Retrieve the top 3 recent developments in quantum computing and summarize them in bullet points."
+  - "Use retrieval to answer: What are the health benefits of meditation?"
+quiz:
+  - q: "True or False: Retrieval-Augmented Generation (RAG) combines external data retrieval with generative capabilities."
+    type: "tf"
+    answer: true
+  - q: "Which component of RAG is responsible for fetching relevant documents?"
+    type: "mcq"
+    choices: ["Retriever","Generator","Tokenizer","Optimizer"]
+    answer: "Retriever"
+references:
+  - title: "Lewis et al., 2020 — Retrieval-Augmented Generation"
+    url: "https://arxiv.org/abs/2005.11401"
+  - title: "PromptForge Compendium — RAG"
+    url: "https://promptforgeai.internal/compendium#rag"
+---
+
+<LessonHeader title="Retrieval-Augmented Generation (RAG)" xp={120} duration={25} belt="Brown" />
+
+## Explainer
+
+Retrieval-Augmented Generation (RAG) enhances large language models by combining two steps: **retrieval** of external documents from a knowledge base and **generation** of responses grounded in those documents. This approach improves factual accuracy, reduces hallucinations, and enables models to answer domain-specific queries.
+
+By separating the retriever (which selects relevant information) and the generator (which formulates the response), RAG allows language models to remain lightweight while still accessing up-to-date or specialized knowledge.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Example 1: Quantum computing
+Retrieve the top 3 recent developments in quantum computing and summarize them in bullet points.
+
+# Example 2: Meditation benefits
+Use retrieval to answer: What are the health benefits of meditation?
+
+# Example 3: Climate change
+Retrieve relevant information about climate change from the knowledge base and generate a structured summary in 3 bullet points.
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Apply RAG to ground outputs in external knowledge.
+
+1. Open **OraclePlayground** with preset `lab-5-rag`.
+2. Run the climate change example.
+3. Observe how the retriever selects documents and the generator forms a grounded answer.
+4. Test another domain-specific query (e.g., medicine, law, technology).
+
+**Completion Criteria:** The model produces a structured, accurate response grounded in external retrievals.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Use RAG to answer: “What are the top 3 cybersecurity threats in 2025?” Ensure the answer is grounded in retrieved documents.
+
+**Acceptance Criteria:**
+- Output contains exactly 3 bullet points.
+- Each point references retrieved knowledge.
+- Response avoids hallucinations or unsupported claims.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** Retrieval-Augmented Generation (RAG) combines external data retrieval with generative capabilities. → **True**
+2. **MCQ:** Which component of RAG is responsible for fetching relevant documents? → “Retriever.”
+
+---
+
+## References
+
+- Lewis et al., 2020 — *Retrieval-Augmented Generation*.  
+- PromptForge Compendium — RAG.

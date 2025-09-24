@@ -1,0 +1,99 @@
+---
+id: "m6-l5-saas-prompts"
+title: "Lab: Building SaaS with Prompts Only"
+module: "Module 6 — Dynamic & Meta Prompting"
+xp: 160
+durationMinutes: 40
+isPremium: true
+labPresets:
+  - id: "lab-6-saas"
+    preset: "Oracle - Full Upgrade"
+    initialPrompt: |
+      Design a SaaS workflow using only prompt chaining. Example: An expense tracker that takes receipts as input, extracts details, and generates a monthly report.
+examples:
+  - "SaaS Idea: Automated resume screener. Step 1 — Extract skills; Step 2 — Compare with job description; Step 3 — Output candidate fit score."
+  - "SaaS Idea: Customer support triager. Step 1 — Classify tickets; Step 2 — Generate responses; Step 3 — Escalate critical issues."
+quiz:
+  - q: "True or False: SaaS workflows can be prototyped entirely with chained prompts before writing backend code."
+    type: "tf"
+    answer: true
+  - q: "Which of these is an example of a prompt-only SaaS prototype?"
+    type: "mcq"
+    choices: ["Weather forecast app using APIs","Expense tracker using prompt chaining","GPU training pipeline","Static website portfolio"]
+    answer: "Expense tracker using prompt chaining"
+references:
+  - title: "PromptForge Compendium — SaaS with Prompts"
+    url: "https://promptforgeai.internal/compendium#saas"
+  - title: "OpenAI Cookbook — Prototyping with Prompts"
+    url: "https://github.com/openai/openai-cookbook"
+---
+
+<LessonHeader title="Lab: Building SaaS with Prompts Only" xp={160} duration={40} belt="Red" />
+
+## Explainer
+
+This lab demonstrates how to prototype SaaS applications using only prompt chaining and structured workflows, without writing backend code. By chaining prompts strategically, learners can simulate end-to-end systems for domains like HR automation, finance, or customer support.
+
+The key benefit is rapid prototyping — teams can validate workflows, test user experiences, and refine logic before investing in full-stack development.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Example 1: Expense tracker
+SaaS Idea: Automated expense tracker.
+Step 1 — Extract details from receipts.
+Step 2 — Categorize expenses.
+Step 3 — Generate monthly report.
+
+# Example 2: Resume screener
+SaaS Idea: Automated resume screener.
+Step 1 — Extract skills.
+Step 2 — Compare with job description.
+Step 3 — Output candidate fit score.
+
+# Example 3: Support triager
+SaaS Idea: Customer support triager.
+Step 1 — Classify tickets.
+Step 2 — Generate responses.
+Step 3 — Escalate critical issues.
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Build a simple SaaS prototype using only prompts.
+
+1. Open **OraclePlayground** with preset `lab-6-saas`.
+2. Run the expense tracker workflow.
+3. Replace it with another SaaS use case of your choice.
+4. Observe how chained prompts create structured, sequential outputs.
+
+**Completion Criteria:** Learner demonstrates a functional SaaS prototype entirely from prompt chaining.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Design a SaaS workflow for project management automation: Step 1 — Parse task descriptions; Step 2 — Assign owners based on skills; Step 3 — Output weekly progress summary.
+
+**Acceptance Criteria:**
+- Workflow has at least 3 sequential steps.
+- Output is structured and actionable.
+- Learner explains how the prototype could evolve into a full SaaS product.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** SaaS workflows can be prototyped entirely with chained prompts before writing backend code. → **True**
+2. **MCQ:** Which of these is an example of a prompt-only SaaS prototype? → “Expense tracker using prompt chaining.”
+
+---
+
+## References
+
+- PromptForge Compendium — SaaS with Prompts.  
+- OpenAI Cookbook — Prototyping with Prompts.

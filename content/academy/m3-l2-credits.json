@@ -1,0 +1,51 @@
+{
+  "id": "m3-l2-credits",
+  "frontmatter": {
+    "id": "m3-l2-credits",
+    "title": "Tracking Credits & Analytics",
+    "module": "Module 3 \u2014 PromptForge Starter Labs",
+    "xp": 80,
+    "durationMinutes": 18,
+    "isPremium": false,
+    "labPresets": [
+      {
+        "id": "lab-3-credits",
+        "preset": "Oracle - Quick Upgrade (Sandbox)",
+        "initialPrompt": "Show me my credit usage and analytics summary after running this upgraded prompt.\n"
+      }
+    ],
+    "examples": [
+      "How many credits have I used today?",
+      "Generate a summary of my prompt runs, including success rate and token usage."
+    ],
+    "quiz": [
+      {
+        "q": "True or False: PromptForge credits are deducted when you run prompts, labs, or quests.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which of the following is NOT tracked in PromptForge analytics?",
+        "type": "mcq",
+        "choices": [
+          "XP earned",
+          "Tokens used",
+          "User sleep schedule",
+          "Success rate of prompts"
+        ],
+        "answer": "User sleep schedule"
+      }
+    ],
+    "references": [
+      {
+        "title": "PromptForge Documentation \u2014 Credits & Billing",
+        "url": "https://promptforgeai.internal/docs/credits"
+      },
+      {
+        "title": "PromptForge Compendium \u2014 Analytics Overview",
+        "url": "https://promptforgeai.internal/compendium#analytics"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

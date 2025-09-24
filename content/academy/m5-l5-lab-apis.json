@@ -1,0 +1,51 @@
+{
+  "id": "m5-l5-lab-apis",
+  "frontmatter": {
+    "id": "m5-l5-lab-apis",
+    "title": "Lab: Connect PromptForge with APIs",
+    "module": "Module 5 \u2014 Augmenting LLMs",
+    "xp": 140,
+    "durationMinutes": 35,
+    "isPremium": true,
+    "labPresets": [
+      {
+        "id": "lab-5-connect-apis",
+        "preset": "Oracle - Full Upgrade",
+        "initialPrompt": "Demonstrate connecting to an external API (e.g., weather or dictionary) using PromptForge. Retrieve the data and integrate it into a structured response.\n"
+      }
+    ],
+    "examples": [
+      "Connect to a weather API and provide tomorrow\u2019s forecast in JSON format.",
+      "Use a dictionary API to define 'artificial intelligence' and return the definition in Markdown."
+    ],
+    "quiz": [
+      {
+        "q": "True or False: PromptForge can integrate with external APIs to enhance prompt outputs.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "What is the key purpose of connecting APIs with PromptForge?",
+        "type": "mcq",
+        "choices": [
+          "To replace LLM reasoning entirely",
+          "To augment outputs with real-world data",
+          "To compress prompts automatically",
+          "To eliminate the need for credits"
+        ],
+        "answer": "To augment outputs with real-world data"
+      }
+    ],
+    "references": [
+      {
+        "title": "PromptForge Compendium \u2014 API Integration",
+        "url": "https://promptforgeai.internal/compendium#apiconnect"
+      },
+      {
+        "title": "Toolformer Extensions for API Chaining",
+        "url": "https://arxiv.org/abs/2302.04761"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

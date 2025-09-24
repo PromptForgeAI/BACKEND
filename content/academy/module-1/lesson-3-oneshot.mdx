@@ -1,0 +1,93 @@
+---
+id: "m1-l3-oneshot"
+title: "One-Shot Prompting"
+module: "Module 1 — The Basics of Prompting"
+xp: 70
+durationMinutes: 15
+isPremium: false
+labPresets:
+  - id: "lab-3-oneshot"
+    preset: "Oracle - Quick Upgrade (Sandbox)"
+    initialPrompt: |
+      Translate English to French.
+      English: "sea otter" -> French: "loutre de mer"
+      English: "cheese" -> French:
+examples:
+  - "Translate English to French. English: 'book' -> French:"
+  - "Classify this review as Positive, Neutral, or Negative. Example: Text: 'I love this product' -> Positive. Text: 'The food was average' ->"
+quiz:
+  - q: "True or False: One-shot prompting involves providing multiple examples within the prompt."
+    type: "tf"
+    answer: false
+  - q: "What is the key benefit of one-shot prompting over zero-shot prompting?"
+    type: "mcq"
+    choices: ["Lower token usage","Clarifying task expectations","Eliminating fine-tuning","Guaranteeing correctness"]
+    answer: "Clarifying task expectations"
+references:
+  - title: "Brown et al., 2020 — Language Models are Few-Shot Learners"
+    url: "https://arxiv.org/abs/2005.14165"
+  - title: "Prompting Basics — Compendium"
+    url: "https://promptforgeai.internal/compendium#oneshot"
+---
+
+<LessonHeader title="One-Shot Prompting" xp={70} duration={15} belt="White" />
+
+## Explainer
+
+One-shot prompting builds upon zero-shot prompting by providing exactly one example within the prompt. This example serves to clarify the task, resolve ambiguity, or specify the desired output format. By doing so, one-shot prompting improves the accuracy of the model compared to a zero-shot prompt.
+
+This technique is especially useful when a task has subtle requirements or multiple possible interpretations. For example, when translating words with multiple meanings or when defining a classification schema, providing a single demonstration can guide the model toward consistent and expected outputs.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Translation (One-shot)
+Translate English to French.
+English: "sea otter" -> French: "loutre de mer"
+English: "cheese" -> French:
+
+# Sentiment classification (One-shot)
+Classify the following text as Positive, Neutral, or Negative.
+Example: Text: "I love this product" -> Positive
+Text: "The food was average" ->
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Apply one-shot prompting to clarify instructions and observe how it improves task execution.
+
+1. Open **OraclePlayground** with preset `lab-3-oneshot`.
+2. Run the translation example with “cheese” → verify the French translation.
+3. Modify the English word (e.g., “book”, “river”) and observe the model’s behavior.
+4. Design a one-shot classification task by adding a single labeled example, then test it on new input.
+
+**Completion Criteria:** The model follows the pattern established by the single example and produces consistent results.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Write a one-shot prompt that classifies movie reviews as “Positive” or “Negative.” Provide one clear example in the prompt, then test it on a new review.
+
+**Acceptance Criteria:**
+- The model outputs only “Positive” or “Negative.”
+- The single example clearly defines the expected output format.
+- The new review is classified consistently.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** One-shot prompting involves providing multiple examples within the prompt. → **False**
+2. **MCQ:** What is the key benefit of one-shot prompting over zero-shot prompting? → **Clarifying task expectations**
+
+---
+
+## References
+
+- Brown et al., 2020 — *Language Models are Few-Shot Learners*.  
+- Prompting Basics — Academy Compendium.

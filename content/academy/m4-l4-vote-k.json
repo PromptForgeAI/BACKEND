@@ -1,0 +1,51 @@
+{
+  "id": "m4-l4-vote-k",
+  "frontmatter": {
+    "id": "m4-l4-vote-k",
+    "title": "Vote-K and Majority Prompting",
+    "module": "Module 4 \u2014 Advanced Prompting Strategies",
+    "xp": 110,
+    "durationMinutes": 25,
+    "isPremium": true,
+    "labPresets": [
+      {
+        "id": "lab-4-vote-k",
+        "preset": "Oracle - Full Upgrade",
+        "initialPrompt": "Solve this riddle using Vote-K: \"If two hens lay two eggs in two days, how many eggs do six hens lay in six days?\" Generate 5 reasoning paths and vote for the final answer.\n"
+      }
+    ],
+    "examples": [
+      "What is 15 + 27? Generate 3 reasoning paths and use majority voting for the answer.",
+      "Translate 'good morning' into French. Generate 5 outputs and select the most consistent one."
+    ],
+    "quiz": [
+      {
+        "q": "True or False: Vote-K prompting uses multiple outputs and majority voting to improve reliability.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "What is the main benefit of Vote-K prompting?",
+        "type": "mcq",
+        "choices": [
+          "It reduces token usage",
+          "It guarantees deterministic outputs",
+          "It improves reliability through consensus",
+          "It eliminates the need for examples"
+        ],
+        "answer": "It improves reliability through consensus"
+      }
+    ],
+    "references": [
+      {
+        "title": "Wang et al., 2022 \u2014 Self-Consistency Improves Chain-of-Thought Reasoning",
+        "url": "https://arxiv.org/abs/2203.11171"
+      },
+      {
+        "title": "PromptForge Compendium \u2014 Vote-K",
+        "url": "https://promptforgeai.internal/compendium#votek"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

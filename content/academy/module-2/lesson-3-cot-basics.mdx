@@ -1,0 +1,91 @@
+---
+id: "m2-l3-cot-basics"
+title: "Chain-of-Thought (CoT) Basics"
+module: "Module 2 — Getting More from Your Prompts"
+xp: 80
+durationMinutes: 20
+isPremium: false
+labPresets:
+  - id: "lab-2-cot"
+    preset: "Oracle - Quick Upgrade (Sandbox)"
+    initialPrompt: |
+      Solve this math problem step by step: If a train travels 60 km at 30 km/h, how long does it take?
+examples:
+  - "What is 17 multiplied by 12? Let's think step by step."
+  - "A store sells pencils at 3 for $1. How many pencils can I buy with $5? Think it through step by step."
+quiz:
+  - q: "True or False: Chain-of-Thought prompting instructs the model to explain reasoning before giving the final answer."
+    type: "tf"
+    answer: true
+  - q: "Which of the following phrases can trigger Chain-of-Thought reasoning?"
+    type: "mcq"
+    choices: ["Translate into Spanish.", "Let's think step by step.", "Summarize in one sentence.", "Provide a bulleted list."]
+    answer: "Let's think step by step."
+references:
+  - title: "Wei et al., 2022 — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
+    url: "https://arxiv.org/abs/2201.11903"
+  - title: "Prompting Basics — Compendium"
+    url: "https://promptforgeai.internal/compendium#cot"
+---
+
+<LessonHeader title="Chain-of-Thought (CoT) Basics" xp={80} duration={20} belt="Blue" />
+
+## Explainer
+
+Chain-of-Thought (CoT) prompting encourages a model to explain its reasoning process before producing a final answer. By prompting the model to "think step by step," users can guide it to generate intermediate reasoning steps, which significantly improves performance on tasks requiring logical or multi-step thinking.
+
+The strength of CoT lies in decomposing complex problems into smaller, manageable steps. This makes outputs more interpretable and reliable, especially in arithmetic, reasoning puzzles, and multi-part instructions.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Example 1: Math reasoning
+What is 17 multiplied by 12? Let's think step by step.
+
+# Example 2: Word problem
+A store sells pencils at 3 for $1. How many pencils can I buy with $5? Let's solve step by step.
+
+# Example 3: Logic puzzle
+There are 5 red balls and 3 blue balls in a bag. If I remove 2 balls at random, what is the probability both are red? Let's solve step by step.
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Apply CoT prompting to encourage structured reasoning.
+
+1. Open **OraclePlayground** with preset `lab-2-cot`.
+2. Run the train travel example.
+3. Observe how the model explains each step of the calculation.
+4. Modify the task to another word problem and repeat.
+5. Compare results with and without the phrase “step by step.”
+
+**Completion Criteria:** Model outputs include intermediate reasoning steps leading to a correct final answer.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Design a CoT prompt that solves the following: “A recipe requires 3 eggs for 12 muffins. How many eggs are needed for 30 muffins?”
+
+**Acceptance Criteria:**
+- Model provides step-by-step reasoning.
+- Final answer is mathematically correct.
+- Reasoning process is clear and easy to follow.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** Chain-of-Thought prompting instructs the model to explain reasoning before giving the final answer. → **True**
+2. **MCQ:** Which of the following phrases can trigger Chain-of-Thought reasoning? → “Let's think step by step.”
+
+---
+
+## References
+
+- Wei et al., 2022 — *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*.  
+- Prompting Basics — Academy Compendium.

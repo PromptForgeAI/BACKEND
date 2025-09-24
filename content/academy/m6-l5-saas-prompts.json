@@ -1,0 +1,51 @@
+{
+  "id": "m6-l5-saas-prompts",
+  "frontmatter": {
+    "id": "m6-l5-saas-prompts",
+    "title": "Lab: Building SaaS with Prompts Only",
+    "module": "Module 6 \u2014 Dynamic & Meta Prompting",
+    "xp": 160,
+    "durationMinutes": 40,
+    "isPremium": true,
+    "labPresets": [
+      {
+        "id": "lab-6-saas",
+        "preset": "Oracle - Full Upgrade",
+        "initialPrompt": "Design a SaaS workflow using only prompt chaining. Example: An expense tracker that takes receipts as input, extracts details, and generates a monthly report.\n"
+      }
+    ],
+    "examples": [
+      "SaaS Idea: Automated resume screener. Step 1 \u2014 Extract skills; Step 2 \u2014 Compare with job description; Step 3 \u2014 Output candidate fit score.",
+      "SaaS Idea: Customer support triager. Step 1 \u2014 Classify tickets; Step 2 \u2014 Generate responses; Step 3 \u2014 Escalate critical issues."
+    ],
+    "quiz": [
+      {
+        "q": "True or False: SaaS workflows can be prototyped entirely with chained prompts before writing backend code.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which of these is an example of a prompt-only SaaS prototype?",
+        "type": "mcq",
+        "choices": [
+          "Weather forecast app using APIs",
+          "Expense tracker using prompt chaining",
+          "GPU training pipeline",
+          "Static website portfolio"
+        ],
+        "answer": "Expense tracker using prompt chaining"
+      }
+    ],
+    "references": [
+      {
+        "title": "PromptForge Compendium \u2014 SaaS with Prompts",
+        "url": "https://promptforgeai.internal/compendium#saas"
+      },
+      {
+        "title": "OpenAI Cookbook \u2014 Prototyping with Prompts",
+        "url": "https://github.com/openai/openai-cookbook"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

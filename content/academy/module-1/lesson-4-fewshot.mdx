@@ -1,0 +1,101 @@
+---
+# File: lesson-4-fewshot.mdx
+---
+
+---
+id: "m1-l4-fewshot"
+title: "Few-Shot Prompting"
+module: "Module 1 — The Basics of Prompting"
+xp: 80
+durationMinutes: 20
+isPremium: false
+labPresets:
+  - id: "lab-4-fewshot"
+    preset: "Oracle - Quick Upgrade (Sandbox)"
+    initialPrompt: |
+      Provide three labeled examples (Input -> Output) for classifying customer feedback into: Positive, Neutral, Negative. Then classify: "The delivery was late but the product quality is excellent." 
+examples:
+  - "Input: 'The food arrived cold' -> Output: Negative"
+  - "Input: 'Great service and fast delivery' -> Output: Positive"
+  - "Input: 'It was okay, nothing special' -> Output: Neutral"
+quiz:
+  - q: "True or False: Few-shot prompting typically uses 2–5 examples to demonstrate task patterns."
+    type: "tf"
+    answer: true
+  - q: "Which benefit is most associated with few-shot prompting?"
+    type: "mcq"
+    choices: ["Lowest token cost","Improved task specificity","Guaranteed zero hallucinations","Faster model training"]
+    answer: "Improved task specificity"
+references:
+  - title: "Brown et al., 2020 — Language Models are Few-Shot Learners"
+    url: "https://arxiv.org/abs/2005.14165"
+  - title: "Liu et al., 2021 — What Makes Good In-Context Examples for GPT-3?"
+    url: "https://arxiv.org/abs/2101.06804"
+---
+
+<LessonHeader title="Few-Shot Prompting" xp={80} duration={20} belt="White" />
+
+## Explainer
+
+Few-shot prompting is an in-context learning technique where the prompt includes a small set of curated examples (commonly 2–5) demonstrating the desired input-output mapping. These examples serve as an in-prompt mini-dataset that helps the model infer the underlying pattern and produce outputs consistent with the demonstrated behavior.
+
+Few-shot is especially useful when you need a specific output format, consistent labeling, or behavior that the model might not reliably infer from a single instruction. It trades increased token cost for higher reliability and precision.
+
+Key considerations when constructing few-shot prompts:
+- **Quality over quantity:** Prefer diverse, representative examples to avoid overfitting to narrow patterns.
+- **Clarity and consistency:** Keep formatting and labels uniform across shots.
+- **Context efficiency:** Use short but informative examples to limit token usage while preserving guidance.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Few-shot classification (3 examples)
+Input: "The food arrived cold and soggy." -> Output: Negative
+Input: "Customer service responded quickly and resolved the issue." -> Output: Positive
+Input: "The app crashes sometimes but is generally useful." -> Output: Neutral
+
+Input: "The delivery was late but the product quality is excellent." -> Output:
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Build and test a few-shot prompt for consistent classification.
+
+1. Open **OraclePlayground** with preset `lab-4-fewshot`.
+2. Paste the three-shot classification examples above.
+3. Add the test input: "The delivery was late but the product quality is excellent." and run.
+4. Observe the model’s output. If it mislabels, revise examples for clarity (e.g., balance positive/negative cues).
+5. Iterate: swap one example with a more representative example and re-run.
+
+**Completion Criteria:** The model classifies the test input correctly (expected: Positive or Neutral with explanation depending on labeling rules) and demonstrates stable behavior over two iterations.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Create a 4-shot prompt that teaches the model to convert casual meeting notes into an exact JSON object with keys: `date`, `attendees`, `action_items`.
+
+**Acceptance Criteria:**
+- Prompt contains 4 consistent examples.
+- The resulting output for a new meeting note is valid JSON with the required keys.
+- No additional narrative text outside the JSON.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** Few-shot prompting typically uses 2–5 examples to demonstrate task patterns. → **True**
+2. **MCQ:** Which benefit is most associated with few-shot prompting? → **Improved task specificity**
+
+---
+
+## References
+
+- Brown et al., 2020 — *Language Models are Few-Shot Learners*.  
+- Liu et al., 2021 — *What Makes Good In-Context Examples for GPT-3?*
+
+---

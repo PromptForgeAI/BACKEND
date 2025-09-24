@@ -1,0 +1,88 @@
+{
+  "modules": [
+    {
+      "id": "module-1",
+      "title": "The Basics of Prompting",
+      "lessons": [
+        { "id": "m1-l1-intro", "title": "Introduction to Prompt Engineering", "isPremium": false },
+        { "id": "m1-l2-zeroshot", "title": "Zero-Shot Prompting", "isPremium": false },
+        { "id": "m1-l3-oneshot", "title": "One-Shot Prompting", "isPremium": false },
+        { "id": "m1-l4-fewshot", "title": "Few-Shot Prompting", "isPremium": false },
+        { "id": "m1-l5-icl", "title": "In-Context Learning Essentials", "isPremium": false }
+      ]
+    },
+    {
+      "id": "module-2",
+      "title": "Getting More from Your Prompts",
+      "lessons": [
+        { "id": "m2-l1-role", "title": "Role Prompting", "isPremium": false },
+        { "id": "m2-l2-instructional", "title": "Instructional Prompts", "isPremium": false },
+        { "id": "m2-l3-cot-basics", "title": "Chain-of-Thought Basics", "isPremium": false },
+        { "id": "m2-l4-structured", "title": "Structured Outputs", "isPremium": false }
+      ]
+    },
+    {
+      "id": "module-3",
+      "title": "PromptForge Starter Labs",
+      "lessons": [
+        { "id": "m3-l1-oracle", "title": "Using the Oracle for Prompt Upgrades", "isPremium": false },
+        { "id": "m3-l2-credits", "title": "Tracking Credits & Analytics", "isPremium": false },
+        { "id": "m3-l3-extensions", "title": "Chrome & VS Code Extension Demo", "isPremium": false }
+      ]
+    },
+    {
+      "id": "module-4",
+      "title": "Advanced Prompting Strategies",
+      "lessons": [
+        { "id": "m4-l1-cot-adv", "title": "Chain-of-Thought Advanced", "isPremium": true },
+        { "id": "m4-l2-self-consistency", "title": "Self-Consistency Decoding", "isPremium": true },
+        { "id": "m4-l3-exemplars", "title": "Exemplars & KNN Selection", "isPremium": true },
+        { "id": "m4-l4-votek", "title": "Vote-K & Majority Prompting", "isPremium": true },
+        { "id": "m4-l5-complex", "title": "Lab: Complex Reasoning Prompts", "isPremium": true }
+      ]
+    },
+    {
+      "id": "module-5",
+      "title": "Augmenting LLMs",
+      "lessons": [
+        { "id": "m5-l1-rag", "title": "Retrieval-Augmented Generation (RAG)", "isPremium": true },
+        { "id": "m5-l2-compression", "title": "Prompt Compression Techniques", "isPremium": true },
+        { "id": "m5-l3-toolformer", "title": "Toolformer & API-Augmented Models", "isPremium": true },
+        { "id": "m5-l4-api", "title": "Orchestrating External APIs", "isPremium": true },
+        { "id": "m5-l5-connect", "title": "Lab: Connect PromptForge with APIs", "isPremium": true }
+      ]
+    },
+    {
+      "id": "module-6",
+      "title": "Dynamic & Meta Prompting",
+      "lessons": [
+        { "id": "m6-l1-meta", "title": "Meta-Prompting", "isPremium": true },
+        { "id": "m6-l2-dynamic", "title": "Dynamic Prompt Optimization", "isPremium": true },
+        { "id": "m6-l3-context", "title": "Context Management & Truncation", "isPremium": true },
+        { "id": "m6-l4-promptfile", "title": "PromptFile Sequences for SaaS Apps", "isPremium": true },
+        { "id": "m6-l5-saas", "title": "Lab: Building SaaS with Prompts Only", "isPremium": true }
+      ]
+    },
+    {
+      "id": "module-7",
+      "title": "Security & Prompt Defense",
+      "lessons": [
+        { "id": "m7-l1-injection", "title": "Prompt Injection Attacks", "isPremium": true },
+        { "id": "m7-l2-jailbreaks", "title": "Jailbreaks (DAN, Developer Mode, Suffix Attacks)", "isPremium": true },
+        { "id": "m7-l3-exfiltration", "title": "Data Exfiltration & Leakage", "isPremium": true },
+        { "id": "m7-l4-attacking", "title": "Labs: Attacking an LLM", "isPremium": true },
+        { "id": "m7-l5-defense", "title": "Defensive Prompting Strategies", "isPremium": true },
+        { "id": "m7-l6-redteaming", "title": "Red-Teaming with PromptForge", "isPremium": true }
+      ]
+    },
+    {
+      "id": "module-8",
+      "title": "Case Studies & Ethics",
+      "lessons": [
+        { "id": "m8-l1-security-cases", "title": "Security Case Studies & OWASP Top 10", "isPremium": true },
+        { "id": "m8-l2-bias", "title": "AI Awareness & Bias", "isPremium": true },
+        { "id": "m8-l3-ethics", "title": "Ethical Prompting Practices", "isPremium": true }
+      ]
+    }
+  ]
+}

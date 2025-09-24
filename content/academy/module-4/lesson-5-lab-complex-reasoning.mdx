@@ -1,0 +1,95 @@
+---
+id: "m4-l5-complex-reasoning"
+title: "Lab: Complex Reasoning Prompts"
+module: "Module 4 — Advanced Prompting Strategies"
+xp: 120
+durationMinutes: 30
+isPremium: true
+labPresets:
+  - id: "lab-4-complex-reasoning"
+    preset: "Oracle - Full Upgrade"
+    initialPrompt: |
+      Solve this reasoning task using advanced prompting techniques (CoT, self-consistency, Vote-K).
+      Problem: A library has 480 books. 1/4 are fiction, the rest are non-fiction. Half of the non-fiction books are history. How many history books are there?
+examples:
+  - "A farmer plants 120 trees. 1/3 are apple, 1/4 are mango, the rest are orange. How many orange trees are there?"
+  - "A box contains 10 red, 15 blue, and 20 green balls. If 5 are removed at random, what is the probability at least 3 are green? Solve step by step with self-consistency."
+quiz:
+  - q: "True or False: Complex reasoning prompts may combine multiple advanced techniques for improved reliability."
+    type: "tf"
+    answer: true
+  - q: "Which combination is best for complex reasoning tasks?"
+    type: "mcq"
+    choices: ["Zero-shot only","Role prompting + Translation","CoT + Self-consistency + Vote-K","Instructional + Poetry generation"]
+    answer: "CoT + Self-consistency + Vote-K"
+references:
+  - title: "Wei et al., 2022 — Chain-of-Thought Prompting"
+    url: "https://arxiv.org/abs/2201.11903"
+  - title: "Wang et al., 2022 — Self-Consistency Improves Reasoning"
+    url: "https://arxiv.org/abs/2203.11171"
+  - title: "PromptForge Compendium — Complex Reasoning"
+    url: "https://promptforgeai.internal/compendium#complexreasoning"
+---
+
+<LessonHeader title="Lab: Complex Reasoning Prompts" xp={120} duration={30} belt="Purple" />
+
+## Explainer
+
+Complex reasoning tasks often require combining multiple advanced prompting strategies to improve accuracy and reliability. Chain-of-Thought ensures structured reasoning, self-consistency compares multiple reasoning paths, and Vote-K applies consensus voting to finalize answers.
+
+This lab challenges learners to apply these strategies together on multi-step reasoning problems involving arithmetic, logic, and probability.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Example 1: Tree distribution
+A farmer plants 120 trees. 1/3 are apple, 1/4 are mango, the rest are orange. How many orange trees are there?
+
+# Example 2: Probability puzzle
+A box contains 10 red, 15 blue, and 20 green balls. If 5 are removed at random, what is the probability at least 3 are green? Solve step by step with self-consistency.
+
+# Example 3: Library books
+A library has 480 books. 1/4 are fiction, the rest are non-fiction. Half of the non-fiction books are history. How many history books are there?
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Apply advanced prompting strategies to multi-step reasoning problems.
+
+1. Open **OraclePlayground** with preset `lab-4-complex-reasoning`.
+2. Run the library books example.
+3. Observe how CoT, self-consistency, and Vote-K techniques interact.
+4. Test other problems (trees, probability) with the same approach.
+5. Compare single-technique vs. combined-technique results.
+
+**Completion Criteria:** Model outputs demonstrate reliable reasoning using advanced strategies in combination.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Design a complex reasoning prompt that calculates: “A train travels 300 km in 5 hours. Another train travels the same distance in 4 hours. Which train is faster and by how much km/h?” Use CoT, self-consistency, and Vote-K to derive the answer.
+
+**Acceptance Criteria:**
+- Model uses step-by-step reasoning.
+- Multiple reasoning paths are compared.
+- Final output includes clear consensus on the correct answer.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** Complex reasoning prompts may combine multiple advanced techniques for improved reliability. → **True**
+2. **MCQ:** Which combination is best for complex reasoning tasks? → “CoT + Self-consistency + Vote-K.”
+
+---
+
+## References
+
+- Wei et al., 2022 — *Chain-of-Thought Prompting*.  
+- Wang et al., 2022 — *Self-Consistency Improves Reasoning*.  
+- PromptForge Compendium — Complex Reasoning.

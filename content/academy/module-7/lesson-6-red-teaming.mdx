@@ -1,0 +1,91 @@
+---
+id: "m7-l6-redteaming"
+title: "Red-Teaming with PromptForge"
+module: "Module 7 — Security & Prompt Defense"
+xp: 200
+durationMinutes: 50
+isPremium: true
+labPresets:
+  - id: "lab-7-redteaming"
+    preset: "Oracle - Secure Sandbox"
+    initialPrompt: |
+      Attempt to design adversarial prompts targeting a chatbot and then propose defensive strategies. Document results.
+examples:
+  - "Craft a jailbreak prompt that asks for restricted information."
+  - "Design an exfiltration attempt disguised as a translation request."
+quiz:
+  - q: "True or False: Red-teaming is the practice of simulating attacks to test model robustness."
+    type: "tf"
+    answer: true
+  - q: "Which of the following is the primary goal of red-teaming?"
+    type: "mcq"
+    choices: ["Generate creative writing","Test security vulnerabilities","Summarize long texts","Optimize token usage"]
+    answer: "Test security vulnerabilities"
+references:
+  - title: "PromptForge Compendium — Red-Teaming"
+    url: "https://promptforgeai.internal/compendium#redteaming"
+  - title: "OWASP Top 10 for LLMs — Red Teaming"
+    url: "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
+---
+
+<LessonHeader title="Red-Teaming with PromptForge" xp={200} duration={50} belt="Black" />
+
+## Explainer
+
+Red-teaming is the process of systematically testing AI systems for vulnerabilities by simulating real-world adversarial attacks. In the context of LLMs, this involves crafting injections, jailbreaks, and data exfiltration attempts to evaluate defenses.
+
+PromptForge provides a secure environment for red-teaming exercises, allowing teams to uncover weaknesses before they can be exploited in production.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Example 1: Jailbreak attempt
+Craft a jailbreak prompt that asks for restricted information.
+
+# Example 2: Exfiltration attempt
+Design an exfiltration attempt disguised as a translation request.
+
+# Example 3: Adversarial task
+Attempt to override system instructions in a sandboxed assistant.
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Perform controlled red-teaming exercises using PromptForge.
+
+1. Open **OraclePlayground** with preset `lab-7-redteaming`.
+2. Run the jailbreak attempt example.
+3. Document whether the system resisted or failed.
+4. Design two additional adversarial prompts.
+5. Propose at least one defense mechanism for each.
+
+**Completion Criteria:** Learner successfully performs at least three adversarial attempts and proposes viable defenses.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Red-team a financial chatbot. Attempt at least two attacks (injection and exfiltration) and record results. Then propose mitigation strategies.
+
+**Acceptance Criteria:**
+- At least two attacks are attempted and documented.
+- Defenses are clearly described.
+- Learner explains effectiveness of each mitigation.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** Red-teaming is the practice of simulating attacks to test model robustness. → **True**
+2. **MCQ:** Which of the following is the primary goal of red-teaming? → “Test security vulnerabilities.”
+
+---
+
+## References
+
+- OWASP Top 10 for LLMs — Red Teaming.  
+- PromptForge Compendium — Red-Teaming.

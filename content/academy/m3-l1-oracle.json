@@ -1,0 +1,51 @@
+{
+  "id": "m3-l1-oracle",
+  "frontmatter": {
+    "id": "m3-l1-oracle",
+    "title": "Using the Oracle for Prompt Upgrades",
+    "module": "Module 3 \u2014 PromptForge Starter Labs",
+    "xp": 100,
+    "durationMinutes": 20,
+    "isPremium": false,
+    "labPresets": [
+      {
+        "id": "lab-3-oracle",
+        "preset": "Oracle - Quick Upgrade (Sandbox)",
+        "initialPrompt": "Improve this prompt so it produces structured JSON output with fields: name, role, and summary.\nUser intent: \"Summarize Ada Lovelace\u2019s contributions in JSON format.\"\n"
+      }
+    ],
+    "examples": [
+      "Refine the following prompt for clarity and structure: 'Explain machine learning basics.'",
+      "Upgrade this intent: 'Write a professional email asking for a project update.'"
+    ],
+    "quiz": [
+      {
+        "q": "True or False: The Oracle in PromptForge automatically refines prompts for clarity and structure.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which of the following best describes Oracle\u2019s role in PromptForge?",
+        "type": "mcq",
+        "choices": [
+          "Run large-scale training",
+          "Upgrade prompts for precision",
+          "Provide external datasets",
+          "Optimize tokenization"
+        ],
+        "answer": "Upgrade prompts for precision"
+      }
+    ],
+    "references": [
+      {
+        "title": "PromptForge Compendium \u2014 Oracle Overview",
+        "url": "https://promptforgeai.internal/compendium#oracle"
+      },
+      {
+        "title": "PromptForge Documentation \u2014 Oracle Service",
+        "url": "https://promptforgeai.internal/docs/oracle"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

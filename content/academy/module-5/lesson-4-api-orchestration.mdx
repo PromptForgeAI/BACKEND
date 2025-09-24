@@ -1,0 +1,90 @@
+---
+id: "m5-l4-api-orchestration"
+title: "Orchestrating External APIs"
+module: "Module 5 — Augmenting LLMs"
+xp: 130
+durationMinutes: 30
+isPremium: true
+labPresets:
+  - id: "lab-5-api"
+    preset: "Oracle - Full Upgrade"
+    initialPrompt: |
+      Use multiple APIs (weather + calendar) to plan an outdoor team event. Output must include location, time, and weather forecast.
+examples:
+  - "Combine a maps API and a traffic API to suggest the fastest route to the airport."
+  - "Use a stock API and a news API to summarize today’s market outlook."
+quiz:
+  - q: "True or False: API orchestration refers to coordinating multiple APIs in a single workflow."
+    type: "tf"
+    answer: true
+  - q: "Which of the following best describes API orchestration in LLM workflows?"
+    type: "mcq"
+    choices: ["Chaining multiple API calls for a task","Training a new model","Compressing prompts","Running zero-shot tasks"]
+    answer: "Chaining multiple API calls for a task"
+references:
+  - title: "PromptForge Compendium — API Orchestration"
+    url: "https://promptforgeai.internal/compendium#apiorchestration"
+  - title: "Toolformer Extensions for API Chaining"
+    url: "https://arxiv.org/abs/2302.04761"
+---
+
+<LessonHeader title="Orchestrating External APIs" xp={130} duration={30} belt="Brown" />
+
+## Explainer
+
+API orchestration is the practice of coordinating multiple external APIs within a single workflow to accomplish complex tasks. Instead of relying on one tool, the model can integrate data from several APIs — for example, combining weather data with a calendar to schedule events.
+
+This strategy demonstrates how LLMs can act as control hubs, intelligently sequencing API calls and integrating outputs into coherent responses. API orchestration is critical for building real-world AI applications and SaaS products.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Example 1: Route planning
+Combine a maps API and a traffic API to suggest the fastest route to the airport.
+
+# Example 2: Market outlook
+Use a stock API and a news API to summarize today’s market outlook.
+
+# Example 3: Event planning
+Use weather + calendar APIs to plan an outdoor event. Output must include location, time, and weather forecast.
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Learn to chain multiple API calls within a single workflow.
+
+1. Open **OraclePlayground** with preset `lab-5-api`.
+2. Run the event planning example.
+3. Observe how multiple APIs are integrated.
+4. Modify the scenario (e.g., travel planning, financial reports) and re-run.
+
+**Completion Criteria:** Model successfully orchestrates at least two APIs to solve a task.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Create a prompt that uses both a translation API and a text-to-speech API to translate “Hello, how are you?” into Japanese and then output it as audio-ready text.
+
+**Acceptance Criteria:**
+- Model orchestrates at least two APIs.
+- Output includes translated text and audio instruction.
+- Workflow is coherent and practical.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** API orchestration refers to coordinating multiple APIs in a single workflow. → **True**
+2. **MCQ:** Which of the following best describes API orchestration in LLM workflows? → “Chaining multiple API calls for a task.”
+
+---
+
+## References
+
+- PromptForge Compendium — API Orchestration.  
+- Toolformer Extensions for API Chaining.

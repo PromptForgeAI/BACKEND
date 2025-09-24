@@ -1,0 +1,95 @@
+
+---
+
+---
+id: "m1-l5-icl"
+title: "In-Context Learning (ICL) Essentials"
+module: "Module 1 — The Basics of Prompting"
+xp: 90
+durationMinutes: 20
+isPremium: false
+labPresets:
+  - id: "lab-5-icl"
+    preset: "Oracle - Quick Upgrade (Sandbox)"
+    initialPrompt: |
+      Demonstrate In-Context Learning by providing two examples of input-output pairs for a new task and then performing the task on a test input.
+examples:
+  - "Example: Q: 'Capital of France?' -> A: 'Paris'"
+  - "Example: Q: '5 + 7' -> A: '12'"
+quiz:
+  - q: "True or False: In-Context Learning requires modifying the model’s weights to learn a new task."
+    type: "tf"
+    answer: false
+  - q: "Which statement best describes ICL?"
+    type: "mcq"
+    choices: ["Training the model on new data","Including examples in the prompt to teach the model a task","Compressing tokens","Using external APIs"]
+    answer: "Including examples in the prompt to teach the model a task"
+references:
+  - title: "Brown et al., 2020 — Language Models are Few-Shot Learners"
+    url: "https://arxiv.org/abs/2005.14165"
+  - title: "Zhang et al., 2023 — Understanding In-Context Learning"
+    url: "https://arxiv.org/abs/2301.03639"
+---
+
+<LessonHeader title="In-Context Learning (ICL) Essentials" xp={90} duration={20} belt="White" />
+
+## Explainer
+
+In-Context Learning (ICL) is the phenomenon where a language model adapts to a new task simply by conditioning on examples and instructions provided at inference time. Unlike fine-tuning, ICL does not change model weights — the model leverages patterns in the provided context to generalize to new inputs.
+
+ICL underpins zero-shot, one-shot, and few-shot techniques and explains why carefully curated examples in a prompt can dramatically alter model behavior. Understanding ICL is essential for designing effective prompts and choosing the right number and type of examples.
+
+Key points:
+- **No retraining:** ICL works at inference time only.
+- **Context sensitivity:** The model’s behavior depends on the quality, order, and formatting of examples.
+- **Scaling effects:** Larger models tend to exhibit stronger ICL capabilities.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# ICL demonstration (2-shot)
+Q: "Translate to French: 'Good morning'" -> A: "Bonjour"
+Q: "Translate to French: 'Thank you'" -> A: "Merci"
+
+Q: "Translate to French: 'See you later'" -> A:
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Demonstrate ICL by teaching a new labeling scheme via examples.
+
+1. Open **OraclePlayground** with preset `lab-5-icl`.
+2. Provide two example input-output pairs that define a small task (e.g., mapping abbreviations to full phrases).
+3. Add a test input and run the prompt.
+4. Observe whether the model generalizes the pattern correctly.
+
+**Completion Criteria:** Model performs the task for the test input following the pattern shown in examples.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Use ICL to teach the model a custom sentiment scale: map text to `[-1, 0, 1]` where -1 = Negative, 0 = Neutral, 1 = Positive. Provide two examples and classify: "The update fixed several bugs, but introduced a new crash." 
+
+**Acceptance Criteria:**
+- Prompt includes two clear examples.
+- Model outputs -1, 0, or 1 for the test input.
+- Explanations are optional but encouraged.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** In-Context Learning requires modifying the model’s weights to learn a new task. → **False**
+2. **MCQ:** Which statement best describes ICL? → "Including examples in the prompt to teach the model a task."
+
+---
+
+## References
+
+- Brown et al., 2020 — *Language Models are Few-Shot Learners*.  
+- Zhang et al., 2023 — *Understanding In-Context Learning*.

@@ -1,0 +1,51 @@
+{
+  "id": "m4-l2-self-consistency",
+  "frontmatter": {
+    "id": "m4-l2-self-consistency",
+    "title": "Self-Consistency Decoding",
+    "module": "Module 4 \u2014 Advanced Prompting Strategies",
+    "xp": 100,
+    "durationMinutes": 25,
+    "isPremium": true,
+    "labPresets": [
+      {
+        "id": "lab-4-self-consistency",
+        "preset": "Oracle - Full Upgrade",
+        "initialPrompt": "Solve the problem: A farmer has 30 apples, sells 12, then buys 5 more. How many apples does he have? Use step-by-step reasoning and provide at least 3 reasoning paths.\n"
+      }
+    ],
+    "examples": [
+      "What is 25 + 47? Solve step by step and generate multiple reasoning paths.",
+      "If a store sells pencils at 3 for $1, how many pencils can I buy with $4? Provide reasoning in multiple paths and vote on the final answer."
+    ],
+    "quiz": [
+      {
+        "q": "True or False: Self-consistency involves sampling multiple reasoning chains and selecting the most consistent final answer.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which strategy improves reliability by comparing multiple reasoning paths?",
+        "type": "mcq",
+        "choices": [
+          "Role prompting",
+          "Self-consistency decoding",
+          "Few-shot prompting",
+          "Instructional prompting"
+        ],
+        "answer": "Self-consistency decoding"
+      }
+    ],
+    "references": [
+      {
+        "title": "Wang et al., 2022 \u2014 Self-Consistency Improves Chain-of-Thought Reasoning",
+        "url": "https://arxiv.org/abs/2203.11171"
+      },
+      {
+        "title": "Prompting Basics \u2014 Compendium",
+        "url": "https://promptforgeai.internal/compendium#selfconsistency"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

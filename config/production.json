@@ -1,0 +1,58 @@
+{
+  "api": {
+  "base_url": "https://api.promptforgeai.tech",
+    "version": "v1",
+    "timeout": 30000
+  },
+  "frontend": {
+  "url": "https://www.promptforgeai.tech"
+  },
+  "database": {
+    "mongodb_url": "mongodb://production-cluster/promptforge"
+  },
+  "auth": {
+    "jwt_secret": "PRODUCTION_JWT_SECRET_HERE",
+    "token_expiry": 86400
+  },
+  "billing": {
+    "paddle": {
+      "environment": "production",
+      "vendor_id": "PADDLE_VENDOR_ID_HERE"
+    },
+    "razorpay": {
+      "environment": "production"
+    }
+  },
+  "ai": {
+    "providers": {
+      "openai": {
+        "enabled": true,
+        "rate_limit": 100
+      },
+      "anthropic": {
+        "enabled": true,
+        "rate_limit": 50
+      }
+    }
+  },
+  "security": {
+    "cors_origins": [
+  "https://www.promptforgeai.tech",
+  "https://promptforgeai.tech",
+      "chrome-extension://*"
+    ],
+    "rate_limiting": {
+      "enabled": true,
+      "redis_url": "redis://production-redis:6379"
+    }
+  },
+  "features": {
+    "telemetry": true,
+    "offline_mode": false,
+    "auto_upgrade": true
+  },
+  "monitoring": {
+    "sentry_dsn": "SENTRY_DSN_HERE",
+    "log_level": "INFO"
+  }
+}

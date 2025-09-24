@@ -1,0 +1,99 @@
+---
+id: "m1-l2-zeroshot"
+title: "Zero-Shot Prompting"
+module: "Module 1 — The Basics of Prompting"
+xp: 60
+durationMinutes: 15
+isPremium: false
+labPresets:
+  - id: "lab-2-zeroshot"
+    preset: "Oracle - Quick Upgrade (Sandbox)"
+    initialPrompt: |
+      Classify the sentiment of the following text as positive, negative, or neutral.
+      Text: I think the vacation was okay.
+      Sentiment:
+examples:
+  - "Summarize the following paragraph in one sentence."
+  - "Translate this English text into Spanish: 'The cat is sleeping on the chair.'"
+quiz:
+  - q: "True or False: Zero-shot prompting requires providing at least one example in the prompt."
+    type: "tf"
+    answer: false
+  - q: "Which of the following tasks is best suited for zero-shot prompting?"
+    type: "mcq"
+    choices: ["Complex JSON schema generation", "Basic sentiment classification", "Nuanced legal reasoning", "Domain-specific rare event detection"]
+    answer: "Basic sentiment classification"
+references:
+  - title: "Prompting Basics — Compendium"
+    url: "https://promptforgeai.internal/compendium#zeroshot"
+  - title: "Brown et al., 2020 — Language Models are Few-Shot Learners"
+    url: "https://arxiv.org/abs/2005.14165"
+---
+
+<LessonHeader title="Zero-Shot Prompting" xp={60} duration={15} belt="White" />
+
+## Explainer
+
+Zero-shot prompting is the most fundamental interaction style with a large language model (LLM). In this approach, the user provides only a direct instruction or query without any accompanying examples. The model then relies exclusively on its pre-trained knowledge to perform the task.
+
+Zero-shot techniques are effective when tasks are straightforward, commonly represented in the model’s training data, or have broadly understood structures. Examples include basic text classification, summarization, translation, or fact-based question answering.
+
+However, zero-shot prompting has limitations. It can be unpredictable for complex or highly specialized tasks, where the absence of examples leads to ambiguous or inconsistent outputs. For such cases, one-shot or few-shot prompting strategies provide more reliable results.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Sentiment classification (Zero-shot)
+Classify the sentiment of the following text as positive, negative, or neutral.
+Text: I think the vacation was okay.
+Sentiment:
+
+# Translation (Zero-shot)
+Translate the following English sentence into Spanish:
+The cat is sleeping on the chair.
+
+# Summarization (Zero-shot)
+Summarize the following passage in one sentence:
+Artificial Intelligence is reshaping industries by automating tasks, improving decision-making, and enabling new forms of human-machine collaboration.
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Experience how zero-shot prompts perform on common tasks.
+
+1. Open **OraclePlayground** with preset `lab-2-zeroshot`.
+2. Run the provided sentiment classification prompt.
+3. Observe the output — does the model correctly classify the sentiment?
+4. Modify the input sentence (e.g., change the sentiment or topic) and re-run.
+5. Test additional zero-shot prompts for summarization and translation.
+
+**Completion Criteria:** Demonstrate at least three runs with different instructions, showing that the model can perform tasks without examples.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Write a zero-shot prompt that instructs the model to output a three-item bulleted list of potential applications of AI in healthcare.
+
+**Acceptance Criteria:**
+- Output contains exactly three bullet points.
+- Each point is a distinct application relevant to healthcare.
+- No extra commentary outside the list.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** Zero-shot prompting requires providing at least one example in the prompt. → **False**
+2. **MCQ:** Which of the following tasks is best suited for zero-shot prompting? → **Basic sentiment classification**
+
+---
+
+## References
+
+- Brown et al., 2020 — *Language Models are Few-Shot Learners*.  
+- Prompting Basics — Academy Compendium.

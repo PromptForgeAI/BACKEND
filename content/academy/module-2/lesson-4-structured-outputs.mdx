@@ -1,0 +1,92 @@
+---
+id: "m2-l4-structured"
+title: "Structured Outputs"
+module: "Module 2 — Getting More from Your Prompts"
+xp: 90
+durationMinutes: 20
+isPremium: false
+labPresets:
+  - id: "lab-2-structured"
+    preset: "Oracle - Quick Upgrade (Sandbox)"
+    initialPrompt: |
+      Extract the following information and return it in JSON format: Name, Age, and Occupation.
+      Text: Sarah, a 29-year-old data scientist, works at a startup.
+examples:
+  - "Provide a bulleted list of three challenges in project management."
+  - "Output the following movie details as JSON: Title, Director, Year."
+quiz:
+  - q: "True or False: Structured output prompting helps ensure consistent response formatting."
+    type: "tf"
+    answer: true
+  - q: "Which of the following is an example of a structured output format?"
+    type: "mcq"
+    choices: ["A paragraph of free text", "A JSON object with keys and values", "A casual conversation", "A poem"]
+    answer: "A JSON object with keys and values"
+references:
+  - title: "Prompting Basics — Compendium"
+    url: "https://promptforgeai.internal/compendium#structured"
+  - title: "OpenAI Cookbook — Structured Outputs"
+    url: "https://github.com/openai/openai-cookbook"
+---
+
+<LessonHeader title="Structured Outputs" xp={90} duration={20} belt="Blue" />
+
+## Explainer
+
+Structured output prompting guides the model to produce responses in a specific format, such as JSON, Markdown tables, or bullet lists. This technique is essential when the output needs to be machine-readable, integrated into applications, or systematically analyzed.
+
+The benefit of structured prompting is consistency — instead of unpredictable free text, the model returns outputs that can be reliably parsed. However, the quality of the structure depends heavily on the clarity of the instructions provided.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Example 1: JSON output
+Extract the following information and return it in JSON format: Name, Age, Occupation.
+Text: Sarah, a 29-year-old data scientist, works at a startup.
+
+# Example 2: Markdown table
+Generate a Markdown table with two columns: Country and Capital. Include France, Japan, and Brazil.
+
+# Example 3: Bulleted list
+Provide a bulleted list of three common challenges in project management.
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Practice creating prompts that enforce structured responses.
+
+1. Open **OraclePlayground** with preset `lab-2-structured`.
+2. Run the JSON extraction example.
+3. Test additional instructions (e.g., Markdown table, CSV output).
+4. Verify whether the model adheres strictly to the required structure.
+
+**Completion Criteria:** The model outputs content in the specified structured format without deviation.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Write a prompt that outputs details of three books (Title, Author, Year) in JSON format.
+
+**Acceptance Criteria:**
+- Output is valid JSON.
+- Includes exactly three books.
+- Each book entry contains the required fields.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** Structured output prompting helps ensure consistent response formatting. → **True**
+2. **MCQ:** Which of the following is an example of a structured output format? → “A JSON object with keys and values.”
+
+---
+
+## References
+
+- OpenAI Cookbook — Structured Outputs.  
+- Prompting Basics — Academy Compendium.

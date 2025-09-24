@@ -1,0 +1,51 @@
+{
+  "id": "m6-l4-promptfile",
+  "frontmatter": {
+    "id": "m6-l4-promptfile",
+    "title": "PromptFile Sequences for SaaS Apps",
+    "module": "Module 6 \u2014 Dynamic & Meta Prompting",
+    "xp": 150,
+    "durationMinutes": 35,
+    "isPremium": true,
+    "labPresets": [
+      {
+        "id": "lab-6-promptfile",
+        "preset": "Oracle - Full Upgrade",
+        "initialPrompt": "Create a PromptFile sequence that first extracts customer feedback themes, then generates a summary report.\n"
+      }
+    ],
+    "examples": [
+      "PromptFile: Step 1 \u2014 Extract entities from reviews; Step 2 \u2014 Summarize results in JSON.",
+      "PromptFile: Step 1 \u2014 Analyze bug reports; Step 2 \u2014 Generate prioritized task list."
+    ],
+    "quiz": [
+      {
+        "q": "True or False: PromptFile sequences allow chaining multiple prompts into workflows.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "What is the primary benefit of PromptFile sequences in SaaS apps?",
+        "type": "mcq",
+        "choices": [
+          "Token compression",
+          "Chaining structured tasks",
+          "Automatic fine-tuning",
+          "Replacing user interfaces"
+        ],
+        "answer": "Chaining structured tasks"
+      }
+    ],
+    "references": [
+      {
+        "title": "PromptForge Compendium \u2014 PromptFile Sequences",
+        "url": "https://promptforgeai.internal/compendium#promptfile"
+      },
+      {
+        "title": "OpenAI Cookbook \u2014 Prompt Chaining",
+        "url": "https://github.com/openai/openai-cookbook"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

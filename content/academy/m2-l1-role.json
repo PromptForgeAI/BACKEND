@@ -1,0 +1,51 @@
+{
+  "id": "m2-l1-role",
+  "frontmatter": {
+    "id": "m2-l1-role",
+    "title": "Role Prompting",
+    "module": "Module 2 \u2014 Getting More from Your Prompts",
+    "xp": 70,
+    "durationMinutes": 15,
+    "isPremium": false,
+    "labPresets": [
+      {
+        "id": "lab-2-role",
+        "preset": "Oracle - Quick Upgrade (Sandbox)",
+        "initialPrompt": "You are a strict code reviewer. For the following JavaScript function, identify bugs and suggest one-line fixes.\nFunction: function add(a, b) { return a - b; }\n"
+      }
+    ],
+    "examples": [
+      "You are a travel guide. Suggest a 3-day itinerary for Paris.",
+      "You are a financial advisor. Summarize key risks of investing in cryptocurrency."
+    ],
+    "quiz": [
+      {
+        "q": "True or False: Role prompting assigns a persona to the LLM to influence its responses.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which of the following is an example of role prompting?",
+        "type": "mcq",
+        "choices": [
+          "Summarize this article.",
+          "Translate into Spanish.",
+          "You are a historian, explain the causes of World War I.",
+          "Classify this text as positive or negative."
+        ],
+        "answer": "You are a historian, explain the causes of World War I."
+      }
+    ],
+    "references": [
+      {
+        "title": "Prompting Basics \u2014 Compendium",
+        "url": "https://promptforgeai.internal/compendium#role"
+      },
+      {
+        "title": "Brown et al., 2020 \u2014 Language Models are Few-Shot Learners",
+        "url": "https://arxiv.org/abs/2005.14165"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

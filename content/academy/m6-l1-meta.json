@@ -1,0 +1,51 @@
+{
+  "id": "m6-l1-meta",
+  "frontmatter": {
+    "id": "m6-l1-meta",
+    "title": "Meta-Prompting",
+    "module": "Module 6 \u2014 Dynamic & Meta Prompting",
+    "xp": 130,
+    "durationMinutes": 30,
+    "isPremium": true,
+    "labPresets": [
+      {
+        "id": "lab-6-meta",
+        "preset": "Oracle - Full Upgrade",
+        "initialPrompt": "Rewrite this prompt to make it more effective for summarization tasks: \"Explain the French Revolution in one paragraph.\"\n"
+      }
+    ],
+    "examples": [
+      "Rewrite this prompt to improve clarity: 'Generate a detailed plan for a startup.'",
+      "Improve this intent: 'List advantages of renewable energy.'"
+    ],
+    "quiz": [
+      {
+        "q": "True or False: Meta-prompting is the practice of writing prompts that help generate or refine other prompts.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which of the following is a core application of meta-prompting?",
+        "type": "mcq",
+        "choices": [
+          "Generating poetry",
+          "Improving prompt design",
+          "Translating text",
+          "Token compression"
+        ],
+        "answer": "Improving prompt design"
+      }
+    ],
+    "references": [
+      {
+        "title": "PromptForge Compendium \u2014 Meta-Prompting",
+        "url": "https://promptforgeai.internal/compendium#metaprompting"
+      },
+      {
+        "title": "OpenAI Cookbook \u2014 Meta Prompts",
+        "url": "https://github.com/openai/openai-cookbook"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

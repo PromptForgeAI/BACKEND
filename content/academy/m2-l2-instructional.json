@@ -1,0 +1,51 @@
+{
+  "id": "m2-l2-instructional",
+  "frontmatter": {
+    "id": "m2-l2-instructional",
+    "title": "Instructional Prompts",
+    "module": "Module 2 \u2014 Getting More from Your Prompts",
+    "xp": 70,
+    "durationMinutes": 15,
+    "isPremium": false,
+    "labPresets": [
+      {
+        "id": "lab-2-instructional",
+        "preset": "Oracle - Quick Upgrade (Sandbox)",
+        "initialPrompt": "Write a 3-step guide on how to prepare a cup of green tea.\n"
+      }
+    ],
+    "examples": [
+      "List the top 3 benefits of daily exercise.",
+      "Write a step-by-step guide to installing Python on Windows."
+    ],
+    "quiz": [
+      {
+        "q": "True or False: Instructional prompts guide the model by specifying desired actions or steps.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which of these is an instructional prompt?",
+        "type": "mcq",
+        "choices": [
+          "Summarize this news article.",
+          "Translate into Spanish.",
+          "Explain how to change a flat tire in steps.",
+          "Classify this review as positive or negative."
+        ],
+        "answer": "Explain how to change a flat tire in steps."
+      }
+    ],
+    "references": [
+      {
+        "title": "Prompting Basics \u2014 Compendium",
+        "url": "https://promptforgeai.internal/compendium#instructional"
+      },
+      {
+        "title": "OpenAI Cookbook \u2014 Instructional Prompts",
+        "url": "https://github.com/openai/openai-cookbook"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

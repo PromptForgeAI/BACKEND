@@ -1,0 +1,8608 @@
+[
+  {
+    "id": "in_context_learning_icl",
+    "name": "In-Context Learning (ICL)",
+    "category": "foundational",
+    "aliases": [
+      "ICL",
+      "zero-shot",
+      "one-shot",
+      "few-shot"
+    ],
+    "description": "The ability of a model to learn a task by being provided with examples (exemplars) and/or instructions within the prompt itself, without updates to the model's weights. Includes few-shot, one-shot, and zero-shot scenarios.",
+    "tags": [
+      "learning",
+      "examples",
+      "adaptive"
+    ],
+    "use_cases": [
+      "task generalization",
+      "instruction following"
+    ],
+    "template_fragments": [
+      "structure/in_context_examples.j2"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "ICL",
+        "in-context learning",
+        "zero-shot",
+        "few-shot"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "intent_preserved"
+      ],
+      "quality_checks": [
+        "schema_compliance"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608",
+        "title": "The Prompt Report"
+      }
+    ]
+  },
+  {
+    "id": "exemplar_ordering",
+    "name": "Exemplar Ordering",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Deliberately arranging the order of few-shot examples in a prompt, as performance can be sensitive to sequence.",
+    "tags": [
+      "ordering",
+      "examples"
+    ],
+    "use_cases": [
+      "few-shot prompting optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "example order",
+        "prompt sequence"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "knn_exemplar_selection",
+    "name": "K-Nearest Neighbor (KNN) Exemplar Selection",
+    "category": "optimization_and_tuning",
+    "aliases": [
+      "KNN"
+    ],
+    "description": "Few-shot prompting where exemplars are selected based on similarity to the current test input, typically via embeddings.",
+    "tags": [
+      "few-shot",
+      "selection",
+      "embeddings"
+    ],
+    "use_cases": [
+      "adaptive example retrieval"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "KNN",
+        "nearest neighbor",
+        "example selection"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success"
+      ],
+      "quality_checks": [
+        "grounding_references_present"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "vote_k",
+    "name": "Vote-K",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "A two-stage method for selecting diverse exemplars: propose candidates, annotate, and reuse as few-shot prompts.",
+    "tags": [
+      "diversity",
+      "example selection"
+    ],
+    "use_cases": [
+      "few-shot exemplar selection"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "vote-k",
+        "diverse examples"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "self_generated_in_context_learning",
+    "name": "Self-Generated In-Context Learning (SG-ICL)",
+    "category": "optimization_and_tuning",
+    "aliases": [
+      "SG-ICL"
+    ],
+    "description": "The LLM generates its own exemplars for ICL, useful when labeled training data is limited.",
+    "tags": [
+      "self-generation",
+      "examples"
+    ],
+    "use_cases": [
+      "low-data scenarios",
+      "bootstrap prompts"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "SG-ICL",
+        "self-generated examples"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "novelty_score"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "prompt_mining",
+    "name": "Prompt Mining",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Discovering optimal prompt templates or 'middle words' from corpora, based on frequent patterns that elicit better responses.",
+    "tags": [
+      "mining",
+      "template discovery"
+    ],
+    "use_cases": [
+      "prompt optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "prompt mining",
+        "template discovery"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success"
+      ],
+      "quality_checks": [
+        "novelty_score"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "simtom",
+    "name": "SimToM (Simulated Theory of Mind)",
+    "category": "reasoning",
+    "aliases": [
+      "SimToM"
+    ],
+    "description": "A zero-shot technique for multi-agent reasoning: establish facts known by an agent, then answer based on their perspective.",
+    "tags": [
+      "reasoning",
+      "multi-agent"
+    ],
+    "use_cases": [
+      "theory of mind",
+      "agent-based questions"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "SimToM",
+        "theory of mind",
+        "multi-agent reasoning"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "re2_rereading",
+    "name": "RE2 (Re-reading)",
+    "category": "reasoning",
+    "aliases": [
+      "RE2"
+    ],
+    "description": "Zero-shot reasoning boost by repeating the question with 'Read the question again:' to encourage re-evaluation.",
+    "tags": [
+      "repetition",
+      "reasoning"
+    ],
+    "use_cases": [
+      "improving reasoning accuracy"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "RE2",
+        "re-reading"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency"
+      ],
+      "quality_checks": [
+        "task_success"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "analogical_prompting",
+    "name": "Analogical Prompting",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Model generates analogical exemplars, sometimes with chains of thought, to improve reasoning performance.",
+    "tags": [
+      "analogy",
+      "reasoning"
+    ],
+    "use_cases": [
+      "reasoning by analogy"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "analogical prompting",
+        "analogy reasoning"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "tabular_chain_of_thought",
+    "name": "Tabular Chain-of-Thought (Tab-CoT)",
+    "category": "reasoning",
+    "aliases": [
+      "Tab-CoT"
+    ],
+    "description": "Zero-shot CoT variant prompting the model to output reasoning steps in a markdown table for clarity.",
+    "tags": [
+      "structured reasoning",
+      "tabular"
+    ],
+    "use_cases": [
+      "organized reasoning output"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "Tab-CoT",
+        "tabular reasoning"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "readability"
+      ],
+      "quality_checks": [
+        "schema_compliance"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "memory_of_thought",
+    "name": "Memory-of-Thought Prompting",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Generates CoT reasoning on unlabeled data, stores it, and retrieves relevant reasoning examples at test time to augment prompts.",
+    "tags": [
+      "memory",
+      "cot"
+    ],
+    "use_cases": [
+      "retrieving reasoning traces"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "memory of thought",
+        "cot retrieval"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ],
+      "quality_checks": [
+        "grounding_references_present"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "cumulative_reasoning",
+    "name": "Cumulative Reasoning",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "A self-criticism technique where the model generates multiple reasoning steps, then evaluates and accepts/rejects each iteratively until reaching a final answer.",
+    "tags": [
+      "reasoning",
+      "self-critique",
+      "iterative"
+    ],
+    "use_cases": [
+      "complex reasoning",
+      "error reduction"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "cumulative reasoning",
+        "self-criticism"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "recursion_of_thought",
+    "name": "Recursion-of-Thought",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Decomposition approach: sub-problems within reasoning chains are recursively solved via new LLM calls and reintegrated.",
+    "tags": [
+      "recursion",
+      "reasoning",
+      "decomposition"
+    ],
+    "use_cases": [
+      "multi-step reasoning",
+      "problem decomposition"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "recursion of thought",
+        "recursive reasoning"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency"
+      ],
+      "quality_checks": [
+        "schema_compliance"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "dense_demonstration_ensembling",
+    "name": "DENSE (Demonstration Ensembling)",
+    "category": "retrieval_and_hybrids",
+    "aliases": [],
+    "description": "Creates multiple few-shot prompts with different subsets of exemplars. Final answer is aggregated across outputs.",
+    "tags": [
+      "ensembling",
+      "examples"
+    ],
+    "use_cases": [
+      "few-shot stability",
+      "robust outputs"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "DENSE",
+        "demonstration ensembling"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success"
+      ],
+      "quality_checks": [
+        "consistency"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "more_mixture_of_reasoning_experts",
+    "name": "MORE (Mixture of Reasoning Experts)",
+    "category": "retrieval_and_hybrids",
+    "aliases": [],
+    "description": "Uses multiple specialized reasoning prompts (e.g., RAG for factual, CoT for math) and selects best answer via agreement scoring.",
+    "tags": [
+      "experts",
+      "ensembling"
+    ],
+    "use_cases": [
+      "hybrid reasoning",
+      "multi-domain tasks"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "MORE",
+        "mixture of experts",
+        "reasoning"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "reasoning_consistency"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "max_mutual_information",
+    "name": "Max Mutual Information Method",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Generates multiple prompt templates, then selects the optimal by maximizing mutual information between prompts and outputs.",
+    "tags": [
+      "information theory",
+      "optimization"
+    ],
+    "use_cases": [
+      "prompt selection",
+      "template optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "max mutual information",
+        "prompt selection"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "novelty_score"
+      ],
+      "quality_checks": [
+        "schema_compliance"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "universal_self_consistency",
+    "name": "Universal Self-Consistency",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Extension of self-consistency: model itself is prompted with all reasoning chains and decides the majority answer.",
+    "tags": [
+      "reasoning",
+      "self-consistency"
+    ],
+    "use_cases": [
+      "robust reasoning aggregation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "universal self-consistency",
+        "reasoning aggregation"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "meta_reasoning_multiple_cot",
+    "name": "Meta-Reasoning over Multiple CoTs",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Generates multiple reasoning chains and merges them in one template to synthesize a final answer.",
+    "tags": [
+      "meta-reasoning",
+      "cot"
+    ],
+    "use_cases": [
+      "multi-path synthesis"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "meta-reasoning",
+        "multiple cot"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ],
+      "quality_checks": [
+        "schema_compliance"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "diverse",
+    "name": "DiVeRSe (Diverse Verifier on Reasoning Steps)",
+    "category": "reasoning",
+    "aliases": [
+      "DiVeRSe"
+    ],
+    "description": "Creates multiple prompts, runs self-consistency, scores reasoning paths step-by-step, and selects the best response.",
+    "tags": [
+      "reasoning",
+      "verification",
+      "ensembling"
+    ],
+    "use_cases": [
+      "diverse reasoning verification"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "DiVeRSe",
+        "diverse verification"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ],
+      "quality_checks": [
+        "consistency"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "cosp_consistency_prompting",
+    "name": "COSP (Consistency-based Self-adaptive Prompting)",
+    "category": "optimization_and_tuning",
+    "aliases": [
+      "COSP"
+    ],
+    "description": "Builds few-shot CoT prompts by running zero-shot CoT with self-consistency, then selecting a high-agreement subset of outputs as exemplars.",
+    "tags": [
+      "consistency",
+      "adaptation"
+    ],
+    "use_cases": [
+      "few-shot generation",
+      "adaptive prompting"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "COSP",
+        "self-adaptive prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "usp_universal_self_adaptive",
+    "name": "USP (Universal Self-Adaptive Prompting)",
+    "category": "optimization_and_tuning",
+    "aliases": [
+      "USP"
+    ],
+    "description": "Generalizes COSP across tasks using unlabeled data and complex scoring to generate exemplars without requiring self-consistency.",
+    "tags": [
+      "adaptation",
+      "universal"
+    ],
+    "use_cases": [
+      "task-agnostic prompting"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "USP",
+        "universal self-adaptive prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "reasoning_consistency"
+      ],
+      "quality_checks": [
+        "schema_compliance"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "prompt_paraphrasing",
+    "name": "Prompt Paraphrasing",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Transforms an original prompt by paraphrasing while preserving meaning, creating multiple prompt variants for ensembling.",
+    "tags": [
+      "paraphrasing",
+      "augmentation"
+    ],
+    "use_cases": [
+      "data augmentation",
+      "ensemble diversity"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "prompt paraphrasing",
+        "augmentation"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "novelty_score"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "self_calibration",
+    "name": "Self-Calibration",
+    "category": "safety_and_security",
+    "aliases": [],
+    "description": "Self-criticism technique to gauge confidence. After generating an answer, the model re-evaluates correctness by being asked explicitly if the answer is correct.",
+    "tags": [
+      "confidence",
+      "self-critique"
+    ],
+    "use_cases": [
+      "uncertainty estimation",
+      "answer verification"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "self-calibration",
+        "confidence check"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "user_satisfaction_proxy",
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "reversing_chain_of_thought",
+    "name": "Reversing Chain-of-Thought (RCoT)",
+    "category": "reasoning",
+    "aliases": [
+      "RCoT"
+    ],
+    "description": "Self-criticism where the model reconstructs the original problem from its answer, compares with the original, and revises if inconsistent.",
+    "tags": [
+      "reasoning",
+      "self-critique",
+      "reverse"
+    ],
+    "use_cases": [
+      "error detection",
+      "logic consistency"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "RCoT",
+        "reversing chain of thought"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "repair_attempts"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "self_verification",
+    "name": "Self-Verification",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Generates multiple candidate CoT solutions and verifies coherence by predicting masked parts of the question from the solution.",
+    "tags": [
+      "verification",
+      "reasoning"
+    ],
+    "use_cases": [
+      "solution validation",
+      "consistency checking"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "self-verification",
+        "cot verification"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ],
+      "quality_checks": [
+        "schema_compliance"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "grips_prompt_search",
+    "name": "GrIPS (Gradient-free Instructional Prompt Search)",
+    "category": "optimization_and_tuning",
+    "aliases": [
+      "GrIPS"
+    ],
+    "description": "Gradient-free prompt search with operations like deletion, addition, swapping, and paraphrasing to optimize prompts.",
+    "tags": [
+      "optimization",
+      "prompt search"
+    ],
+    "use_cases": [
+      "prompt engineering",
+      "variant generation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "GrIPS",
+        "instructional prompt search"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "novelty_score",
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "dp2o_prompt_optimization",
+    "name": "DP2O (Dialogue-comprised Policy-gradient-based Discrete Prompt Optimization)",
+    "category": "optimization_and_tuning",
+    "aliases": [
+      "DP2O"
+    ],
+    "description": "Reinforcement learning-based prompt optimization using a custom scoring function and dialogue with an LLM.",
+    "tags": [
+      "rl",
+      "prompt optimization"
+    ],
+    "use_cases": [
+      "high-precision prompt optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "DP2O",
+        "policy gradient",
+        "prompt optimization"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "novelty_score"
+      ],
+      "quality_checks": [
+        "schema_compliance"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "answer_engineering",
+    "name": "Answer Engineering",
+    "category": "output_structuring",
+    "aliases": [],
+    "description": "Iterative process of designing algorithms (extractors) to pull precise, structured answers from free-form LLM outputs.",
+    "tags": [
+      "output structuring",
+      "answer extraction"
+    ],
+    "use_cases": [
+      "structured answers",
+      "information retrieval"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "answer engineering",
+        "structured extraction"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "valid_json_rate"
+      ],
+      "quality_checks": [
+        "schema_compliance"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "verbalizer",
+    "name": "Verbalizer",
+    "category": "output_structuring",
+    "aliases": [],
+    "description": "Maps specific tokens/spans (e.g., '+') to final labels (e.g., 'positive'), often used in labeling tasks.",
+    "tags": [
+      "mapping",
+      "labels"
+    ],
+    "use_cases": [
+      "classification",
+      "label assignment"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "verbalizer",
+        "token-label mapping"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "schema_accuracy"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "translate_first_prompting",
+    "name": "Translate First Prompting",
+    "category": "multimodal",
+    "aliases": [],
+    "description": "Non-English inputs are first translated into English before LLM inference, improving accuracy.",
+    "tags": [
+      "translation",
+      "multilingual"
+    ],
+    "use_cases": [
+      "multilingual reasoning",
+      "non-English queries"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "translate first",
+        "multilingual prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "xlt_cross_lingual_thought",
+    "name": "XLT (Cross-Lingual Thought) Prompting",
+    "category": "multimodal",
+    "aliases": [
+      "XLT"
+    ],
+    "description": "Uses a 6-part template (role assignment, cross-lingual thinking, CoT, etc.) to improve multilingual reasoning.",
+    "tags": [
+      "cot",
+      "multilingual",
+      "reasoning"
+    ],
+    "use_cases": [
+      "cross-lingual reasoning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "XLT",
+        "cross-lingual thought"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "clsp_cross_lingual_self_consistent",
+    "name": "Cross-Lingual Self Consistent Prompting (CLSP)",
+    "category": "multimodal",
+    "aliases": [
+      "CLSP"
+    ],
+    "description": "Constructs reasoning paths in multiple languages and compares them for robustness.",
+    "tags": [
+      "multilingual",
+      "ensemble"
+    ],
+    "use_cases": [
+      "cross-lingual robustness"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "CLSP",
+        "cross-lingual self consistency"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "reasoning_consistency"
+      ],
+      "quality_checks": [
+        "consistency"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "xinista_prompting",
+    "name": "X-InSTA Prompting",
+    "category": "multimodal",
+    "aliases": [],
+    "description": "Multilingual ICL strategy aligning examples with inputs by semantic or label alignment.",
+    "tags": [
+      "multilingual",
+      "icl"
+    ],
+    "use_cases": [
+      "cross-lingual classification"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "X-InSTA",
+        "multilingual ICL"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "inclt_cross_lingual_transfer",
+    "name": "In-CLT (Cross-lingual Transfer) Prompting",
+    "category": "multimodal",
+    "aliases": [
+      "In-CLT"
+    ],
+    "description": "Leverages both source and target languages to create in-context examples for cross-lingual transfer.",
+    "tags": [
+      "transfer",
+      "multilingual"
+    ],
+    "use_cases": [
+      "cross-lingual transfer learning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "In-CLT",
+        "cross-lingual transfer"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "parc_cross_lingual_retrieval",
+    "name": "PARC (Prompts Augmented by Retrieval Cross-lingually)",
+    "category": "multimodal",
+    "aliases": [
+      "PARC"
+    ],
+    "description": "Retrieves exemplars from high-resource languages to boost low-resource cross-lingual tasks.",
+    "tags": [
+      "retrieval",
+      "multilingual"
+    ],
+    "use_cases": [
+      "low-resource language support"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "PARC",
+        "cross-lingual retrieval"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "grounding_references_present"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "maps_multi_aspect_translation",
+    "name": "Multi-Aspect Prompting and Selection (MAPS)",
+    "category": "multimodal",
+    "aliases": [
+      "MAPS"
+    ],
+    "description": "Mimics human translation by mining knowledge, generating multiple translations, and selecting the best one.",
+    "tags": [
+      "translation",
+      "multi-aspect"
+    ],
+    "use_cases": [
+      "machine translation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "MAPS",
+        "multi-aspect prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "user_satisfaction_proxy"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "cod_chain_of_dictionary",
+    "name": "Chain-of-Dictionary (CoD)",
+    "category": "multimodal",
+    "aliases": [
+      "CoD"
+    ],
+    "description": "Extracts source words, retrieves dictionary meanings in multiple languages, and prepends entries to guide translation.",
+    "tags": [
+      "dictionary",
+      "translation"
+    ],
+    "use_cases": [
+      "machine translation",
+      "low-resource translation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "CoD",
+        "chain-of-dictionary"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success"
+      ],
+      "quality_checks": [
+        "schema_compliance"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "dipmt_dictionary_based_prompting",
+    "name": "Dictionary-based Prompting for Machine Translation (DiPMT)",
+    "category": "multimodal",
+    "aliases": [
+      "DiPMT"
+    ],
+    "description": "Provides definitions in both source and target languages to guide translation.",
+    "tags": [
+      "dictionary",
+      "translation"
+    ],
+    "use_cases": [
+      "machine translation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "DiPMT",
+        "dictionary prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "grounding_references_present"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "decomt_decomposed_translation",
+    "name": "Decomposed Prompting for MT (DecoMT)",
+    "category": "multimodal",
+    "aliases": [
+      "DecoMT"
+    ],
+    "description": "Splits source into chunks, translates separately, then integrates context for coherence.",
+    "tags": [
+      "decomposition",
+      "translation"
+    ],
+    "use_cases": [
+      "long text translation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "DecoMT",
+        "decomposed prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "readability"
+      ],
+      "quality_checks": [
+        "schema_compliance"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "icp_interactive_chain_prompting",
+    "name": "Interactive-Chain-Prompting (ICP)",
+    "category": "multimodal",
+    "aliases": [
+      "ICP"
+    ],
+    "description": "Human-in-the-loop MT: model asks clarifying questions, human answers, final translation improves.",
+    "tags": [
+      "interactive",
+      "human-in-the-loop"
+    ],
+    "use_cases": [
+      "resolving ambiguities in translation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "ICP",
+        "interactive chain prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "user_satisfaction_proxy"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "iterative_prompting_mt",
+    "name": "Iterative Prompting (for MT)",
+    "category": "multimodal",
+    "aliases": [],
+    "description": "Human-in-the-loop translation refinement using supervision signals from retrieval or human feedback.",
+    "tags": [
+      "iteration",
+      "translation"
+    ],
+    "use_cases": [
+      "improving translation quality"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "iterative prompting",
+        "machine translation"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "user_satisfaction_proxy"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "prompt_modifiers",
+    "name": "Prompt Modifiers",
+    "category": "multimodal",
+    "aliases": [],
+    "description": "Words/phrases added to text-to-image prompts to adjust style, lighting, medium, or aesthetics.",
+    "tags": [
+      "image generation",
+      "style control"
+    ],
+    "use_cases": [
+      "controlling aesthetics",
+      "style transfer"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "prompt modifiers",
+        "style prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "user_satisfaction_proxy"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "negative_prompting",
+    "name": "Negative Prompting",
+    "category": "multimodal",
+    "aliases": [],
+    "description": "Specifies undesired elements in image generation outputs, often with weights (e.g., 'bad hands:-1.5').",
+    "tags": [
+      "image generation",
+      "safety"
+    ],
+    "use_cases": [
+      "removing artifacts",
+      "aesthetic refinement"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "negative prompting",
+        "exclude terms"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "user_satisfaction_proxy"
+      ],
+      "quality_checks": [
+        "no_sensitive_leakage"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "paired_image_prompting",
+    "name": "Paired-Image Prompting",
+    "category": "multimodal",
+    "aliases": [],
+    "description": "Shows before/after image pairs as in-context examples, then applies the same transformation to a new image.",
+    "tags": [
+      "images",
+      "transformation",
+      "icl"
+    ],
+    "use_cases": [
+      "image-to-image tasks",
+      "visual transformations"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "paired image prompting",
+        "image icl"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "image_as_text_prompting",
+    "name": "Image-as-Text Prompting",
+    "category": "multimodal",
+    "aliases": [],
+    "description": "Transforms images into textual captions, which are then integrated into text prompts for manipulation.",
+    "tags": [
+      "image captioning",
+      "multimodal"
+    ],
+    "use_cases": [
+      "text-image hybrid tasks",
+      "contextual reasoning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "image as text",
+        "caption prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success"
+      ],
+      "quality_checks": [
+        "schema_compliance"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "ddcot_duty_distinct_cot",
+    "name": "Duty Distinct Chain-of-Thought (DDCoT)",
+    "category": "multimodal",
+    "aliases": [
+      "DDCoT"
+    ],
+    "description": "Generates sub-questions across modalities (image+text) and solves them sequentially for reasoning.",
+    "tags": [
+      "cot",
+      "multimodal",
+      "decomposition"
+    ],
+    "use_cases": [
+      "visual+text reasoning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "DDCoT",
+        "duty distinct chain of thought"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "multimodal_graph_of_thought",
+    "name": "Multimodal Graph-of-Thought",
+    "category": "multimodal",
+    "aliases": [],
+    "description": "Extends Graph-of-Thought by generating captions, then constructing a thought graph for multimodal reasoning.",
+    "tags": [
+      "graph",
+      "reasoning",
+      "multimodal"
+    ],
+    "use_cases": [
+      "complex multimodal reasoning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "multimodal graph of thought",
+        "graph reasoning"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency"
+      ],
+      "quality_checks": [
+        "schema_compliance"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "chain_of_images",
+    "name": "Chain-of-Images (CoI)",
+    "category": "multimodal",
+    "aliases": [
+      "CoI"
+    ],
+    "description": "A visual extension of CoT: generates sequences of images (e.g., SVGs) to reason visually.",
+    "tags": [
+      "cot",
+      "images",
+      "visual reasoning"
+    ],
+    "use_cases": [
+      "diagrammatic reasoning",
+      "visual planning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "chain of images",
+        "CoI"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "novelty_score"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "mrkl_system",
+    "name": "MRKL (Modular Reasoning, Knowledge, and Language) System",
+    "category": "planning_and_architecture",
+    "aliases": [
+      "MRKL"
+    ],
+    "description": "Agentic framework with LLM router that calls external tools/APIs and merges outputs.",
+    "tags": [
+      "agents",
+      "tools"
+    ],
+    "use_cases": [
+      "tool-augmented responses"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "MRKL",
+        "modular reasoning"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success"
+      ],
+      "quality_checks": [
+        "grounding_references_present"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "critic_self_correcting_agent",
+    "name": "CRITIC (Self-Correcting with Tool-Interactive Critiquing)",
+    "category": "planning_and_architecture",
+    "aliases": [
+      "CRITIC"
+    ],
+    "description": "Agent generates a response, critiques it, and uses external tools (e.g., web search) to verify/amend.",
+    "tags": [
+      "critique",
+      "agents",
+      "verification"
+    ],
+    "use_cases": [
+      "fact-checking",
+      "robust responses"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "CRITIC",
+        "self-correcting agent"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "user_satisfaction_proxy"
+      ],
+      "quality_checks": [
+        "grounding_references_present"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "pal_program_aided_language_model",
+    "name": "Program-aided Language Model (PAL)",
+    "category": "planning_and_architecture",
+    "aliases": [
+      "PAL"
+    ],
+    "description": "Code-generation agent that translates problems into code and executes for precise answers.",
+    "tags": [
+      "code",
+      "agents"
+    ],
+    "use_cases": [
+      "math problems",
+      "data processing"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "PAL",
+        "program-aided language model"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "schema_accuracy"
+      ],
+      "quality_checks": [
+        "schema_compliance"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "tora_tool_integrated_reasoning_agent",
+    "name": "ToRA (Tool-Integrated Reasoning Agent)",
+    "category": "planning_and_architecture",
+    "aliases": [
+      "ToRA"
+    ],
+    "description": "Like PAL but interleaves code execution and natural language reasoning steps.",
+    "tags": [
+      "code",
+      "agents",
+      "reasoning"
+    ],
+    "use_cases": [
+      "mixed reasoning+execution"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "ToRA",
+        "tool-integrated reasoning"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "task_weaver",
+    "name": "Task Weaver",
+    "category": "planning_and_architecture",
+    "aliases": [],
+    "description": "Transforms user requests into code and leverages plugins for extensibility.",
+    "tags": [
+      "agents",
+      "code",
+      "plugins"
+    ],
+    "use_cases": [
+      "workflow automation",
+      "plugin-based execution"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "task weaver",
+        "plugin agent"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success"
+      ],
+      "quality_checks": [
+        "user_satisfaction_proxy"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "reflexion_agent",
+    "name": "Reflexion",
+    "category": "planning_and_architecture",
+    "aliases": [],
+    "description": "Observation-based agent with introspection. Reflects on action trajectories, records lessons for future attempts.",
+    "tags": [
+      "agents",
+      "reflection",
+      "memory"
+    ],
+    "use_cases": [
+      "improving agent performance over time"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "reflexion agent",
+        "introspective agent"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "user_satisfaction_proxy"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "voyager_agent",
+    "name": "Voyager",
+    "category": "planning_and_architecture",
+    "aliases": [],
+    "description": "Lifelong learning agent for open worlds. Proposes tasks, generates code to act, and stores learned skills in memory.",
+    "tags": [
+      "agents",
+      "lifelong learning",
+      "memory"
+    ],
+    "use_cases": [
+      "game exploration",
+      "long-term learning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "voyager agent",
+        "lifelong learning"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "novelty_score"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "gitm_ghost_in_the_minecraft",
+    "name": "Ghost in the Minecraft (GITM)",
+    "category": "planning_and_architecture",
+    "aliases": [
+      "GITM"
+    ],
+    "description": "Recursive goal decomposition agent: breaks goals into subgoals, plans, and executes with external knowledge + memory.",
+    "tags": [
+      "agents",
+      "recursive planning",
+      "memory"
+    ],
+    "use_cases": [
+      "open-world goal solving"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "GITM",
+        "ghost in the minecraft"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "reasoning_consistency"
+      ],
+      "quality_checks": [
+        "schema_compliance"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "demonstrate_search_predict",
+    "name": "Demonstrate-Search-Predict",
+    "category": "planning_and_architecture",
+    "aliases": [],
+    "description": "Few-shot decomposes into sub-questions, retrieves answers via search, and combines for final output.",
+    "tags": [
+      "rag",
+      "agents"
+    ],
+    "use_cases": [
+      "multi-hop QA"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "demonstrate search predict",
+        "rag agent"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "grounding_references_present"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "ircot_interleaved_rag",
+    "name": "Interleaved Retrieval guided by Chain-of-Thought (IRCoT)",
+    "category": "retrieval_and_hybrids",
+    "aliases": [
+      "IRCoT"
+    ],
+    "description": "Interleaves CoT and retrieval for multi-hop QA, where reasoning steps guide retrieval queries.",
+    "tags": [
+      "rag",
+      "cot",
+      "retrieval"
+    ],
+    "use_cases": [
+      "multi-hop reasoning",
+      "qa"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "IRCoT",
+        "interleaved retrieval"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ],
+      "quality_checks": [
+        "grounding_references_present"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "iterative_retrieval_augmentation",
+    "name": "Iterative Retrieval Augmentation",
+    "category": "retrieval_and_hybrids",
+    "aliases": [
+      "FLARE",
+      "IRP"
+    ],
+    "description": "Retrieval is performed multiple times during long-form generation; interim outputs guide the retrieval.",
+    "tags": [
+      "rag",
+      "iteration",
+      "retrieval"
+    ],
+    "use_cases": [
+      "long-form QA",
+      "content generation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "iterative retrieval",
+        "FLARE",
+        "IRP"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "grounding_references_present"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "model_generated_guidelines",
+    "name": "Model-Generated Guidelines",
+    "category": "meta_frameworks",
+    "aliases": [
+      "AUTOCALIBRATE"
+    ],
+    "description": "LLM generates its own guidelines/scoring criteria, then uses them to evaluate task outputs.",
+    "tags": [
+      "evaluation",
+      "meta"
+    ],
+    "use_cases": [
+      "automatic evaluation",
+      "reducing ambiguity"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "model-generated guidelines",
+        "autocalibrate"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "user_satisfaction_proxy"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "llm_eval",
+    "name": "LLM-EVAL",
+    "category": "meta_frameworks",
+    "aliases": [],
+    "description": "Evaluation framework using a single prompt schema with variables, scoring ranges, and target content.",
+    "tags": [
+      "evaluation",
+      "framework"
+    ],
+    "use_cases": [
+      "automated evaluation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "LLM-EVAL",
+        "evaluation framework"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "task_success"
+      ],
+      "quality_checks": [
+        "schema_compliance"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "g_eval",
+    "name": "G-EVAL",
+    "category": "meta_frameworks",
+    "aliases": [],
+    "description": "Evaluation framework that adds auto-generated CoT to guide explicit evaluation.",
+    "tags": [
+      "evaluation",
+      "cot"
+    ],
+    "use_cases": [
+      "improved scoring accuracy"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "G-EVAL",
+        "cot evaluation"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ],
+      "quality_checks": [
+        "schema_compliance"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "chateval",
+    "name": "ChatEval",
+    "category": "meta_frameworks",
+    "aliases": [],
+    "description": "Evaluation via multi-agent debate; agents play roles and collaboratively score content.",
+    "tags": [
+      "evaluation",
+      "agents"
+    ],
+    "use_cases": [
+      "multi-perspective evaluation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "ChatEval",
+        "multi-agent evaluation"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "user_satisfaction_proxy"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "batch_prompting_eval",
+    "name": "Batch Prompting (for evaluation)",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Evaluates multiple instances at once in a single prompt. Reduces cost but may reduce accuracy.",
+    "tags": [
+      "efficiency",
+      "evaluation"
+    ],
+    "use_cases": [
+      "low-cost evaluation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "batch prompting",
+        "evaluation"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "latency_ms",
+        "tokens_total"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "pairwise_evaluation",
+    "name": "Pairwise Evaluation",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Compares two outputs directly and selects the better one, instead of scoring individually.",
+    "tags": [
+      "evaluation",
+      "comparison"
+    ],
+    "use_cases": [
+      "model comparison",
+      "output ranking"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "pairwise evaluation",
+        "comparison"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "user_satisfaction_proxy"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "prompt_hacking",
+    "name": "Prompt Hacking",
+    "category": "safety_and_security",
+    "aliases": [],
+    "description": "General attacks manipulating prompts to exploit models, producing harmful or unintended outputs.",
+    "tags": [
+      "security",
+      "attack"
+    ],
+    "use_cases": [
+      "security testing",
+      "adversarial training"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "prompt hacking",
+        "llm attack"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "no_policy_violation"
+      ],
+      "quality_checks": [
+        "no_sensitive_leakage"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "prompt_injection",
+    "name": "Prompt Injection",
+    "category": "safety_and_security",
+    "aliases": [],
+    "description": "A subclass of prompt hacking where user input overrides or ignores developer instructions.",
+    "tags": [
+      "security",
+      "injection"
+    ],
+    "use_cases": [
+      "attack prevention",
+      "safety research"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "prompt injection",
+        "attack"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "no_policy_violation"
+      ],
+      "quality_checks": [
+        "no_sensitive_leakage"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "jailbreaking",
+    "name": "Jailbreaking",
+    "category": "safety_and_security",
+    "aliases": [],
+    "description": "Bypasses model safety training, forcing it to produce unsafe outputs.",
+    "tags": [
+      "security",
+      "bypass"
+    ],
+    "use_cases": [
+      "red teaming",
+      "adversarial testing"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "jailbreaking",
+        "safety bypass"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "no_policy_violation"
+      ],
+      "quality_checks": [
+        "no_sensitive_leakage"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "training_data_reconstruction",
+    "name": "Training Data Reconstruction",
+    "category": "safety_and_security",
+    "aliases": [],
+    "description": "Extracts and regurgitates training data verbatim via prompt hacking.",
+    "tags": [
+      "privacy",
+      "data leakage"
+    ],
+    "use_cases": [
+      "privacy auditing",
+      "attack detection"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "training data reconstruction",
+        "data leakage"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "no_sensitive_leakage"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "prompt_leaking",
+    "name": "Prompt Leaking",
+    "category": "safety_and_security",
+    "aliases": [],
+    "description": "Tricks applications into revealing their hidden system prompts/templates.",
+    "tags": [
+      "security",
+      "injection"
+    ],
+    "use_cases": [
+      "prompt security auditing"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "prompt leaking",
+        "injection"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "no_sensitive_leakage"
+      ],
+      "quality_checks": [
+        "no_policy_violation"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "package_hallucination",
+    "name": "Package Hallucination",
+    "category": "safety_and_security",
+    "aliases": [],
+    "description": "LLM generates non-existent package imports. Attackers may publish malicious versions.",
+    "tags": [
+      "security",
+      "hallucination",
+      "supply chain"
+    ],
+    "use_cases": [
+      "safe code generation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "package hallucination",
+        "malicious package"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "no_sensitive_leakage"
+      ],
+      "quality_checks": [
+        "no_policy_violation"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "prompt_drift",
+    "name": "Prompt Drift",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Same prompt yields different results over time due to provider model updates.",
+    "tags": [
+      "drift",
+      "stability"
+    ],
+    "use_cases": [
+      "evaluation consistency tracking"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "prompt drift",
+        "model update"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "consistency"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "sycophancy",
+    "name": "Sycophancy",
+    "category": "safety_and_security",
+    "aliases": [],
+    "description": "LLMs agree with user opinions, even if factually wrong.",
+    "tags": [
+      "bias",
+      "safety"
+    ],
+    "use_cases": [
+      "bias detection",
+      "safety alignment"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "sycophancy",
+        "agreement bias"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "no_policy_violation"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "vanilla_prompting_safety",
+    "name": "Vanilla Prompting (for safety)",
+    "category": "safety_and_security",
+    "aliases": [
+      "moral self-correction"
+    ],
+    "description": "Adds explicit safety instructions (e.g., be unbiased, avoid harmful content).",
+    "tags": [
+      "safety",
+      "bias mitigation"
+    ],
+    "use_cases": [
+      "safety control",
+      "bias mitigation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "vanilla prompting",
+        "safety prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "no_policy_violation",
+        "user_satisfaction_proxy"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "attrprompt",
+    "name": "AttrPrompt",
+    "category": "safety_and_security",
+    "aliases": [],
+    "description": "Prompts LLM to identify key diversity attributes (e.g., location, style), then generate varied outputs to avoid bias.",
+    "tags": [
+      "diversity",
+      "bias mitigation"
+    ],
+    "use_cases": [
+      "synthetic data generation",
+      "bias reduction"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "AttrPrompt",
+        "bias mitigation"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "novelty_score",
+        "user_satisfaction_proxy"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "question_clarification",
+    "name": "Question Clarification (for ambiguity)",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Detects ambiguous user inputs and generates clarifying questions before final answers.",
+    "tags": [
+      "clarification",
+      "reasoning"
+    ],
+    "use_cases": [
+      "disambiguation",
+      "user interaction"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "question clarification",
+        "ambiguity resolution"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "user_satisfaction_proxy",
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "autodicot",
+    "name": "Automatic Directed CoT (AutoDiCoT)",
+    "category": "reasoning",
+    "aliases": [
+      "AutoDiCoT"
+    ],
+    "description": "Combines automatic CoT generation with contrastive examples, marking incorrect reasoning as what not to do.",
+    "tags": [
+      "cot",
+      "contrastive"
+    ],
+    "use_cases": [
+      "teaching by contrast"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "AutoDiCoT",
+        "automatic directed cot"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "novelty_score"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "selectivecontext",
+    "name": "SelectiveContext",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Filters redundant parts of prompts by quantifying self-information of tokens, preserving coherence via SpaCy noun phrases.",
+    "tags": [
+      "compression",
+      "filtering"
+    ],
+    "use_cases": [
+      "prompt length reduction",
+      "efficiency"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "SelectiveContext",
+        "prompt filtering"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "latency_ms",
+        "tokens_total"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "llmlingua",
+    "name": "LLMLingua",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Uses a smaller LM (e.g., GPT-2) to score self-information and remove redundant tokens before sending to LLM.",
+    "tags": [
+      "compression",
+      "efficiency"
+    ],
+    "use_cases": [
+      "prompt compression for closed LLMs"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "LLMLingua",
+        "prompt compression"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "tokens_total",
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "longllmlingua",
+    "name": "LongLLMLingua",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Extends LLMLingua with longer compression windows, using document reordering and subsequence recovery.",
+    "tags": [
+      "compression",
+      "long context"
+    ],
+    "use_cases": [
+      "large document processing"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "LongLLMLingua",
+        "long compression"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "tokens_total",
+        "latency_ms"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "adacomp",
+    "name": "AdaComp",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Adaptive prompt compression selecting relevant docs based on query difficulty and retrieval quality.",
+    "tags": [
+      "adaptive",
+      "compression"
+    ],
+    "use_cases": [
+      "efficient retrieval",
+      "adaptive prompts"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "AdaComp",
+        "adaptive compression"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "latency_ms",
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "llmlingua2",
+    "name": "LLMLingua-2",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Enhanced LLMLingua with data distillation: creates compressed dataset and trains classifier for token selection.",
+    "tags": [
+      "compression",
+      "distillation"
+    ],
+    "use_cases": [
+      "efficient prompt filtering"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "LLMLingua-2",
+        "distillation"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "tokens_total",
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "taco_rl",
+    "name": "TACO-RL",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Task-specific RL applied to optimize token selection for compression.",
+    "tags": [
+      "rl",
+      "compression"
+    ],
+    "use_cases": [
+      "task-optimized prompts"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "TACO-RL",
+        "reinforcement learning"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "tokens_total",
+        "task_success"
+      ],
+      "quality_checks": [
+        "schema_compliance"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "favicomp",
+    "name": "FAVICOMP",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Hard prompt compression method categorized under paraphrasing techniques.",
+    "tags": [
+      "compression",
+      "paraphrasing"
+    ],
+    "use_cases": [
+      "prompt shortening",
+      "efficiency"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "FAVICOMP",
+        "prompt compression"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "tokens_total",
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "contrastive_conditioning",
+    "name": "CC (Contrastive Conditioning)",
+    "category": "optimization_and_tuning",
+    "aliases": [
+      "CC"
+    ],
+    "description": "Decoder-only soft prompt method that trains a short soft prompt to replicate outputs of a longer natural language prompt. Each is trained per natural language prompt, limiting generalization.",
+    "tags": [
+      "soft prompt",
+      "contrastive"
+    ],
+    "use_cases": [
+      "prompt distillation",
+      "efficiency"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "contrastive conditioning",
+        "CC"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "gist_tokens",
+    "name": "GIST (Gist Tokens)",
+    "category": "optimization_and_tuning",
+    "aliases": [
+      "GIST"
+    ],
+    "description": "Appends special gist tokens to prompts. Alters attention so generated tokens attend only gist tokens, compressing original prompt.",
+    "tags": [
+      "soft prompt",
+      "compression"
+    ],
+    "use_cases": [
+      "long-context summarization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "gist tokens",
+        "prompt compression"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "tokens_total",
+        "task_success"
+      ],
+      "quality_checks": [
+        "schema_compliance"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "autocompressor",
+    "name": "AutoCompressor",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Recursive soft prompt compression method. Processes prompt in chunks, compresses into vectors, and passes to next iteration.",
+    "tags": [
+      "compression",
+      "soft prompt"
+    ],
+    "use_cases": [
+      "long-context handling"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "autocompressor",
+        "recursive compression"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "tokens_total",
+        "latency_ms"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "icae",
+    "name": "ICAE (In-context autoencoder)",
+    "category": "optimization_and_tuning",
+    "aliases": [
+      "ICAE"
+    ],
+    "description": "Soft prompt method compressing long contexts into continuous vectors using fine-tuned encoder; keeps main LLM frozen.",
+    "tags": [
+      "compression",
+      "soft prompt"
+    ],
+    "use_cases": [
+      "QA with long contexts"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "ICAE",
+        "in-context autoencoder"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "500xcompressor",
+    "name": "500xCompressor",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Soft prompt method achieving high compression ratios by feeding decoder KV pairs of compression tokens.",
+    "tags": [
+      "compression",
+      "high ratio"
+    ],
+    "use_cases": [
+      "extreme context compression"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "500xCompressor",
+        "compression"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "tokens_total",
+        "novelty_score"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "xrag",
+    "name": "xRAG",
+    "category": "retrieval_and_hybrids",
+    "aliases": [],
+    "description": "Soft prompt method using frozen encoder and trainable adapter to connect to decoder for RAG or general compression.",
+    "tags": [
+      "soft prompt",
+      "rag"
+    ],
+    "use_cases": [
+      "retrieval augmentation",
+      "context compression"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "xRAG",
+        "rag compression"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "grounding_references_present"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "uniicl",
+    "name": "UniICL",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Soft prompt method compressing only ICL demonstrations, leaving queries untouched. Uses projector between frozen encoder/decoder.",
+    "tags": [
+      "icl",
+      "soft prompt"
+    ],
+    "use_cases": [
+      "few-shot efficiency"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "UniICL",
+        "in-context learning compression"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "tokens_total"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "cocom",
+    "name": "COCOM",
+    "category": "retrieval_and_hybrids",
+    "aliases": [],
+    "description": "Fine-tuned encoder-decoder soft prompt method for RAG, compresses retrieved docs into grouped embeddings for decoder.",
+    "tags": [
+      "rag",
+      "compression",
+      "soft prompt"
+    ],
+    "use_cases": [
+      "document retrieval compression"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "COCOM",
+        "rag soft prompt"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "grounding_references_present"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "lloco",
+    "name": "LLoCO",
+    "category": "retrieval_and_hybrids",
+    "aliases": [],
+    "description": "Soft prompt RAG method that stores/retrieves LoRA parameters for decoder to adapt to different tasks.",
+    "tags": [
+      "rag",
+      "soft prompt",
+      "lora"
+    ],
+    "use_cases": [
+      "task-adaptive retrieval"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "LLoCO",
+        "rag lora"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "schema_accuracy"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "qgc",
+    "name": "QGC (Query-guided compressor)",
+    "category": "optimization_and_tuning",
+    "aliases": [
+      "QGC"
+    ],
+    "description": "Soft prompt compressor guided by queries to retain key information effectively at high compression ratios.",
+    "tags": [
+      "query-guided",
+      "compression"
+    ],
+    "use_cases": [
+      "query-dependent summarization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "QGC",
+        "query-guided compression"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "tokens_total"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "protegi",
+    "name": "ProTeGi",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Uses textual gradients for discrete prompt optimization. Samples paraphrases with Monte Carlo + UCB bandit search.",
+    "tags": [
+      "optimization",
+      "prompt search"
+    ],
+    "use_cases": [
+      "prompt refinement",
+      "automated optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "ProTeGi",
+        "prompt optimization"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "novelty_score"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "ape",
+    "name": "APE (Automatic Prompt Engineer)",
+    "category": "optimization_and_tuning",
+    "aliases": [
+      "Automatic Prompt Engineer"
+    ],
+    "description": "Induces human-readable prompts from demonstrations, seeds further optimization, and evaluates via accuracy + likelihood.",
+    "tags": [
+      "automatic",
+      "prompt engineering"
+    ],
+    "use_cases": [
+      "instruction generation",
+      "prompt optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "APE",
+        "automatic prompt engineer"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "schema_accuracy"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "crispo",
+    "name": "CRISPO",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Uses critique-suggestion meta-prompt to identify style/content flaws and iteratively refine prompts.",
+    "tags": [
+      "critique",
+      "optimization"
+    ],
+    "use_cases": [
+      "prompt debugging",
+      "iterative improvement"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "CRISPO",
+        "prompt critique"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "novelty_score"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "mop_mixture_of_expert_prompts",
+    "name": "MOP (Mixture-of-Expert-Prompts)",
+    "category": "planning_and_architecture",
+    "aliases": [
+      "Mixture-of-Expert-Prompts"
+    ],
+    "description": "Clusters demonstrations and creates specialized expert prompts per cluster. At inference, selects closest expert prompt.",
+    "tags": [
+      "experts",
+      "prompt selection"
+    ],
+    "use_cases": [
+      "domain-specific prompting"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "MOP",
+        "mixture of expert prompts"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "reasoning_consistency"
+      ],
+      "quality_checks": [
+        "schema_compliance"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "dspy",
+    "name": "DSPy",
+    "category": "meta_frameworks",
+    "aliases": [],
+    "description": "Transforms LLM pipelines into modular text transformation graphs. Optimizes pipelines via compiler refining instructions and demonstrations.",
+    "tags": [
+      "framework",
+      "pipeline"
+    ],
+    "use_cases": [
+      "modular LLM development",
+      "pipeline optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "DSPy",
+        "llm framework"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "schema_accuracy"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "opro",
+    "name": "OPRO (Optimization by PROmpting)",
+    "category": "optimization_and_tuning",
+    "aliases": [
+      "Optimization by PROmpting"
+    ],
+    "description": "Meta-prompt includes optimization problem, past solutions + scores, and instructions to refine for better prompts.",
+    "tags": [
+      "optimization",
+      "meta-prompt"
+    ],
+    "use_cases": [
+      "meta-optimization of prompts"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "OPRO",
+        "optimization by prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "novelty_score"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "gate",
+    "name": "GATE (Generative Active Task Elicitation)",
+    "category": "foundational",
+    "aliases": [],
+    "description": "Interactive method where LLM asks clarifying questions to infer human preferences, using dialogue history to refine prompts.",
+    "tags": [
+      "interactive",
+      "clarification"
+    ],
+    "use_cases": [
+      "intent inference",
+      "preference elicitation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "GATE",
+        "active task elicitation"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "user_satisfaction_proxy",
+        "task_success"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "instruction_induction",
+    "name": "Instruction Induction",
+    "category": "foundational",
+    "aliases": [],
+    "description": "LLM infers and generates human-readable prompts or task descriptions from input-output demonstrations.",
+    "tags": [
+      "induction",
+      "instruction generation"
+    ],
+    "use_cases": [
+      "automatic prompt creation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "instruction induction",
+        "automatic prompt"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "schema_accuracy"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "oirl",
+    "name": "OIRL (Offline Inverse Reinforcement Learning)",
+    "category": "optimization_and_tuning",
+    "aliases": [
+      "Prompt-OIRL"
+    ],
+    "description": "Trains offline reward models (e.g., XGBoost) to predict correctness of prompts, selecting best candidate at inference.",
+    "tags": [
+      "rl",
+      "reward model"
+    ],
+    "use_cases": [
+      "prompt selection",
+      "reward-guided optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "OIRL",
+        "inverse reinforcement learning"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "drpo",
+    "name": "DRPO (Direct Reward-based Preference Optimization)",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Reward modeling approach optimizing both ICL examples and task prompts using predefined and dynamic criteria.",
+    "tags": [
+      "rl",
+      "reward optimization"
+    ],
+    "use_cases": [
+      "preference optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "DRPO",
+        "preference optimization"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "user_satisfaction_proxy"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "claps",
+    "name": "CLAPS",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Entropy-based method using negative incremental cross-entropy to identify effective prompt words; prunes space with K-means clustering.",
+    "tags": [
+      "entropy",
+      "optimization"
+    ],
+    "use_cases": [
+      "prompt word selection"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "CLAPS",
+        "cross-entropy prompt"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "novelty_score",
+        "task_success"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "grips",
+    "name": "GRIPS",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Phrase-level editing using add, delete, paraphrase, swap; entropy term encourages diverse outputs.",
+    "tags": [
+      "editing",
+      "optimization"
+    ],
+    "use_cases": [
+      "prompt refinement"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "GRIPS",
+        "phrase editing"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "novelty_score",
+        "task_success"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "sculpt",
+    "name": "SCULPT",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Represents prompts as trees for hierarchical tuning with two-step feedback (preliminary + error).",
+    "tags": [
+      "tree",
+      "feedback"
+    ],
+    "use_cases": [
+      "long prompt tuning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "SCULPT",
+        "hierarchical prompt"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "repair_attempts"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "pace",
+    "name": "PACE",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Actor-critic editing framework for dynamic adaptive prompt refinement.",
+    "tags": [
+      "rl",
+      "editing"
+    ],
+    "use_cases": [
+      "adaptive prompt tuning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "PACE",
+        "actor-critic prompt"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "autohint",
+    "name": "Autohint",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Summarizes multiple failed inferences into hints used to improve single candidate prompt.",
+    "tags": [
+      "hints",
+      "optimization"
+    ],
+    "use_cases": [
+      "error-based refinement"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "Autohint",
+        "prompt hints"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "repair_attempts",
+        "task_success"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "textgrad",
+    "name": "TextGrad",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Guides discrete prompt optimization using textual gradients, emulating gradient descent in text space.",
+    "tags": [
+      "textual gradients",
+      "optimization"
+    ],
+    "use_cases": [
+      "prompt optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "TextGrad",
+        "gradient prompts"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "novelty_score",
+        "task_success"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "promptagent",
+    "name": "PromptAgent",
+    "category": "planning_and_architecture",
+    "aliases": [],
+    "description": "Error collection approach to emulate expert-written prompts with structured sections. Uses MCTS for candidate exploration.",
+    "tags": [
+      "agent",
+      "prompt generation"
+    ],
+    "use_cases": [
+      "automated expert prompts"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "PromptAgent",
+        "mcts prompts"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "novelty_score"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "prefer",
+    "name": "PREFER",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Feedback-reflect-refine ensemble method, aggregates feedback into multiple prompts for generalization.",
+    "tags": [
+      "ensemble",
+      "optimization"
+    ],
+    "use_cases": [
+      "cross-task generalization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "PREFER",
+        "feedback ensemble"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "user_satisfaction_proxy"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "sos",
+    "name": "SOS (Survival of the Safest)",
+    "category": "safety_and_security",
+    "aliases": [],
+    "description": "Prompt optimization balancing performance and safety with multi-objective framework.",
+    "tags": [
+      "safety",
+      "optimization"
+    ],
+    "use_cases": [
+      "safe optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "SOS",
+        "safe prompt optimization"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "no_policy_violation",
+        "task_success"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "strago",
+    "name": "StraGo (Strategic Guidance)",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Summarizes guidance from correct+incorrect predictions to prevent harming effective prompts.",
+    "tags": [
+      "strategy",
+      "guidance"
+    ],
+    "use_cases": [
+      "safe optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "StraGo",
+        "strategic guidance"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "repair_attempts",
+        "task_success"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "apohf",
+    "name": "APOHF (Automatic Prompt Optimization with Human Feedback)",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Optimizes prompts with human preference feedback via dueling bandit comparisons.",
+    "tags": [
+      "human feedback",
+      "optimization"
+    ],
+    "use_cases": [
+      "preference-guided tuning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "APOHF",
+        "human feedback optimization"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "user_satisfaction_proxy",
+        "task_success"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "genetic_algorithm_prompts",
+    "name": "Genetic Algorithm for Prompts",
+    "category": "optimization_and_tuning",
+    "aliases": [
+      "EvoPrompt",
+      "Prompt-Breeder",
+      "SPRIG",
+      "LMEA"
+    ],
+    "description": "Applies genetic algorithms to prompt optimization with mutation and crossover of prompts.",
+    "tags": [
+      "genetic",
+      "evolutionary"
+    ],
+    "use_cases": [
+      "prompt evolution"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "genetic prompts",
+        "evoprompt"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "novelty_score",
+        "task_success"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "cople",
+    "name": "COPLE",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Identifies influential tokens via performance drops; replaces with synonyms predicted by MLM.",
+    "tags": [
+      "token editing",
+      "optimization"
+    ],
+    "use_cases": [
+      "token-level prompt optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "COPLE",
+        "token replacement"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "task_success"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "bdpl",
+    "name": "BDPL (Black-box Discrete Prompt Learning)",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Optimizes discrete prompts with variance-reduced policy gradients; prunes vocab using PMI.",
+    "tags": [
+      "black-box",
+      "discrete prompts"
+    ],
+    "use_cases": [
+      "limited API optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "BDPL",
+        "discrete prompt learning"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "tokens_total",
+        "task_success"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "pin",
+    "name": "PIN",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Adds Tsallis-entropy regularization during RL training of prompt generation to improve interpretability.",
+    "tags": [
+      "rl",
+      "regularization"
+    ],
+    "use_cases": [
+      "interpretable prompt optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "PIN",
+        "entropy regularization"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "novelty_score"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "bpo",
+    "name": "BPO (Black-box Prompt Optimization)",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Trains smaller LMs to optimize prompts by aligning outputs with larger target LLMs, reward-free alignment.",
+    "tags": [
+      "black-box",
+      "optimization"
+    ],
+    "use_cases": [
+      "low-resource optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "BPO",
+        "black-box prompt optimization"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "user_satisfaction_proxy"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "fipo",
+    "name": "FIPO (Free-form Instruction-oriented Prompt Optimization)",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Local model optimizes prompts with privacy-preserving fine-tuning methods like SFT and preference optimization.",
+    "tags": [
+      "privacy",
+      "optimization"
+    ],
+    "use_cases": [
+      "private prompt optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "FIPO",
+        "instruction optimization"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "user_satisfaction_proxy"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "gan_prompt_optimization",
+    "name": "GAN-based Prompt Optimization",
+    "category": "optimization_and_tuning",
+    "aliases": [
+      "Adv-ICL"
+    ],
+    "description": "Frames prompt optimization in GAN setup: generator produces prompt outputs, discriminator distinguishes from ground truth.",
+    "tags": [
+      "gan",
+      "optimization"
+    ],
+    "use_cases": [
+      "adversarial prompt training"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "GAN-based prompt",
+        "Adv-ICL"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "novelty_score"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "pe2",
+    "name": "PE2 (Prompt Engineering a Prompt Engineer)",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Explores meta-prompt search space to improve automatic generation of prompts.",
+    "tags": [
+      "meta",
+      "optimization"
+    ],
+    "use_cases": [
+      "improving auto prompt generation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "PE2",
+        "prompt engineer"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "novelty_score",
+        "task_success"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "dapo",
+    "name": "DAPO (Dual-phase Accelerated Prompt Optimization)",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Generates high-quality initial prompts with meta-instructions, then optimizes iteratively at sentence level.",
+    "tags": [
+      "dual-phase",
+      "optimization"
+    ],
+    "use_cases": [
+      "accelerated prompt optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "DAPO",
+        "dual-phase optimization"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "repair_attempts"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "ampo",
+    "name": "AMPO (Automatic Multi-branched Prompt Optimization)",
+    "category": "output_structuring",
+    "aliases": [],
+    "description": "Coverage-based technique that enumerates failure cases via feedback and constructs multi-branched prompts with if-then-else logic.",
+    "tags": [
+      "coverage",
+      "if-then-else"
+    ],
+    "use_cases": [
+      "failure case handling",
+      "structured prompts"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "AMPO",
+        "multi-branched optimization"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "repair_attempts"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "uniprompt",
+    "name": "UNIPROMPT",
+    "category": "foundational",
+    "aliases": [],
+    "description": "Coverage-based method ensuring multiple semantic facets of a task are included using a two-stage refinement with background knowledge and examples.",
+    "tags": [
+      "coverage",
+      "foundational"
+    ],
+    "use_cases": [
+      "multi-faceted tasks",
+      "semantic coverage"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "UNIPROMPT",
+        "semantic coverage"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "task_success"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "promptboosting",
+    "name": "PromptBoosting",
+    "category": "retrieval_and_hybrids",
+    "aliases": [],
+    "description": "Ensemble method invoking multiple prompts during inference and combining their outputs via weighted sum or aggregation.",
+    "tags": [
+      "ensemble",
+      "boosting"
+    ],
+    "use_cases": [
+      "improved inference",
+      "ensemble prompting"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "PromptBoosting",
+        "prompt ensemble"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "reasoning_consistency"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "gpo",
+    "name": "GPO (Generalized Prompt Optimization)",
+    "category": "retrieval_and_hybrids",
+    "aliases": [],
+    "description": "Uses labeled source data to generate multiple prompts, applies them to unlabeled target data, and aggregates via majority voting.",
+    "tags": [
+      "ensemble",
+      "optimization"
+    ],
+    "use_cases": [
+      "transfer learning",
+      "robust prompting"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "GPO",
+        "generalized prompt optimization"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "novelty_score"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "program_synthesis_prompts",
+    "name": "Program Synthesis for Prompts",
+    "category": "meta_frameworks",
+    "aliases": [
+      "DSP",
+      "DLN",
+      "MIPRO",
+      "SAMMO"
+    ],
+    "description": "Transforms LLM pipelines into modular programs or graphs, enabling systematic optimization of each component.",
+    "tags": [
+      "program synthesis",
+      "framework"
+    ],
+    "use_cases": [
+      "pipeline optimization",
+      "modular prompt design"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "program synthesis",
+        "modular prompt optimization"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "task_success"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "rbjs",
+    "name": "Region-based Joint Search (RBJS)",
+    "category": "optimization_and_tuning",
+    "aliases": [
+      "RBJS"
+    ],
+    "description": "Search strategy with Mixture-of-Expert-Prompts, sampling from inside and outside clusters to generate robust instructions.",
+    "tags": [
+      "search",
+      "experts"
+    ],
+    "use_cases": [
+      "expert prompt robustness"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "RBJS",
+        "region-based search"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "reasoning_consistency"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "plum",
+    "name": "PLUM",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Library providing meta-heuristic ensemble of search algorithms (hill climbing, simulated annealing, GA) for prompt optimization.",
+    "tags": [
+      "meta-heuristic",
+      "ensemble"
+    ],
+    "use_cases": [
+      "search-based optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "PLUM",
+        "meta heuristic prompt"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "novelty_score"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "alignpro",
+    "name": "AlignPro",
+    "category": "meta_frameworks",
+    "aliases": [],
+    "description": "Provides theoretical upper bound on gains from discrete prompt optimization, measuring suboptimality gap vs RLHF-optimal policy.",
+    "tags": [
+      "theory",
+      "alignment"
+    ],
+    "use_cases": [
+      "benchmarking optimization methods"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "AlignPro",
+        "prompt optimization bounds"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "task_success"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "apeer",
+    "name": "APEER",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Automatic Prompt Engineering Enhances Reranking. Uses feedback and preference optimization for passage reranking tasks.",
+    "tags": [
+      "reranking",
+      "optimization"
+    ],
+    "use_cases": [
+      "passage reranking",
+      "search optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "APEER",
+        "prompt reranking"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "user_satisfaction_proxy"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "batprompt",
+    "name": "BATPrompt",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Prompt optimization technique using LLM rewriter and feedback loops for iterative improvement.",
+    "tags": [
+      "feedback",
+      "rewriting"
+    ],
+    "use_cases": [
+      "iterative prompt refinement"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "BATPrompt",
+        "prompt rewriter"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "repair_attempts"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "morl_prompt",
+    "name": "MORL-Prompt",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Applies Multi-objective Reinforcement Learning to prompt optimization, balancing competing objectives (e.g., accuracy, efficiency, safety).",
+    "tags": [
+      "rl",
+      "multi-objective"
+    ],
+    "use_cases": [
+      "balancing performance and safety"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "MORL-Prompt",
+        "multi-objective RL"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "no_policy_violation"
+      ],
+      "quality_checks": [
+        "intent_preserved"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "prewrite",
+    "name": "PRewrite",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Uses a trained reinforcement learning model to rewrite and iteratively improve prompts.",
+    "tags": [
+      "rl",
+      "rewriting"
+    ],
+    "use_cases": [
+      "iterative prompt refinement"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "PRewrite",
+        "prompt rewriting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "repair_attempts"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "promptwizard",
+    "name": "PROMPTWIZARD",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Task-aware optimization framework using a genetic algorithm with LLM-guided mutations.",
+    "tags": [
+      "genetic",
+      "optimization"
+    ],
+    "use_cases": [
+      "task-specific prompt optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "PROMPTWIZARD",
+        "genetic prompt optimization"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "novelty_score"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "promst",
+    "name": "PROMST (Prompt Optimization in Multi-step Tasks)",
+    "category": "planning_and_architecture",
+    "aliases": [],
+    "description": "Framework for optimizing prompts in multi-step tasks using human feedback and heuristic-based sampling.",
+    "tags": [
+      "multi-step",
+      "optimization"
+    ],
+    "use_cases": [
+      "complex workflows",
+      "multi-step optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "PROMST",
+        "multi-step optimization"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "reasoning_consistency"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "reprompting",
+    "name": "Reprompting",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Automated Chain-of-Thought inference via Gibbs sampling. Uses LLM rewrites and rejection sampling with exploration.",
+    "tags": [
+      "cot",
+      "sampling"
+    ],
+    "use_cases": [
+      "automated prompt inference"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "Reprompting",
+        "gibbs sampling cot"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "novelty_score"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "meta_language_creation",
+    "name": "Meta Language Creation",
+    "category": "foundational",
+    "aliases": [],
+    "description": "Defines new custom languages or notation for structured, domain-specific interaction with LLMs.",
+    "tags": [
+      "language design",
+      "notation"
+    ],
+    "use_cases": [
+      "domain-specific tasks",
+      "structured communication"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "meta language creation",
+        "custom notation"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "task_success"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ],
+    "examples": [
+      "From now on, whenever I type two identifiers separated by a '->', I am describing a graph..."
+    ]
+  },
+  {
+    "id": "output_automater",
+    "name": "Output Automater",
+    "category": "output_structuring",
+    "aliases": [],
+    "description": "Instructs the LLM to generate runnable scripts (e.g., Python, bash) that automate steps from its output.",
+    "tags": [
+      "automation",
+      "structuring"
+    ],
+    "use_cases": [
+      "workflow automation",
+      "code generation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "output automater",
+        "script generation"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "repair_attempts"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ],
+    "examples": [
+      "When generating code across files, also output a Python script that auto-creates those files."
+    ]
+  },
+  {
+    "id": "persona",
+    "name": "Persona",
+    "category": "foundational",
+    "aliases": [],
+    "description": "Assigns specific roles or characters (e.g., expert, reviewer, terminal) to LLM for perspective control and stylistic alignment.",
+    "tags": [
+      "role-playing",
+      "persona"
+    ],
+    "use_cases": [
+      "expert simulation",
+      "style alignment"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "persona",
+        "role-playing prompts"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "user_satisfaction_proxy"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ],
+    "examples": [
+      "Act as a security reviewer. Focus on code safety and vulnerabilities."
+    ]
+  },
+  {
+    "id": "visualization_generator",
+    "name": "Visualization Generator",
+    "category": "output_structuring",
+    "aliases": [],
+    "description": "Overcomes LLM's inability to directly create images by generating textual output (e.g., Graphviz Dot, DALL-E prompt) interpretable by visualization tools.",
+    "tags": [
+      "visualization",
+      "structuring"
+    ],
+    "use_cases": [
+      "graph creation",
+      "diagram generation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "visualization generator",
+        "graphviz",
+        "dall-e prompt"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "task_success"
+      ]
+    },
+    "examples": [
+      "Whenever I ask you to visualize something, generate a Graphviz Dot file or DALL-E prompt."
+    ]
+  },
+  {
+    "id": "recipe",
+    "name": "Recipe",
+    "category": "planning_and_architecture",
+    "aliases": [],
+    "description": "Generates a full sequence of steps to achieve a goal from partial 'ingredients' or steps, filling gaps and flagging redundancies.",
+    "tags": [
+      "planning",
+      "completion"
+    ],
+    "use_cases": [
+      "workflow generation",
+      "deployment planning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "recipe prompting",
+        "workflow steps"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "reasoning_consistency"
+      ]
+    },
+    "examples": [
+      "I know I need dependencies... please complete the sequence and remove unnecessary steps."
+    ]
+  },
+  {
+    "id": "template",
+    "name": "Template",
+    "category": "output_structuring",
+    "aliases": [],
+    "description": "Provides LLM with a strict template and placeholders, ensuring outputs follow precise formats.",
+    "tags": [
+      "structuring",
+      "formatting"
+    ],
+    "use_cases": [
+      "API response shaping",
+      "document formatting"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "template prompting",
+        "structured format"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "valid_json_rate"
+      ]
+    },
+    "examples": [
+      "Output must fit: https://myapi.com/NAME/profile/JOB"
+    ]
+  },
+  {
+    "id": "fact_check_list",
+    "name": "Fact Check List",
+    "category": "safety_and_security",
+    "aliases": [],
+    "description": "Instructs LLM to produce a list of facts or assumptions its output depends on, enabling verification.",
+    "tags": [
+      "fact-checking",
+      "safety"
+    ],
+    "use_cases": [
+      "misinformation detection",
+      "output auditing"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "fact check prompting",
+        "fact assumption list"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "no_policy_violation"
+      ]
+    },
+    "examples": [
+      "At the end of answers, generate a list of core facts to verify."
+    ]
+  },
+  {
+    "id": "reflection",
+    "name": "Reflection",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Requires LLM to explain reasoning and assumptions behind answers for validation and debugging.",
+    "tags": [
+      "reasoning",
+      "explanation"
+    ],
+    "use_cases": [
+      "debugging answers",
+      "transparency"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "reflection prompting",
+        "reason explanation"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ]
+    },
+    "examples": [
+      "Explain why you chose these frameworks and your assumptions."
+    ]
+  },
+  {
+    "id": "question_refinement",
+    "name": "Question Refinement",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Engages LLM in suggesting refined versions of user questions to improve accuracy and helpfulness.",
+    "tags": [
+      "refinement",
+      "optimization"
+    ],
+    "use_cases": [
+      "security analysis",
+      "question improvement"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "question refinement",
+        "better phrasing"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "user_satisfaction_proxy"
+      ]
+    },
+    "examples": [
+      "Whenever I ask about software security, suggest a clearer version of my question."
+    ]
+  },
+  {
+    "id": "alternative_approaches",
+    "name": "Alternative Approaches",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "LLM lists and compares alternative ways of solving a task, reducing bias and improving decision-making.",
+    "tags": [
+      "reasoning",
+      "decision-making"
+    ],
+    "use_cases": [
+      "deployment strategies",
+      "comparative analysis"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "alternative approaches",
+        "decision support"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ]
+    },
+    "examples": [
+      "If deploying to X cloud, also list Y/Z options with pros and cons."
+    ]
+  },
+  {
+    "id": "cognitive_verifier",
+    "name": "Cognitive Verifier",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Breaks complex questions into simpler sub-questions, answers them, and combines results into a final response.",
+    "tags": [
+      "reasoning",
+      "verification"
+    ],
+    "use_cases": [
+      "multi-step QA",
+      "accuracy improvement"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "cognitive verifier",
+        "sub-questions"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ]
+    },
+    "examples": [
+      "When asked a question, generate 3 sub-questions, get answers, then combine into the final answer."
+    ]
+  },
+  {
+    "id": "refusal_breaker",
+    "name": "Refusal Breaker",
+    "category": "safety_and_security",
+    "aliases": [],
+    "description": "Handles LLM refusals by asking it to explain why and propose alternative phrasings it could answer.",
+    "tags": [
+      "safety",
+      "refusal handling"
+    ],
+    "use_cases": [
+      "overcoming refusals",
+      "user guidance"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "refusal breaker",
+        "refusal handling"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "user_satisfaction_proxy",
+        "no_policy_violation"
+      ]
+    },
+    "examples": [
+      "When refusing, explain why and provide alternative wordings."
+    ]
+  },
+  {
+    "id": "flipped_interaction",
+    "name": "Flipped Interaction",
+    "category": "planning_and_architecture",
+    "aliases": [],
+    "description": "Reverses interaction: LLM asks user questions until it has enough information to fulfill the task.",
+    "tags": [
+      "planning",
+      "interactive"
+    ],
+    "use_cases": [
+      "script generation",
+      "guided workflows"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "flipped interaction",
+        "llm asks questions"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "user_satisfaction_proxy"
+      ]
+    },
+    "examples": [
+      "Ask user for deployment details, then generate the script."
+    ]
+  },
+  {
+    "id": "game_play",
+    "name": "Game Play",
+    "category": "planning_and_architecture",
+    "aliases": [],
+    "description": "Instructs LLM to create text-based games with rules, scenarios, and responses to user input.",
+    "tags": [
+      "game",
+      "simulation"
+    ],
+    "use_cases": [
+      "training",
+      "entertainment"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "game play",
+        "text-based game"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "user_satisfaction_proxy",
+        "novelty_score"
+      ]
+    },
+    "examples": [
+      "Play a cybersecurity simulation as a Linux terminal."
+    ]
+  },
+  {
+    "id": "infinite_generation",
+    "name": "Infinite Generation",
+    "category": "planning_and_architecture",
+    "aliases": [],
+    "description": "Creates looping prompts where LLM continuously generates outputs until stopped, optionally including user input between iterations.",
+    "tags": [
+      "looping",
+      "automation"
+    ],
+    "use_cases": [
+      "continuous content generation",
+      "simulation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "infinite generation",
+        "looping prompts"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "latency_ms",
+        "task_success"
+      ]
+    },
+    "examples": [
+      "Keep generating names and jobs until I say stop."
+    ]
+  },
+  {
+    "id": "context_manager",
+    "name": "Context Manager",
+    "category": "foundational",
+    "aliases": [],
+    "description": "Enables explicit control of conversational context: focus, ignore, or reset.",
+    "tags": [
+      "context control",
+      "conversation"
+    ],
+    "use_cases": [
+      "focus on specific aspects",
+      "resetting context"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "context manager",
+        "reset context"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "schema_accuracy"
+      ]
+    },
+    "examples": [
+      "Only analyze security aspects of code snippets."
+    ]
+  },
+  {
+    "id": "lcp",
+    "name": "LCP (Learning from Contrastive Prompts)",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Incorporates contrastive learning into meta-prompts, helping FMs distinguish high- vs low-quality prompts and adapt across models/languages.",
+    "tags": [
+      "contrastive",
+      "learning"
+    ],
+    "use_cases": [
+      "cross-model adaptation",
+      "quality discrimination"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "LCP",
+        "contrastive prompts"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "novelty_score",
+        "task_success"
+      ]
+    },
+    "references": [
+      {
+        "source": "arxiv:2406.06608"
+      }
+    ]
+  },
+  {
+    "id": "longpo",
+    "name": "LongPO (Long Prompt Optimization)",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Extends genetic algorithm principles to long prompts using beam search heuristics and history buffers for context maintenance.",
+    "tags": [
+      "genetic",
+      "long prompts"
+    ],
+    "use_cases": [
+      "long context optimization",
+      "iterative refinement"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "LongPO",
+        "long prompt optimization"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "novelty_score"
+      ]
+    }
+  },
+  {
+    "id": "hpme",
+    "name": "HPME (Hard Prompt Made Easy)",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Gradient-based method for discrete prompt optimization projecting learned embeddings back to tokens with nearest-neighbor matching.",
+    "tags": [
+      "gradient",
+      "discrete prompts"
+    ],
+    "use_cases": [
+      "gradient-guided optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "HPME",
+        "hard prompt optimization"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "schema_accuracy"
+      ]
+    }
+  },
+  {
+    "id": "zopo",
+    "name": "ZOPO (Zeroth-Order Prompt Optimization)",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Zeroth-order optimization in prompt spaces via token perturbations guided by neural tangent kernel approximations.",
+    "tags": [
+      "zeroth-order",
+      "optimization"
+    ],
+    "use_cases": [
+      "black-box optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "ZOPO",
+        "zeroth order optimization"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "novelty_score"
+      ]
+    }
+  },
+  {
+    "id": "stableprompt",
+    "name": "StablePrompt",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "RL-based method adapting PPO to stabilize prompt tuning and improve reliability.",
+    "tags": [
+      "rl",
+      "ppo"
+    ],
+    "use_cases": [
+      "stable training"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "StablePrompt",
+        "ppo prompt tuning"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "reasoning_consistency"
+      ]
+    }
+  },
+  {
+    "id": "evoke",
+    "name": "Evoke",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Reviewer-author loop where outputs are critiqued by a model suggesting incremental edits for refinement.",
+    "tags": [
+      "review",
+      "refinement"
+    ],
+    "use_cases": [
+      "iterative improvement",
+      "feedback-based tuning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "Evoke",
+        "review loop"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "repair_attempts",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "mapo",
+    "name": "MAPO (Model-Adaptive Prompt Optimization)",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Combines supervised fine-tuning + RL for prompt optimization tailored to a target FM, boosting performance across tasks.",
+    "tags": [
+      "rl",
+      "fine-tuning"
+    ],
+    "use_cases": [
+      "foundation model adaptation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "MAPO",
+        "model adaptive prompt"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "user_satisfaction_proxy"
+      ]
+    }
+  },
+  {
+    "id": "self_ask",
+    "name": "Self-ask",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Model generates its own follow-up questions to break down complex problems, enhancing reasoning (similar to Cognitive Verifier).",
+    "tags": [
+      "reasoning",
+      "self-questions"
+    ],
+    "use_cases": [
+      "complex QA",
+      "reasoning improvement"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "self-ask",
+        "follow-up questions"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "react",
+    "name": "ReAct (Reason and Act)",
+    "category": "planning_and_architecture",
+    "aliases": [],
+    "description": "Combines reasoning traces with interleaved task-specific actions (e.g., search, execution).",
+    "tags": [
+      "reasoning",
+      "acting"
+    ],
+    "use_cases": [
+      "tool integration",
+      "interactive agents"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "ReAct",
+        "reason and act"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "grounding_references_present"
+      ]
+    }
+  },
+  {
+    "id": "self_refine",
+    "name": "Self-refine",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Iterative refinement process where model generates, critiques, and improves its own outputs.",
+    "tags": [
+      "self-critique",
+      "refinement"
+    ],
+    "use_cases": [
+      "iterative answer improvement"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "self-refine",
+        "self critique"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "repair_attempts",
+        "reasoning_consistency"
+      ]
+    }
+  },
+  {
+    "id": "kate",
+    "name": "KATE (Kernel-based Active Example Tagger)",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Active learning method selecting the most informative few-shot examples for ICL.",
+    "tags": [
+      "icl",
+      "active learning"
+    ],
+    "use_cases": [
+      "example selection",
+      "few-shot learning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "KATE",
+        "active example tagging"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "schema_accuracy"
+      ]
+    }
+  },
+  {
+    "id": "al_exemplars",
+    "name": "AL (Active Learning for Exemplars)",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Uses active learning to select or generate the most effective few-shot examples, improving performance with minimal labeled data.",
+    "tags": [
+      "active learning",
+      "examples"
+    ],
+    "use_cases": [
+      "few-shot learning",
+      "low-resource optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "active learning exemplars",
+        "few-shot optimization"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "schema_accuracy"
+      ]
+    }
+  },
+  {
+    "id": "aes",
+    "name": "AES (Active Example Selection)",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Actively selects the most informative few-shot examples to maximize task performance.",
+    "tags": [
+      "example selection",
+      "optimization"
+    ],
+    "use_cases": [
+      "few-shot ICL",
+      "dataset curation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "AES",
+        "active example selection"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "reasoning_consistency"
+      ]
+    }
+  },
+  {
+    "id": "ordered_prompt",
+    "name": "Ordered Prompt",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Optimizes the order of few-shot examples in prompts, since sequence impacts model performance.",
+    "tags": [
+      "ordering",
+      "optimization"
+    ],
+    "use_cases": [
+      "few-shot optimization",
+      "sequence-sensitive tasks"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "ordered prompt",
+        "exemplar ordering"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "schema_accuracy"
+      ]
+    }
+  },
+  {
+    "id": "sa",
+    "name": "SA (Spatial Annotation)",
+    "category": "multimodal",
+    "aliases": [],
+    "description": "Uses spatial annotations like bounding boxes, markers, or pixel masks to ground LLM understanding in visual tasks.",
+    "tags": [
+      "multimodal",
+      "vision grounding"
+    ],
+    "use_cases": [
+      "image reasoning",
+      "visual QA"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "spatial annotation",
+        "bounding box prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "kosmos2",
+    "name": "KOSMOS-2",
+    "category": "multimodal",
+    "aliases": [],
+    "description": "Grounds understanding by linking text spans to bounding boxes in an image (discrete visual annotation).",
+    "tags": [
+      "multimodal",
+      "visual annotation"
+    ],
+    "use_cases": [
+      "captioning",
+      "grounded language tasks"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "KOSMOS-2",
+        "visual grounding"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "grounding_references_present"
+      ]
+    }
+  },
+  {
+    "id": "visualcues",
+    "name": "Visualcues",
+    "category": "multimodal",
+    "aliases": [],
+    "description": "Uses visual prompts or annotations to guide vision-language models.",
+    "tags": [
+      "multimodal",
+      "visual prompting"
+    ],
+    "use_cases": [
+      "vision-language tasks"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "visual cues",
+        "visual prompts"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "schema_accuracy"
+      ]
+    }
+  },
+  {
+    "id": "prefix_tuning",
+    "name": "Prefix-tuning",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Soft prompt tuning method adding learnable continuous vectors (prefixes) to hidden states of each model layer for parameter-efficient adaptation.",
+    "tags": [
+      "soft prompt",
+      "prefix"
+    ],
+    "use_cases": [
+      "task adaptation",
+      "efficient tuning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "prefix tuning",
+        "soft prompt adaptation"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "tokens_total"
+      ]
+    }
+  },
+  {
+    "id": "prompt_tuning",
+    "name": "Prompt-Tuning",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Prepends trainable continuous embeddings to input layer; more effective at larger scale, requiring minimal parameters.",
+    "tags": [
+      "soft prompt",
+      "embedding"
+    ],
+    "use_cases": [
+      "few-shot tasks",
+      "efficient parameterization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "prompt tuning",
+        "embedding-based tuning"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "schema_accuracy"
+      ]
+    }
+  },
+  {
+    "id": "p_tuning",
+    "name": "P-Tuning",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Extends prompt tuning by inserting continuous trainable prompts into multiple layers, boosting few-shot performance.",
+    "tags": [
+      "soft prompt",
+      "layer tuning"
+    ],
+    "use_cases": [
+      "few-shot performance",
+      "multi-layer tuning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "p-tuning",
+        "multi-layer prompt tuning"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "schema_accuracy"
+      ]
+    }
+  },
+  {
+    "id": "phaseevo",
+    "name": "PhaseEvo",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Hybrid pipeline alternating between refining instructions and refining exemplars via multi-phase evolutionary steps.",
+    "tags": [
+      "evolutionary",
+      "multi-phase"
+    ],
+    "use_cases": [
+      "instruction tuning",
+      "example optimization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "PhaseEvo",
+        "multi-phase optimization"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "novelty_score"
+      ]
+    }
+  },
+  {
+    "id": "opt2i",
+    "name": "OPT2I (Optimization for Text-to-Image)",
+    "category": "multimodal",
+    "aliases": [],
+    "description": "Optimizes text-to-image prompts by rewriting them for better alignment between textual and visual outputs.",
+    "tags": [
+      "multimodal",
+      "text-to-image"
+    ],
+    "use_cases": [
+      "image generation consistency"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "OPT2I",
+        "text-to-image optimization"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "user_satisfaction_proxy"
+      ]
+    }
+  },
+  {
+    "id": "zero_shot_prompting",
+    "name": "Zero-Shot Prompting",
+    "category": "foundational",
+    "aliases": [],
+    "description": "Provides task description without examples; model uses pre-trained knowledge to perform the task.",
+    "tags": [
+      "foundational",
+      "zero-shot"
+    ],
+    "use_cases": [
+      "new task adaptation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "zero-shot prompting",
+        "task description"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "schema_accuracy"
+      ]
+    }
+  },
+  {
+    "id": "few_shot_prompting",
+    "name": "Few-Shot Prompting",
+    "category": "foundational",
+    "aliases": [],
+    "description": "Provides a handful of input-output examples (demonstrations) within the prompt to guide model behavior and task format understanding.",
+    "tags": [
+      "foundational",
+      "examples"
+    ],
+    "use_cases": [
+      "classification",
+      "translation",
+      "task adaptation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "few-shot prompting",
+        "demonstrations"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "schema_accuracy"
+      ]
+    }
+  },
+  {
+    "id": "cot_prompting",
+    "name": "Chain-of-Thought (CoT) Prompting",
+    "category": "reasoning",
+    "aliases": [
+      "CoT"
+    ],
+    "description": "Prompts the model to generate intermediate reasoning steps before final answers, improving complex reasoning performance.",
+    "tags": [
+      "reasoning",
+      "step-by-step"
+    ],
+    "use_cases": [
+      "math problems",
+      "logical inference"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "chain-of-thought",
+        "cot"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "auto_cot",
+    "name": "Automatic Chain-of-Thought (Auto-CoT) Prompting",
+    "category": "reasoning",
+    "aliases": [
+      "Auto-CoT"
+    ],
+    "description": "Automates CoT example creation by prompting with 'Let's think step-by-step' and sampling diverse reasoning chains.",
+    "tags": [
+      "automation",
+      "reasoning"
+    ],
+    "use_cases": [
+      "example generation",
+      "reasoning-rich tasks"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "auto-cot",
+        "automatic chain of thought"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "novelty_score",
+        "reasoning_consistency"
+      ]
+    }
+  },
+  {
+    "id": "self_consistency",
+    "name": "Self-Consistency",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Enhances CoT by generating multiple reasoning chains and selecting the most consistent answer via majority voting.",
+    "tags": [
+      "reasoning",
+      "ensembling"
+    ],
+    "use_cases": [
+      "math reasoning",
+      "QA consistency"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "self-consistency",
+        "majority voting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "logicot",
+    "name": "Logical Chain-of-Thought (LogiCoT) Prompting",
+    "category": "reasoning",
+    "aliases": [
+      "LogiCoT"
+    ],
+    "description": "Neurosymbolic CoT that uses symbolic logic (e.g., reductio ad absurdum) to verify reasoning steps and guide revisions.",
+    "tags": [
+      "logic",
+      "verification"
+    ],
+    "use_cases": [
+      "symbolic reasoning",
+      "formal verification"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "logicot",
+        "logical chain of thought"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "reasoning_consistency"
+      ]
+    }
+  },
+  {
+    "id": "cos_prompting",
+    "name": "Chain-of-Symbol (CoS) Prompting",
+    "category": "reasoning",
+    "aliases": [
+      "CoS"
+    ],
+    "description": "Represents complex relationships with symbols instead of natural language, producing concise and effective reasoning prompts.",
+    "tags": [
+      "symbols",
+      "reasoning"
+    ],
+    "use_cases": [
+      "math",
+      "spatial reasoning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "chain-of-symbol",
+        "cos reasoning"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "novelty_score"
+      ]
+    }
+  },
+  {
+    "id": "tot_prompting",
+    "name": "Tree-of-Thoughts (ToT) Prompting",
+    "category": "reasoning",
+    "aliases": [
+      "ToT"
+    ],
+    "description": "Extends CoT by structuring thoughts into trees, enabling exploration, evaluation, and backtracking of reasoning paths.",
+    "tags": [
+      "tree",
+      "exploration"
+    ],
+    "use_cases": [
+      "complex problem solving",
+      "strategic reasoning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "tree-of-thoughts",
+        "tot prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "got_prompting",
+    "name": "Graph-of-Thoughts (GoT) Prompting",
+    "category": "reasoning",
+    "aliases": [
+      "GoT"
+    ],
+    "description": "Models reasoning as a directed graph, allowing flexible, non-linear exploration and merging of reasoning branches.",
+    "tags": [
+      "graph",
+      "reasoning"
+    ],
+    "use_cases": [
+      "multi-path reasoning",
+      "creative synthesis"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "graph-of-thoughts",
+        "got prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "novelty_score"
+      ]
+    }
+  },
+  {
+    "id": "s2a_prompting",
+    "name": "System 2 Attention (S2A) Prompting",
+    "category": "reasoning",
+    "aliases": [
+      "S2A"
+    ],
+    "description": "LLM regenerates input context to focus only on relevant parts before producing final response, mimicking deliberate 'System 2' thinking.",
+    "tags": [
+      "reasoning",
+      "attention"
+    ],
+    "use_cases": [
+      "complex QA",
+      "focused reasoning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "system 2 attention",
+        "s2a prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "thot_prompting",
+    "name": "Thread of Thought (ThoT) Prompting",
+    "category": "reasoning",
+    "aliases": [
+      "ThoT"
+    ],
+    "description": "Enhances reasoning in chaotic/long contexts by breaking down into segments, analyzing incrementally, and synthesizing final output.",
+    "tags": [
+      "reasoning",
+      "segmentation"
+    ],
+    "use_cases": [
+      "long context reasoning",
+      "incremental synthesis"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "thread of thought",
+        "thot prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "chain_of_table",
+    "name": "Chain-of-Table Prompting",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Uses tabular reasoning: dynamically generates and executes table operations (SQL/DataFrame-like) to solve structured reasoning tasks.",
+    "tags": [
+      "tables",
+      "reasoning"
+    ],
+    "use_cases": [
+      "table QA",
+      "structured data reasoning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "chain-of-table",
+        "tabular reasoning"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "reasoning_consistency"
+      ]
+    }
+  },
+  {
+    "id": "code_prompting",
+    "name": "Code Prompting",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Reframes natural language problems into code, enabling text+code LLMs to reason without external execution.",
+    "tags": [
+      "reasoning",
+      "code"
+    ],
+    "use_cases": [
+      "math reasoning",
+      "logic with code"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "code prompting",
+        "reasoning with code"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "reasoning_consistency"
+      ]
+    }
+  },
+  {
+    "id": "echo_prompting",
+    "name": "Self-Harmonized CoT (ECHO) Prompting",
+    "category": "reasoning",
+    "aliases": [
+      "ECHO"
+    ],
+    "description": "Clusters questions, samples demonstrations, and iteratively refines rationales to unify reasoning paths into robust CoT.",
+    "tags": [
+      "cot",
+      "harmonization"
+    ],
+    "use_cases": [
+      "robust CoT",
+      "multi-path reasoning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "echo prompting",
+        "self-harmonized cot"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "novelty_score"
+      ]
+    }
+  },
+  {
+    "id": "logic_of_thought",
+    "name": "Logic-of-Thought Prompting",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Enriches prompts with propositional logic. Extracts, extends, and translates logical relations back into natural language to guide reasoning.",
+    "tags": [
+      "logic",
+      "reasoning"
+    ],
+    "use_cases": [
+      "formal logic QA",
+      "structured reasoning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "logic-of-thought",
+        "neuro-symbolic prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "schema_accuracy"
+      ]
+    }
+  },
+  {
+    "id": "iap",
+    "name": "Instance-adaptive Prompting (IAP)",
+    "category": "optimization_and_tuning",
+    "aliases": [
+      "IAP"
+    ],
+    "description": "Dynamically tailors prompts to individual instances using saliency analysis of internal model information flow.",
+    "tags": [
+      "adaptation",
+      "optimization"
+    ],
+    "use_cases": [
+      "personalized prompting",
+      "instance-specific reasoning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "instance adaptive prompting",
+        "iap"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "reasoning_consistency"
+      ]
+    }
+  },
+  {
+    "id": "eedp",
+    "name": "End-to-End DAG-Path (EEDP) Prompting",
+    "category": "reasoning",
+    "aliases": [
+      "EEDP"
+    ],
+    "description": "Focuses on long-distance reasoning in graphs by prioritizing backbone paths between endpoints while preserving adjacency info.",
+    "tags": [
+      "graph reasoning",
+      "paths"
+    ],
+    "use_cases": [
+      "graph QA",
+      "path reasoning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "eedp prompting",
+        "graph path reasoning"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "schema_accuracy"
+      ]
+    }
+  },
+  {
+    "id": "lot_prompting",
+    "name": "Layer-of-Thoughts (LoT) Prompting",
+    "category": "reasoning",
+    "aliases": [
+      "LoT"
+    ],
+    "description": "Hierarchical framework structuring reasoning into 'layers' and 'options' via constraint hierarchies, used in legal and structured retrieval.",
+    "tags": [
+      "hierarchical",
+      "reasoning"
+    ],
+    "use_cases": [
+      "legal reasoning",
+      "structured tasks"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "layer-of-thoughts",
+        "lot prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "not_prompting",
+    "name": "Narrative-of-Thought (NoT) Prompting",
+    "category": "reasoning",
+    "aliases": [
+      "NoT"
+    ],
+    "description": "Enhances temporal reasoning by generating narratives grounded in time, guiding construction of temporal graphs from unordered events.",
+    "tags": [
+      "temporal reasoning",
+      "narratives"
+    ],
+    "use_cases": [
+      "event ordering",
+      "temporal graph QA"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "narrative-of-thought",
+        "not prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "bot_prompting",
+    "name": "Buffer of Thoughts (BoT) Prompting",
+    "category": "reasoning",
+    "aliases": [
+      "BoT"
+    ],
+    "description": "Creates and maintains a meta-buffer of reusable high-level reasoning templates that can be retrieved and adapted for new tasks.",
+    "tags": [
+      "reasoning",
+      "templates"
+    ],
+    "use_cases": [
+      "transfer reasoning",
+      "pattern reuse"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "buffer of thoughts",
+        "bot prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "cd_cot",
+    "name": "Contrastive Denoising with Noisy CoT (CD-CoT) Prompting",
+    "category": "reasoning",
+    "aliases": [
+      "CD-CoT"
+    ],
+    "description": "Contrasts flawed reasoning with clean CoT paths, teaching the model to recognize and avoid noisy rationales.",
+    "tags": [
+      "contrastive",
+      "cot"
+    ],
+    "use_cases": [
+      "clean reasoning",
+      "error reduction"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "cd-cot",
+        "contrastive chain of thought"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "r_cot",
+    "name": "Reverse Chain-of-Thought (R-CoT) Prompting",
+    "category": "reasoning",
+    "aliases": [
+      "R-CoT"
+    ],
+    "description": "Enhances geometric reasoning by generating step-by-step geometric images (GeoChain) and then deriving questions from them.",
+    "tags": [
+      "geometry",
+      "reverse reasoning"
+    ],
+    "use_cases": [
+      "geometric QA",
+      "reverse questioning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "r-cot",
+        "reverse chain of thought"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "reasoning_consistency"
+      ]
+    }
+  },
+  {
+    "id": "cod_prompting",
+    "name": "Chain of Draft (CoD) Prompting",
+    "category": "reasoning",
+    "aliases": [
+      "CoD"
+    ],
+    "description": "Efficiency-focused variant of CoT that produces concise, information-dense drafts at each reasoning step, reducing token use.",
+    "tags": [
+      "drafts",
+      "efficiency"
+    ],
+    "use_cases": [
+      "low-latency reasoning",
+      "efficient CoT"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "chain of draft",
+        "cod prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "latency_ms",
+        "reasoning_consistency"
+      ]
+    }
+  },
+  {
+    "id": "rag",
+    "name": "Retrieval Augmented Generation (RAG)",
+    "category": "retrieval_and_hybrids",
+    "aliases": [],
+    "description": "Augments LLM outputs by retrieving relevant external knowledge and incorporating it into responses for factual grounding.",
+    "tags": [
+      "retrieval",
+      "knowledge"
+    ],
+    "use_cases": [
+      "fact QA",
+      "knowledge-grounded tasks"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "rag",
+        "retrieval augmented generation"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "grounding_references_present",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "cove",
+    "name": "Chain-of-Verification (CoVe) Prompting",
+    "category": "safety_and_security",
+    "aliases": [
+      "CoVe"
+    ],
+    "description": "Four-step verification pipeline: baseline response, generate verification questions, answer them, and produce a revised verified response.",
+    "tags": [
+      "verification",
+      "safety"
+    ],
+    "use_cases": [
+      "hallucination reduction",
+      "validated answers"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "cove prompting",
+        "chain of verification"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "valid_json_rate",
+        "no_policy_violation"
+      ]
+    }
+  },
+  {
+    "id": "con_prompting",
+    "name": "Chain-of-Note (CoN) Prompting",
+    "category": "retrieval_and_hybrids",
+    "aliases": [
+      "CoN"
+    ],
+    "description": "Systematically generates notes on retrieved documents to evaluate their relevance and reliability before synthesizing answers.",
+    "tags": [
+      "retrieval",
+      "notes"
+    ],
+    "use_cases": [
+      "document vetting",
+      "evidence QA"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "chain of note",
+        "con prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "grounding_references_present",
+        "schema_accuracy"
+      ]
+    }
+  },
+  {
+    "id": "cok_prompting",
+    "name": "Chain-of-Knowledge (CoK) Prompting",
+    "category": "retrieval_and_hybrids",
+    "aliases": [
+      "CoK"
+    ],
+    "description": "Improves reasoning by dynamically integrating knowledge from heterogeneous sources (internal, external, contextual).",
+    "tags": [
+      "knowledge",
+      "integration"
+    ],
+    "use_cases": [
+      "multi-source QA",
+      "hybrid reasoning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "chain of knowledge",
+        "cok prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "grounding_references_present",
+        "reasoning_consistency"
+      ]
+    }
+  },
+  {
+    "id": "active_prompt",
+    "name": "Active-Prompt",
+    "category": "optimization_and_tuning",
+    "aliases": [],
+    "description": "Uses uncertainty-based active learning to create task-specific CoT example prompts more efficiently than random selection.",
+    "tags": [
+      "active learning",
+      "cot"
+    ],
+    "use_cases": [
+      "efficient example generation",
+      "task-specific cot"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "active prompt",
+        "uncertainty-based selection"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "novelty_score"
+      ]
+    }
+  },
+  {
+    "id": "art",
+    "name": "Automatic Reasoning and Tool-use (ART)",
+    "category": "planning_and_architecture",
+    "aliases": [
+      "ART"
+    ],
+    "description": "Integrates reasoning and external tool-use. Automatically generates a program of reasoning steps interleaved with tool calls.",
+    "tags": [
+      "tools",
+      "planning"
+    ],
+    "use_cases": [
+      "multi-step reasoning",
+      "tool-augmented workflows"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "art prompting",
+        "automatic reasoning and tool use"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "grounding_references_present"
+      ]
+    }
+  },
+  {
+    "id": "ccot",
+    "name": "Contrastive Chain-of-Thought (CCoT) Prompting",
+    "category": "reasoning",
+    "aliases": [
+      "CCoT"
+    ],
+    "description": "Provides both valid and invalid reasoning examples to teach models correct reasoning while avoiding common mistakes.",
+    "tags": [
+      "contrastive",
+      "cot"
+    ],
+    "use_cases": [
+      "teaching reasoning",
+      "error avoidance"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "ccot",
+        "contrastive chain of thought"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "emotion_prompting",
+    "name": "Emotion Prompting",
+    "category": "foundational",
+    "aliases": [],
+    "description": "Boosts LLM performance by appending emotionally charged statements to prompts, leveraging psychological priming.",
+    "tags": [
+      "emotions",
+      "priming"
+    ],
+    "use_cases": [
+      "motivation-sensitive tasks",
+      "persuasive writing"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "emotion prompting",
+        "emotional priming"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "user_satisfaction_proxy",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "scratchpad",
+    "name": "Scratchpad Prompting",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Encourages models to use an intermediate scratchpad of calculations or reasoning steps before producing answers.",
+    "tags": [
+      "scratchpad",
+      "reasoning"
+    ],
+    "use_cases": [
+      "math",
+      "multi-step problem solving"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "scratchpad prompting",
+        "intermediate steps"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "pot",
+    "name": "Program of Thoughts (PoT) Prompting",
+    "category": "reasoning",
+    "aliases": [
+      "PoT"
+    ],
+    "description": "Delegates reasoning to external interpreters by generating code for reasoning steps, executed for precise results.",
+    "tags": [
+      "code",
+      "external interpreter"
+    ],
+    "use_cases": [
+      "math QA",
+      "logical workflows"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "program of thoughts",
+        "pot prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "scot",
+    "name": "Structured Chain-of-Thought (SCoT) Prompting",
+    "category": "reasoning",
+    "aliases": [
+      "SCoT"
+    ],
+    "description": "Incorporates program structures (sequence, branch, loop) into CoT reasoning, guiding structured code generation.",
+    "tags": [
+      "structure",
+      "code"
+    ],
+    "use_cases": [
+      "code generation",
+      "algorithm reasoning"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "structured cot",
+        "scot prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "schema_accuracy"
+      ]
+    }
+  },
+  {
+    "id": "coc",
+    "name": "Chain of Code (CoC) Prompting",
+    "category": "reasoning",
+    "aliases": [
+      "CoC"
+    ],
+    "description": "Formats reasoning sub-tasks as pseudocode, checked by interpreters for logic and semantic correctness.",
+    "tags": [
+      "code",
+      "pseudocode"
+    ],
+    "use_cases": [
+      "algorithm design",
+      "QA verification"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "chain of code",
+        "coc prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "repair_attempts"
+      ]
+    }
+  },
+  {
+    "id": "rar",
+    "name": "Rephrase and Respond (RaR) Prompting",
+    "category": "optimization_and_tuning",
+    "aliases": [
+      "RaR"
+    ],
+    "description": "Rephrases user questions for clarity before generating answers, reducing ambiguity and aligning semantics.",
+    "tags": [
+      "clarity",
+      "rephrasing"
+    ],
+    "use_cases": [
+      "ambiguous queries",
+      "QA refinement"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "rephrase and respond",
+        "rar prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "intent_preserved",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "take_a_step_back",
+    "name": "Take a Step Back Prompting",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Prompts the model to extract high-level concepts from specific cases before solving, enabling abstraction.",
+    "tags": [
+      "abstraction",
+      "reasoning"
+    ],
+    "use_cases": [
+      "concept learning",
+      "generalization"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "take a step back",
+        "abstraction prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "cot_factored_decomposition",
+    "name": "Chain-of-Thought Factored Decomposition",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Combines sequential CoT with decomposition by breaking tasks into smaller sub-components solved step by step.",
+    "tags": [
+      "decomposition",
+      "cot"
+    ],
+    "use_cases": [
+      "teaching tasks",
+      "process explanation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "factored decomposition",
+        "cot decomposition"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "schema_accuracy"
+      ]
+    }
+  },
+  {
+    "id": "sot",
+    "name": "Skeleton-of-Thought (SoT)",
+    "category": "output_structuring",
+    "aliases": [
+      "SoT"
+    ],
+    "description": "Provides a high-level structured skeleton/template of an output, which the model fills in.",
+    "tags": [
+      "skeleton",
+      "template"
+    ],
+    "use_cases": [
+      "emails",
+      "structured writing"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "skeleton of thought",
+        "sot prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "socratic",
+    "name": "Socratic Prompting",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Uses probing Socratic-style questions to explore concepts deeply and lead users/models to conclusions.",
+    "tags": [
+      "dialogue",
+      "reasoning"
+    ],
+    "use_cases": [
+      "education",
+      "concept exploration"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "socratic prompting",
+        "socratic method"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "user_satisfaction_proxy"
+      ]
+    }
+  },
+  {
+    "id": "show_me_vs_tell_me",
+    "name": "Show-me versus Tell-me",
+    "category": "output_structuring",
+    "aliases": [],
+    "description": "Lets LLM choose between demonstration (e.g., diagram/code) or textual explanation depending on context.",
+    "tags": [
+      "explanation",
+      "structuring"
+    ],
+    "use_cases": [
+      "education",
+      "technical teaching"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "show-me tell-me",
+        "demonstrate vs describe"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "user_satisfaction_proxy"
+      ]
+    }
+  },
+  {
+    "id": "tar",
+    "name": "Target-your-response (TAR)",
+    "category": "output_structuring",
+    "aliases": [
+      "TAR"
+    ],
+    "description": "Directs model responses toward a specific target (format, length, style) to improve relevance and conciseness.",
+    "tags": [
+      "targeting",
+      "output control"
+    ],
+    "use_cases": [
+      "summaries",
+      "style control"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "target your response",
+        "tar prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "readability",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "prompt_macros",
+    "name": "Prompt Macros and End-goal Planning",
+    "category": "planning_and_architecture",
+    "aliases": [],
+    "description": "Uses a macro prompt for a broad goal, which the model decomposes into implied micro-queries.",
+    "tags": [
+      "planning",
+      "macro"
+    ],
+    "use_cases": [
+      "trip planning",
+      "project design"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "prompt macros",
+        "end-goal planning"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "reasoning_consistency"
+      ]
+    }
+  },
+  {
+    "id": "contrastive_prompting",
+    "name": "Contrastive Prompting",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Asks the model to compare or contrast concepts, deepening explanations and highlighting differences/similarities.",
+    "tags": [
+      "comparison",
+      "reasoning"
+    ],
+    "use_cases": [
+      "education",
+      "technology comparison"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "contrastive prompting",
+        "compare and contrast"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "meta_prompting",
+    "name": "Meta-Prompting",
+    "category": "meta_frameworks",
+    "aliases": [],
+    "description": "Guides LLMs to reflect on their own prompting methods and improve them, fostering self-awareness.",
+    "tags": [
+      "meta",
+      "reflection"
+    ],
+    "use_cases": [
+      "self-optimization",
+      "prompt analysis"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "meta prompting",
+        "self-aware prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "novelty_score",
+        "user_satisfaction_proxy"
+      ]
+    }
+  },
+  {
+    "id": "anticipatory_prompting",
+    "name": "Anticipatory Prompting",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Encourages LLMs to anticipate follow-up questions and proactively provide related insights alongside answers.",
+    "tags": [
+      "anticipation",
+      "context"
+    ],
+    "use_cases": [
+      "guides",
+      "tutorials"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "anticipatory prompting",
+        "foresee follow-ups"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "user_satisfaction_proxy"
+      ]
+    }
+  },
+  {
+    "id": "prompt_to_code",
+    "name": "Prompt to Code",
+    "category": "output_structuring",
+    "aliases": [],
+    "description": "Directly instructs an LLM to generate functional code from natural language task descriptions.",
+    "tags": [
+      "code generation",
+      "output"
+    ],
+    "use_cases": [
+      "software development",
+      "automation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "prompt to code",
+        "nl to code"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "directional_stimulus",
+    "name": "Directional Stimulus",
+    "category": "foundational",
+    "aliases": [
+      "Hints"
+    ],
+    "description": "Uses subtle cues to steer the model in a desired direction while preserving creativity and openness.",
+    "tags": [
+      "steering",
+      "creativity"
+    ],
+    "use_cases": [
+      "storytelling",
+      "creative writing"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "directional stimulus",
+        "hints prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "novelty_score",
+        "user_satisfaction_proxy"
+      ]
+    }
+  },
+  {
+    "id": "ambiguous_prompting",
+    "name": "Ambiguous Prompting",
+    "category": "creative_and_generative",
+    "aliases": [],
+    "description": "Intentionally vague prompts to stimulate broad, creative, and diverse responses.",
+    "tags": [
+      "creativity",
+      "open-ended"
+    ],
+    "use_cases": [
+      "creative writing",
+      "idea generation"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "ambiguous prompting",
+        "open-ended prompts"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "novelty_score",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "cross_disciplinary",
+    "name": "Cross-disciplinary Prompting",
+    "category": "reasoning",
+    "aliases": [],
+    "description": "Blends knowledge from multiple fields to generate insights or explain a topic through interdisciplinary analogies.",
+    "tags": [
+      "interdisciplinary",
+      "reasoning"
+    ],
+    "use_cases": [
+      "teaching",
+      "innovation",
+      "cross-domain explanations"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "cross disciplinary",
+        "analogy prompting"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "novelty_score",
+        "reasoning_consistency"
+      ]
+    }
+  },
+  {
+    "id": "historical_context",
+    "name": "Historical Context Prompting",
+    "category": "foundational",
+    "aliases": [],
+    "description": "Frames responses from the perspective of a specific historical period or cultural context.",
+    "tags": [
+      "history",
+      "context"
+    ],
+    "use_cases": [
+      "education",
+      "creative writing",
+      "historical framing"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "historical prompting",
+        "context framing"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "novelty_score",
+        "user_satisfaction_proxy"
+      ]
+    }
+  },
+  {
+    "id": "grammar_correction",
+    "name": "Grammar Correction",
+    "category": "output_structuring",
+    "aliases": [],
+    "description": "Instructs the model to identify and fix grammar, tone, and style inconsistencies in text.",
+    "tags": [
+      "grammar",
+      "style"
+    ],
+    "use_cases": [
+      "editing",
+      "professional writing"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "grammar correction",
+        "style check"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "readability",
+        "schema_accuracy"
+      ]
+    }
+  },
+  {
+    "id": "constrained_vocabulary",
+    "name": "Constrained Vocabulary",
+    "category": "output_structuring",
+    "aliases": [],
+    "description": "Restricts responses to a fixed lexicon or terminology, ensuring domain-specific or controlled language use.",
+    "tags": [
+      "constraints",
+      "lexicon"
+    ],
+    "use_cases": [
+      "medical QA",
+      "domain-specific writing"
+    ],
+    "retrieval_metadata": {
+      "keywords": [
+        "constrained vocabulary",
+        "restricted lexicon"
+      ]
+    },
+    "evaluation": {
+      "metrics": [
+        "schema_accuracy",
+        "intent_preserved"
+      ]
+    }
+  },
+  {
+    "id": "rephrase_and_respond",
+    "name": "Rephrase & Respond (Clean Preserving Intent)",
+    "category": "foundational",
+    "aliases": [
+      "/clean",
+      "/preserve"
+    ],
+    "phase": [
+      "pre",
+      "post"
+    ],
+    "surfaces": [
+      "web",
+      "chrome",
+      "vscode",
+      "cursor",
+      "agent"
+    ],
+    "tiers": [
+      "free",
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 0.6,
+      "tools": 0
+    },
+    "core_principle": "Improve clarity/grammar without altering intent.",
+    "inputs_required": [
+      "prompt_text"
+    ],
+    "template_fragments": {
+      "system": "foundations/system_role_minimal.j2",
+      "user": "Rephrase for clarity without changing meaning. Original: {{ prompt_text }}"
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "pfcl",
+          "any": [
+            "/clean"
+          ]
+        },
+        {
+          "type": "keyword",
+          "any": [
+            "clean",
+            "grammar",
+            "clarity",
+            "tidy",
+            "fix spelling"
+          ]
+        }
+      ],
+      "contra": [
+        {
+          "type": "length_chars",
+          "lt": 10
+        }
+      ]
+    },
+    "conflicts_with": [
+      "divergent_ideation"
+    ],
+    "complements": [
+      "json_schema_guided",
+      "instruction_hierarchy"
+    ],
+    "evaluation": {
+      "quality_checks": [
+        "intent_preserved"
+      ],
+      "metrics": [
+        "readability",
+        "tokens_total",
+        "latency_ms"
+      ]
+    }
+  },
+  {
+    "id": "json_schema_guided",
+    "name": "JSON Schema-Guided Output",
+    "category": "output_structuring_and_control",
+    "aliases": [
+      "/structure",
+      "/schema",
+      "/strict"
+    ],
+    "phase": [
+      "post"
+    ],
+    "surfaces": [
+      "web",
+      "vscode",
+      "chrome",
+      "cursor",
+      "agent"
+    ],
+    "tiers": [
+      "free",
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 1.1,
+      "tools": 0
+    },
+    "core_principle": "Constrain model output to a strict JSON schema with auto-repair attempts.",
+    "inputs_required": [
+      "json_schema"
+    ],
+    "template_fragments": {
+      "system": "structure/system_schema_guard.j2",
+      "user": "structure/user_schema_guard.j2"
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "pfcl",
+          "any": [
+            "/structure",
+            "/schema",
+            "/strict"
+          ]
+        },
+        {
+          "type": "keyword",
+          "any": [
+            "json",
+            "schema",
+            "contract",
+            "valid json",
+            "keys:"
+          ]
+        }
+      ],
+      "contra": [
+        {
+          "type": "length_chars",
+          "lt": 40
+        }
+      ]
+    },
+    "conflicts_with": [
+      "self_consistency"
+    ],
+    "complements": [
+      "few_shot_prompting",
+      "role_playing_persona"
+    ],
+    "evaluation": {
+      "quality_checks": [
+        "valid_json",
+        "schema_compliance"
+      ],
+      "metrics": [
+        "schema_accuracy",
+        "repair_attempts",
+        "latency_ms"
+      ]
+    }
+  },
+  {
+    "id": "role_playing_persona",
+    "name": "Role-Playing Persona",
+    "category": "foundational",
+    "aliases": [],
+    "phase": [
+      "pre"
+    ],
+    "surfaces": [
+      "web",
+      "chrome",
+      "vscode",
+      "cursor",
+      "agent"
+    ],
+    "tiers": [
+      "free",
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 0.3,
+      "tools": 0
+    },
+    "core_principle": "Set system role with task-aligned persona and tone.",
+    "inputs_required": [
+      "persona?"
+    ],
+    "template_fragments": {
+      "system": "You are {{ persona or 'a precise expert assistant' }}."
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "keyword",
+          "any": [
+            "as an expert",
+            "act as",
+            "role:"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [],
+    "complements": [
+      "json_schema_guided",
+      "few_shot_prompting"
+    ],
+    "evaluation": {
+      "metrics": [
+        "user_satisfaction_proxy"
+      ]
+    }
+  },
+  {
+    "id": "step_back_prompting",
+    "name": "Step-Back Prompting",
+    "category": "problem_decomposition_and_step_wise_reasoning",
+    "aliases": [
+      "/upgrade"
+    ],
+    "phase": [
+      "pre"
+    ],
+    "surfaces": [
+      "web",
+      "agent"
+    ],
+    "tiers": [
+      "free",
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 0.8,
+      "tools": 0
+    },
+    "core_principle": "Summarize the objective and constraints, then outline a minimal plan before answering.",
+    "template_fragments": {
+      "user": "Objective: {{ objective }}. Constraints: {{ constraints }}. Provide a brief plan then the answer."
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "keyword",
+          "any": [
+            "plan",
+            "steps",
+            "before answering"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [],
+    "complements": [
+      "chain_of_thought",
+      "critique_and_revise"
+    ],
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency",
+        "latency_ms"
+      ]
+    }
+  },
+  {
+    "id": "chain_of_thought",
+    "name": "Chain-of-Thought (Hidden)",
+    "category": "problem_decomposition_and_step_wise_reasoning",
+    "aliases": [
+      "/cot",
+      "/think"
+    ],
+    "phase": [
+      "intra"
+    ],
+    "surfaces": [
+      "web",
+      "agent"
+    ],
+    "tiers": [
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 1.6,
+      "tools": 0
+    },
+    "risk": "verbosity",
+    "pfcl_defaults": {
+      "show_rationale": false
+    },
+    "template_fragments": {
+      "system": "reasoning/cot_hidden.j2"
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "pfcl",
+          "any": [
+            "/cot"
+          ]
+        },
+        {
+          "type": "keyword",
+          "any": [
+            "multi-step",
+            "reason about",
+            "explain steps"
+          ]
+        },
+        {
+          "type": "ambiguity",
+          "gte": 0.6
+        }
+      ]
+    },
+    "conflicts_with": [
+      "self_consistency"
+    ],
+    "complements": [
+      "critique_and_revise",
+      "step_back_prompting"
+    ],
+    "evaluation": {
+      "metrics": [
+        "reasoning_consistency"
+      ]
+    }
+  },
+  {
+    "id": "divergent_ideation",
+    "name": "Divergent Ideation (Brainstorm)",
+    "category": "planning_and_architecture",
+    "aliases": [
+      "/brainstorm"
+    ],
+    "phase": [
+      "intra"
+    ],
+    "surfaces": [
+      "web",
+      "chrome",
+      "agent"
+    ],
+    "tiers": [
+      "free",
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 1.1,
+      "tools": 0
+    },
+    "core_principle": "Generate a wide set of options along axes (domain, audience, novelty).",
+    "inputs_required": [
+      "n?",
+      "axes?"
+    ],
+    "template_fragments": {
+      "user": "Generate {{ n or 10 }} distinct options across axes: {{ axes or 'domain,audience,novelty' }}."
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "pfcl",
+          "any": [
+            "/brainstorm"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [
+      "rephrase_and_respond"
+    ],
+    "complements": [
+      "critique_and_revise",
+      "json_schema_guided"
+    ],
+    "evaluation": {
+      "metrics": [
+        "novelty_score",
+        "user_satisfaction_proxy"
+      ]
+    }
+  },
+  {
+    "id": "critique_and_revise",
+    "name": "Critique & Revise",
+    "category": "quality_and_critique",
+    "aliases": [
+      "/critic"
+    ],
+    "phase": [
+      "post"
+    ],
+    "surfaces": [
+      "web",
+      "vscode",
+      "agent"
+    ],
+    "tiers": [
+      "free",
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 0.9,
+      "tools": 0
+    },
+    "template_fragments": {
+      "system": "quality/critic.j2"
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "pfcl",
+          "any": [
+            "/critic"
+          ]
+        },
+        {
+          "type": "keyword",
+          "any": [
+            "review",
+            "critique",
+            "improve"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [],
+    "complements": [
+      "json_schema_guided",
+      "few_shot_prompting"
+    ],
+    "evaluation": {
+      "metrics": [
+        "readability",
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "retrieval_augmented_generation",
+    "name": "Retrieval-Augmented Generation (RAG)",
+    "category": "retrieval_and_tools",
+    "aliases": [
+      "/rag"
+    ],
+    "phase": [
+      "pre",
+      "intra"
+    ],
+    "surfaces": [
+      "web",
+      "vscode",
+      "agent"
+    ],
+    "tiers": [
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 1.2,
+      "tools": 0.8
+    },
+    "inputs_required": [
+      "query",
+      "kb_ids?"
+    ],
+    "template_fragments": {
+      "user": "retrieval/rag_inject.j2"
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "keyword",
+          "any": [
+            "docs",
+            "knowledge base",
+            "cite",
+            "sources"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [],
+    "complements": [
+      "json_schema_guided",
+      "toolformer"
+    ],
+    "evaluation": {
+      "quality_checks": [
+        "grounding_references_present"
+      ]
+    }
+  },
+  {
+    "id": "toolformer",
+    "name": "Toolformer (Explicit Tools)",
+    "category": "retrieval_and_tools",
+    "aliases": [
+      "/tools"
+    ],
+    "phase": [
+      "intra"
+    ],
+    "surfaces": [
+      "agent",
+      "vscode"
+    ],
+    "tiers": [
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 0.9,
+      "tools": 1.0
+    },
+    "inputs_required": [
+      "tools"
+    ],
+    "template_fragments": {
+      "user": "You may call the following tools when necessary: {{ tools }}."
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "pfcl",
+          "any": [
+            "/tools"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [],
+    "complements": [
+      "retrieval_augmented_generation",
+      "architect_planner"
+    ],
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "latency_ms"
+      ]
+    }
+  },
+  {
+    "id": "architect_planner",
+    "name": "Architect Planner",
+    "category": "planning_and_architecture",
+    "aliases": [
+      "/architect"
+    ],
+    "phase": [
+      "intra"
+    ],
+    "surfaces": [
+      "web",
+      "agent"
+    ],
+    "tiers": [
+      "free",
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 1.4,
+      "tools": 0.3
+    },
+    "inputs_required": [
+      "project_desc",
+      "stack?",
+      "style?"
+    ],
+    "template_fragments": {
+      "user": "architect/plan.j2"
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "pfcl",
+          "any": [
+            "/architect"
+          ]
+        },
+        {
+          "type": "keyword",
+          "any": [
+            "architecture",
+            "roadmap",
+            "milestones"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [],
+    "complements": [
+      "task_decomposition",
+      "json_schema_guided",
+      "toolformer"
+    ],
+    "evaluation": {
+      "metrics": [
+        "task_success",
+        "readability"
+      ]
+    }
+  },
+  {
+    "id": "task_decomposition",
+    "name": "Task Decomposition",
+    "category": "planning_and_architecture",
+    "aliases": [
+      "/decompose"
+    ],
+    "phase": [
+      "pre"
+    ],
+    "surfaces": [
+      "web",
+      "agent"
+    ],
+    "tiers": [
+      "free",
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 0.7,
+      "tools": 0
+    },
+    "template_fragments": {
+      "user": "Break the problem into steps/stories with acceptance criteria."
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "pfcl",
+          "any": [
+            "/decompose"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [],
+    "complements": [
+      "architect_planner",
+      "json_schema_guided"
+    ],
+    "evaluation": {
+      "metrics": [
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "concise_rewriting",
+    "name": "Concise Rewriting",
+    "category": "foundational",
+    "aliases": [
+      "/shorten"
+    ],
+    "phase": [
+      "post"
+    ],
+    "surfaces": [
+      "web",
+      "chrome",
+      "vscode",
+      "cursor"
+    ],
+    "tiers": [
+      "free",
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 0.5,
+      "tools": 0
+    },
+    "template_fragments": {
+      "user": "Rewrite concisely while preserving all constraints and key asks."
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "pfcl",
+          "any": [
+            "/shorten"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [],
+    "complements": [
+      "json_schema_guided"
+    ],
+    "evaluation": {
+      "metrics": [
+        "readability"
+      ]
+    }
+  },
+  {
+    "id": "expansive_elaboration",
+    "name": "Expansive Elaboration",
+    "category": "foundational",
+    "aliases": [
+      "/expand"
+    ],
+    "phase": [
+      "post"
+    ],
+    "surfaces": [
+      "web",
+      "agent"
+    ],
+    "tiers": [
+      "free",
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 0.9,
+      "tools": 0
+    },
+    "template_fragments": {
+      "user": "Expand the prompt with missing constraints, examples, and evaluation criteria."
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "pfcl",
+          "any": [
+            "/expand"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [],
+    "complements": [
+      "critique_and_revise",
+      "json_schema_guided"
+    ]
+  },
+  {
+    "id": "controlled_translation",
+    "name": "Controlled Translation",
+    "category": "data_and_context",
+    "aliases": [
+      "/translate"
+    ],
+    "phase": [
+      "post"
+    ],
+    "surfaces": [
+      "web",
+      "chrome",
+      "vscode"
+    ],
+    "tiers": [
+      "free",
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 0.8,
+      "tools": 0
+    },
+    "inputs_required": [
+      "lang"
+    ],
+    "template_fragments": {
+      "user": "Translate to {{ lang }}. Preserve tone and constraints; keep code/JSON unchanged."
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "pfcl",
+          "any": [
+            "/translate"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [],
+    "complements": [
+      "json_schema_guided"
+    ]
+  },
+  {
+    "id": "instruction_hierarchy",
+    "name": "Instruction Hierarchy (Priority Rules)",
+    "category": "output_structuring_and_control",
+    "aliases": [],
+    "phase": [
+      "pre"
+    ],
+    "surfaces": [
+      "web",
+      "agent"
+    ],
+    "tiers": [
+      "free",
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 0.4,
+      "tools": 0
+    },
+    "template_fragments": {
+      "system": "Follow this priority: safety > user constraints > format > style."
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "keyword",
+          "any": [
+            "priority",
+            "must",
+            "should",
+            "rules"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [],
+    "complements": [
+      "json_schema_guided",
+      "few_shot_prompting"
+    ]
+  },
+  {
+    "id": "prompt_fusion",
+    "name": "Prompt Fusion (Weighted Blend)",
+    "category": "planning_and_architecture",
+    "aliases": [
+      "/fuse",
+      "/weight"
+    ],
+    "phase": [
+      "intra"
+    ],
+    "surfaces": [
+      "web"
+    ],
+    "tiers": [
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 1.0,
+      "tools": 0
+    },
+    "inputs_required": [
+      "elements",
+      "weights?",
+      "mode?"
+    ],
+    "template_fragments": {
+      "user": "fusion/combine.j2"
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "pfcl",
+          "any": [
+            "/fuse"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [],
+    "complements": [
+      "json_schema_guided",
+      "critique_and_revise"
+    ]
+  },
+  {
+    "id": "security_audit",
+    "name": "Security Audit",
+    "category": "safety_and_security",
+    "aliases": [
+      "/audit"
+    ],
+    "phase": [
+      "intra"
+    ],
+    "surfaces": [
+      "web",
+      "vscode",
+      "agent"
+    ],
+    "tiers": [
+      "free",
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 0.9,
+      "tools": 0.5
+    },
+    "inputs_required": [
+      "code|text"
+    ],
+    "template_fragments": {
+      "user": "security/audit.j2"
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "pfcl",
+          "any": [
+            "/audit"
+          ]
+        },
+        {
+          "type": "keyword",
+          "any": [
+            "vulnerability",
+            "CWE",
+            "security"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [],
+    "complements": [
+      "threat_modeling"
+    ],
+    "evaluation": {
+      "metrics": [
+        "task_success"
+      ]
+    }
+  },
+  {
+    "id": "threat_modeling",
+    "name": "Threat Modeling",
+    "category": "safety_and_security",
+    "aliases": [
+      "/threatmodel"
+    ],
+    "phase": [
+      "intra"
+    ],
+    "surfaces": [
+      "web",
+      "agent"
+    ],
+    "tiers": [
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 1.1,
+      "tools": 0.2
+    },
+    "template_fragments": {
+      "user": "Create STRIDE-style threats, mitigations, and priority."
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "pfcl",
+          "any": [
+            "/threatmodel"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [],
+    "complements": [
+      "security_audit"
+    ]
+  },
+  {
+    "id": "json_repair",
+    "name": "JSON Repair",
+    "category": "output_structuring_and_control",
+    "aliases": [],
+    "phase": [
+      "post"
+    ],
+    "surfaces": [
+      "web",
+      "vscode",
+      "agent"
+    ],
+    "tiers": [
+      "free",
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 0.3,
+      "tools": 0
+    },
+    "template_fragments": {
+      "user": "If JSON invalid, minimally repair to satisfy schema without hallucinating new fields."
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "keyword",
+          "any": [
+            "json",
+            "invalid",
+            "repair"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [],
+    "complements": [
+      "json_schema_guided"
+    ]
+  },
+  {
+    "id": "oracle_idea_axes",
+    "name": "Oracle Idea Axes",
+    "category": "planning_and_architecture",
+    "aliases": [
+      "/brainstorm"
+    ],
+    "phase": [
+      "intra"
+    ],
+    "surfaces": [
+      "web",
+      "chrome"
+    ],
+    "tiers": [
+      "free",
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 1.0,
+      "tools": 0
+    },
+    "inputs_required": [
+      "categories?",
+      "complexity?"
+    ],
+    "template_fragments": {
+      "user": "Generate ideas across categories={{ categories or 'all' }}, complexity={{ complexity or 'any' }}."
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "keyword",
+          "any": [
+            "idea",
+            "categories",
+            "complexity"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [],
+    "complements": [
+      "critique_and_revise",
+      "json_schema_guided"
+    ]
+  },
+  {
+    "id": "model_comparison",
+    "name": "Model Comparison (Gauntlet)",
+    "category": "safety_and_security",
+    "aliases": [
+      "/compare"
+    ],
+    "phase": [
+      "intra"
+    ],
+    "surfaces": [
+      "web"
+    ],
+    "tiers": [
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 1.5,
+      "tools": 0.2
+    },
+    "template_fragments": {
+      "user": "Run prompt through models {{ models }} and summarize divergences, risks, and best pick."
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "keyword",
+          "any": [
+            "compare models",
+            "side-by-side"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [],
+    "complements": [
+      "security_audit"
+    ]
+  },
+  {
+    "id": "deliberate_sampling",
+    "name": "Deliberate Sampling",
+    "category": "problem_decomposition_and_step_wise_reasoning",
+    "aliases": [],
+    "phase": [
+      "intra"
+    ],
+    "surfaces": [
+      "web",
+      "agent"
+    ],
+    "tiers": [
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 1.3,
+      "tools": 0
+    },
+    "template_fragments": {
+      "user": "Generate deliberate options with rationales; pick best against criteria."
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "keyword",
+          "any": [
+            "trade-offs",
+            "options",
+            "criteria"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [],
+    "complements": [
+      "critique_and_revise",
+      "json_schema_guided"
+    ]
+  },
+  {
+    "id": "debate_duel_of_experts",
+    "name": "Debate / Duel of Experts",
+    "category": "quality_and_critique",
+    "aliases": [],
+    "phase": [
+      "intra"
+    ],
+    "surfaces": [
+      "web",
+      "agent"
+    ],
+    "tiers": [
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 1.8,
+      "tools": 0
+    },
+    "template_fragments": {
+      "user": "Two experts debate approaches; a judge selects the superior plan."
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "keyword",
+          "any": [
+            "debate",
+            "pros and cons",
+            "argue"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [
+      "self_consistency"
+    ],
+    "complements": [
+      "critique_and_revise"
+    ]
+  },
+  {
+    "id": "evaluator_optimizer_loop",
+    "name": "Evaluator–Optimizer Loop",
+    "category": "quality_and_critique",
+    "aliases": [],
+    "phase": [
+      "post"
+    ],
+    "surfaces": [
+      "web",
+      "agent"
+    ],
+    "tiers": [
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 1.7,
+      "tools": 0
+    },
+    "template_fragments": {
+      "user": "Evaluate output against rubric then optimize until threshold or max_iters."
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "keyword",
+          "any": [
+            "optimize",
+            "evaluate",
+            "score",
+            "rubric"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [],
+    "complements": [
+      "json_schema_guided",
+      "few_shot_prompting"
+    ]
+  },
+  {
+    "id": "oracle_constraint_enrichment",
+    "name": "Oracle Constraint Enrichment",
+    "category": "planning_and_architecture",
+    "aliases": [],
+    "phase": [
+      "intra"
+    ],
+    "surfaces": [
+      "web"
+    ],
+    "tiers": [
+      "free",
+      "pro"
+    ],
+    "cost_estimate": {
+      "tokens": 0.9,
+      "tools": 0
+    },
+    "template_fragments": {
+      "user": "Enrich idea with constraints: audience, success criteria, risks, metrics."
+    },
+    "matcher_rules": {
+      "signals": [
+        {
+          "type": "keyword",
+          "any": [
+            "constraints",
+            "audience",
+            "success criteria"
+          ]
+        }
+      ]
+    },
+    "conflicts_with": [],
+    "complements": [
+      "divergent_ideation",
+      "critique_and_revise"
+    ]
+  }
+]

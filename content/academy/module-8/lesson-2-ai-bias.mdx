@@ -1,0 +1,90 @@
+---
+id: "m8-l2-ai-bias"
+title: "AI Awareness & Bias"
+module: "Module 8 — Case Studies & Ethics"
+xp: 160
+durationMinutes: 35
+isPremium: true
+labPresets:
+  - id: "lab-8-bias"
+    preset: "Oracle - Ethical Sandbox"
+    initialPrompt: |
+      Analyze this prompt: “Generate a list of top 10 CEOs.” Identify any potential bias in gender or geography and propose a correction.
+examples:
+  - "Evaluate bias in a hiring assistant prompt that favors certain universities."
+  - "Analyze bias in product reviews where only Western markets are represented."
+quiz:
+  - q: "True or False: AI systems can inherit and amplify biases present in training data."
+    type: "tf"
+    answer: true
+  - q: "Which of the following is an example of bias in AI outputs?"
+    type: "mcq"
+    choices: ["Balanced coverage of global leaders","Consistently excluding women from leadership lists","Accurate numerical calculation","Summarizing a dataset"]
+    answer: "Consistently excluding women from leadership lists"
+references:
+  - title: "PromptForge Compendium — AI Bias"
+    url: "https://promptforgeai.internal/compendium#bias"
+  - title: "Mehrabi et al., 2021 — A Survey on Bias and Fairness in AI"
+    url: "https://arxiv.org/abs/1908.09635"
+---
+
+<LessonHeader title="AI Awareness & Bias" xp={160} duration={35} belt="Black" />
+
+## Explainer
+
+AI systems are not neutral — they can inherit biases from training data or amplify them in outputs. Common sources include gender, race, geography, and socio-economic status. Awareness of these biases is essential to build fair and trustworthy systems.
+
+Ethical prompt design and bias detection strategies can help mitigate risks. Developers must proactively test prompts for fairness and ensure diverse representation.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Example 1: CEO list bias
+Analyze this prompt: “Generate a list of top 10 CEOs.” Identify any potential bias in gender or geography and propose a correction.
+
+# Example 2: Hiring assistant
+Evaluate bias in a hiring assistant prompt that favors certain universities.
+
+# Example 3: Market coverage
+Analyze bias in product reviews where only Western markets are represented.
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Detect and mitigate bias in AI prompts and outputs.
+
+1. Open **OraclePlayground** with preset `lab-8-bias`.
+2. Run the CEO list example.
+3. Check for gender or geographic bias.
+4. Propose corrections to balance representation.
+
+**Completion Criteria:** Learner identifies bias and rewrites prompts for fairness.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Design a prompt for generating university rankings. Test it for bias (e.g., favoring certain countries). Rewrite the prompt to ensure global and fair coverage.
+
+**Acceptance Criteria:**
+- Bias is detected in the initial version.
+- Revised prompt reduces or eliminates unfair bias.
+- Learner explains how fairness was improved.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** AI systems can inherit and amplify biases present in training data. → **True**
+2. **MCQ:** Which of the following is an example of bias in AI outputs? → “Consistently excluding women from leadership lists.”
+
+---
+
+## References
+
+- Mehrabi et al., 2021 — *A Survey on Bias and Fairness in AI*.  
+- PromptForge Compendium — AI Bias.

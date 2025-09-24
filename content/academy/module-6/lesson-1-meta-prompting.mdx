@@ -1,0 +1,93 @@
+---
+id: "m6-l1-meta"
+title: "Meta-Prompting"
+module: "Module 6 — Dynamic & Meta Prompting"
+xp: 130
+durationMinutes: 30
+isPremium: true
+labPresets:
+  - id: "lab-6-meta"
+    preset: "Oracle - Full Upgrade"
+    initialPrompt: |
+      Rewrite this prompt to make it more effective for summarization tasks: "Explain the French Revolution in one paragraph."
+examples:
+  - "Rewrite this prompt to improve clarity: 'Generate a detailed plan for a startup.'"
+  - "Improve this intent: 'List advantages of renewable energy.'"
+quiz:
+  - q: "True or False: Meta-prompting is the practice of writing prompts that help generate or refine other prompts."
+    type: "tf"
+    answer: true
+  - q: "Which of the following is a core application of meta-prompting?"
+    type: "mcq"
+    choices: ["Generating poetry","Improving prompt design","Translating text","Token compression"]
+    answer: "Improving prompt design"
+references:
+  - title: "PromptForge Compendium — Meta-Prompting"
+    url: "https://promptforgeai.internal/compendium#metaprompting"
+  - title: "OpenAI Cookbook — Meta Prompts"
+    url: "https://github.com/openai/openai-cookbook"
+---
+
+<LessonHeader title="Meta-Prompting" xp={130} duration={30} belt="Red" />
+
+## Explainer
+
+Meta-prompting is the practice of writing prompts that help generate or refine other prompts. Instead of crafting a single-use instruction, meta-prompts provide guidance for creating more effective prompts across different contexts.
+
+For example, a meta-prompt might instruct the model to *improve clarity*, *enforce structure*, or *adapt tone* in a given prompt. This enables systematic refinement and reduces trial-and-error for users.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Example 1: Summarization improvement
+Rewrite this prompt to make it more effective for summarization tasks:
+"Explain the French Revolution in one paragraph."
+
+# Example 2: Startup plan
+Rewrite this prompt to improve clarity:
+"Generate a detailed plan for a startup."
+
+# Example 3: Energy list
+Improve this intent:
+"List advantages of renewable energy."
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Practice writing and applying meta-prompts to refine instructions.
+
+1. Open **OraclePlayground** with preset `lab-6-meta`.
+2. Run the French Revolution example.
+3. Observe how the prompt is rewritten for clarity.
+4. Test additional prompts of your own (e.g., essay, classification, analysis).
+
+**Completion Criteria:** The refined prompts are shorter, clearer, or more structured compared to the original.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Write a meta-prompt that rewrites: “Describe the impact of AI on education” into a more precise prompt requiring 3 bullet points and one real-world example.
+
+**Acceptance Criteria:**
+- Output includes a rewritten version of the original prompt.
+- Rewritten prompt enforces bullet points and an example.
+- Learner can run the improved prompt to verify results.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** Meta-prompting is the practice of writing prompts that help generate or refine other prompts. → **True**
+2. **MCQ:** Which of the following is a core application of meta-prompting? → “Improving prompt design.”
+
+---
+
+## References
+
+- PromptForge Compendium — Meta-Prompting.  
+- OpenAI Cookbook — Meta Prompts.

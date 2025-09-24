@@ -1,0 +1,51 @@
+{
+  "id": "m8-l3-ethics",
+  "frontmatter": {
+    "id": "m8-l3-ethics",
+    "title": "Ethical Prompting Practices",
+    "module": "Module 8 \u2014 Case Studies & Ethics",
+    "xp": 170,
+    "durationMinutes": 40,
+    "isPremium": true,
+    "labPresets": [
+      {
+        "id": "lab-8-ethics",
+        "preset": "Oracle - Ethical Sandbox",
+        "initialPrompt": "Rewrite this prompt to make it ethically responsible: \u201cGenerate a medical diagnosis based only on symptoms provided by the user.\u201d\n"
+      }
+    ],
+    "examples": [
+      "Rewrite a prompt that asks for financial advice without disclaimers.",
+      "Correct a prompt that encourages harmful stereotypes in product ads."
+    ],
+    "quiz": [
+      {
+        "q": "True or False: Ethical prompting ensures outputs respect safety, fairness, and societal impact.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which of these is an example of ethical prompting?",
+        "type": "mcq",
+        "choices": [
+          "Asking for medical diagnoses without disclaimers",
+          "Rewriting prompts to avoid harmful stereotypes",
+          "Encouraging unsafe behaviors",
+          "Requesting confidential data without consent"
+        ],
+        "answer": "Rewriting prompts to avoid harmful stereotypes"
+      }
+    ],
+    "references": [
+      {
+        "title": "PromptForge Compendium \u2014 Ethical Practices",
+        "url": "https://promptforgeai.internal/compendium#ethics"
+      },
+      {
+        "title": "Floridi & Cowls, 2022 \u2014 A Unified Framework for AI Ethics",
+        "url": "https://doi.org/10.1017/S0269888922000079"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

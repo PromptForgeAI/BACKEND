@@ -1,0 +1,51 @@
+{
+  "id": "m3-l3-demo",
+  "frontmatter": {
+    "id": "m3-l3-demo",
+    "title": "Demo of Chrome Extension & VS Code Extension",
+    "module": "Module 3 \u2014 PromptForge Starter Labs",
+    "xp": 90,
+    "durationMinutes": 20,
+    "isPremium": false,
+    "labPresets": [
+      {
+        "id": "lab-3-demo",
+        "preset": "Oracle - Quick Upgrade (Sandbox)",
+        "initialPrompt": "Demonstrate how the Chrome or VS Code extension can be used to upgrade and run prompts directly within workflows.\n"
+      }
+    ],
+    "examples": [
+      "Use the Chrome extension to upgrade a prompt on a news article.",
+      "Run a prompt upgrade inside VS Code for a Python function documentation task."
+    ],
+    "quiz": [
+      {
+        "q": "True or False: The PromptForge Chrome extension allows users to refine prompts directly in the browser.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which of the following is a benefit of the VS Code extension?",
+        "type": "mcq",
+        "choices": [
+          "Debugging low-level GPU code",
+          "Upgrading prompts within the coding workflow",
+          "Replacing the operating system",
+          "Automatically fine-tuning models"
+        ],
+        "answer": "Upgrading prompts within the coding workflow"
+      }
+    ],
+    "references": [
+      {
+        "title": "PromptForge Documentation \u2014 Extensions",
+        "url": "https://promptforgeai.internal/docs/extensions"
+      },
+      {
+        "title": "PromptForge Compendium \u2014 Starter Labs",
+        "url": "https://promptforgeai.internal/compendium#starterlabs"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

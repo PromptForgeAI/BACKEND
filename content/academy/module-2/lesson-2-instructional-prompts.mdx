@@ -1,0 +1,90 @@
+---
+id: "m2-l2-instructional"
+title: "Instructional Prompts"
+module: "Module 2 — Getting More from Your Prompts"
+xp: 70
+durationMinutes: 15
+isPremium: false
+labPresets:
+  - id: "lab-2-instructional"
+    preset: "Oracle - Quick Upgrade (Sandbox)"
+    initialPrompt: |
+      Write a 3-step guide on how to prepare a cup of green tea.
+examples:
+  - "List the top 3 benefits of daily exercise."
+  - "Write a step-by-step guide to installing Python on Windows."
+quiz:
+  - q: "True or False: Instructional prompts guide the model by specifying desired actions or steps."
+    type: "tf"
+    answer: true
+  - q: "Which of these is an instructional prompt?"
+    type: "mcq"
+    choices: ["Summarize this news article.", "Translate into Spanish.", "Explain how to change a flat tire in steps.", "Classify this review as positive or negative."]
+    answer: "Explain how to change a flat tire in steps."
+references:
+  - title: "Prompting Basics — Compendium"
+    url: "https://promptforgeai.internal/compendium#instructional"
+  - title: "OpenAI Cookbook — Instructional Prompts"
+    url: "https://github.com/openai/openai-cookbook"
+---
+
+<LessonHeader title="Instructional Prompts" xp={70} duration={15} belt="Blue" />
+
+## Explainer
+
+Instructional prompts explicitly direct the model to perform a task by framing the request as a set of instructions. These prompts provide clarity and structure, which is particularly effective for procedural, step-by-step, or ordered tasks.
+
+Compared to zero-shot or role prompting, instructional prompts reduce ambiguity by giving the model clear guidance. They are useful for tutorials, process explanations, and structured outputs where order and precision matter.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Example 1: Step guide
+Write a 3-step guide on how to prepare a cup of green tea.
+
+# Example 2: How-to explanation
+Explain how to reset a forgotten password in four steps.
+
+# Example 3: Instructional list
+List five key steps to improve cybersecurity in small businesses.
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Apply instructional prompts to generate ordered, step-based outputs.
+
+1. Open **OraclePlayground** with preset `lab-2-instructional`.
+2. Run the green tea preparation example.
+3. Modify the task (e.g., “install Node.js” or “bake a cake”) and re-run.
+4. Observe how the model structures instructions based on your directive.
+
+**Completion Criteria:** The model generates clear, logically ordered steps.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Write an instructional prompt that guides the model to explain how to prepare for a remote job interview.
+
+**Acceptance Criteria:**
+- Response includes at least 4 distinct steps.
+- Steps are logically ordered and easy to follow.
+- Guidance is practical and professional.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** Instructional prompts guide the model by specifying desired actions or steps. → **True**
+2. **MCQ:** Which of these is an instructional prompt? → “Explain how to change a flat tire in steps.”
+
+---
+
+## References
+
+- OpenAI Cookbook — Instructional Prompts.  
+- Prompting Basics — Academy Compendium.

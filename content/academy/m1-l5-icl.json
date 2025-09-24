@@ -1,0 +1,51 @@
+{
+  "id": "m1-l5-icl",
+  "frontmatter": {
+    "id": "m1-l5-icl",
+    "title": "In-Context Learning (ICL) Essentials",
+    "module": "Module 1 \u2014 The Basics of Prompting",
+    "xp": 90,
+    "durationMinutes": 20,
+    "isPremium": false,
+    "labPresets": [
+      {
+        "id": "lab-5-icl",
+        "preset": "Oracle - Quick Upgrade (Sandbox)",
+        "initialPrompt": "Demonstrate In-Context Learning by providing two examples of input-output pairs for a new task and then performing the task on a test input.\n"
+      }
+    ],
+    "examples": [
+      "Example: Q: 'Capital of France?' -> A: 'Paris'",
+      "Example: Q: '5 + 7' -> A: '12'"
+    ],
+    "quiz": [
+      {
+        "q": "True or False: In-Context Learning requires modifying the model\u2019s weights to learn a new task.",
+        "type": "tf",
+        "answer": false
+      },
+      {
+        "q": "Which statement best describes ICL?",
+        "type": "mcq",
+        "choices": [
+          "Training the model on new data",
+          "Including examples in the prompt to teach the model a task",
+          "Compressing tokens",
+          "Using external APIs"
+        ],
+        "answer": "Including examples in the prompt to teach the model a task"
+      }
+    ],
+    "references": [
+      {
+        "title": "Brown et al., 2020 \u2014 Language Models are Few-Shot Learners",
+        "url": "https://arxiv.org/abs/2005.14165"
+      },
+      {
+        "title": "Zhang et al., 2023 \u2014 Understanding In-Context Learning",
+        "url": "https://arxiv.org/abs/2301.03639"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

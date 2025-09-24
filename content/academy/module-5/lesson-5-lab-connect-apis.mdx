@@ -1,0 +1,90 @@
+---
+id: "m5-l5-lab-apis"
+title: "Lab: Connect PromptForge with APIs"
+module: "Module 5 — Augmenting LLMs"
+xp: 140
+durationMinutes: 35
+isPremium: true
+labPresets:
+  - id: "lab-5-connect-apis"
+    preset: "Oracle - Full Upgrade"
+    initialPrompt: |
+      Demonstrate connecting to an external API (e.g., weather or dictionary) using PromptForge. Retrieve the data and integrate it into a structured response.
+examples:
+  - "Connect to a weather API and provide tomorrow’s forecast in JSON format."
+  - "Use a dictionary API to define 'artificial intelligence' and return the definition in Markdown."
+quiz:
+  - q: "True or False: PromptForge can integrate with external APIs to enhance prompt outputs."
+    type: "tf"
+    answer: true
+  - q: "What is the key purpose of connecting APIs with PromptForge?"
+    type: "mcq"
+    choices: ["To replace LLM reasoning entirely","To augment outputs with real-world data","To compress prompts automatically","To eliminate the need for credits"]
+    answer: "To augment outputs with real-world data"
+references:
+  - title: "PromptForge Compendium — API Integration"
+    url: "https://promptforgeai.internal/compendium#apiconnect"
+  - title: "Toolformer Extensions for API Chaining"
+    url: "https://arxiv.org/abs/2302.04761"
+---
+
+<LessonHeader title="Lab: Connect PromptForge with APIs" xp={140} duration={35} belt="Brown" />
+
+## Explainer
+
+This lab provides hands-on practice integrating PromptForge with external APIs. By connecting APIs like weather, dictionary, or financial data services, learners can enrich model outputs with real-world, up-to-date information.
+
+Through this exercise, students experience how PromptForge acts as a hub that not only upgrades prompts but also orchestrates data retrieval for more reliable and actionable outputs.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Example 1: Weather API
+Connect to a weather API and provide tomorrow’s forecast in JSON format.
+
+# Example 2: Dictionary API
+Use a dictionary API to define "artificial intelligence" and return the definition in Markdown.
+
+# Example 3: Finance API
+Retrieve today’s stock price for Tesla and output it in a structured table.
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Learn to connect PromptForge with APIs for enriched outputs.
+
+1. Open **OraclePlayground** with preset `lab-5-connect-apis`.
+2. Run the weather API example.
+3. Replace the API call with a dictionary or finance API.
+4. Observe how real-world data is integrated into the model’s output.
+
+**Completion Criteria:** Learner successfully retrieves external data and integrates it into a structured, usable format.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Connect to a public API of your choice (e.g., news, currency exchange, or sports scores) and use PromptForge to generate a structured, shareable summary of the retrieved data.
+
+**Acceptance Criteria:**
+- Prompt connects to a valid external API.
+- Output is accurate, structured, and clearly grounded in retrieved data.
+- Summary is concise and ready for practical use.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** PromptForge can integrate with external APIs to enhance prompt outputs. → **True**
+2. **MCQ:** What is the key purpose of connecting APIs with PromptForge? → “To augment outputs with real-world data.”
+
+---
+
+## References
+
+- PromptForge Compendium — API Integration.  
+- Toolformer Extensions for API Chaining.

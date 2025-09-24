@@ -1,0 +1,51 @@
+{
+  "id": "m5-l3-toolformer",
+  "frontmatter": {
+    "id": "m5-l3-toolformer",
+    "title": "Toolformer & API-Augmented Models",
+    "module": "Module 5 \u2014 Augmenting LLMs",
+    "xp": 120,
+    "durationMinutes": 25,
+    "isPremium": true,
+    "labPresets": [
+      {
+        "id": "lab-5-toolformer",
+        "preset": "Oracle - Full Upgrade",
+        "initialPrompt": "Use Toolformer-style prompting to call an external calculator API and solve: 248 * 37.\n"
+      }
+    ],
+    "examples": [
+      "Query a weather API: What is the temperature in Paris right now?",
+      "Use a calculator tool to compute: (145 + 27) / 12."
+    ],
+    "quiz": [
+      {
+        "q": "True or False: Toolformer enables models to call external APIs during inference.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which of the following is an example of Toolformer use?",
+        "type": "mcq",
+        "choices": [
+          "Writing a poem",
+          "Calling an API to fetch stock prices",
+          "Summarizing text without references",
+          "Generating fictional stories"
+        ],
+        "answer": "Calling an API to fetch stock prices"
+      }
+    ],
+    "references": [
+      {
+        "title": "Schick et al., 2023 \u2014 Toolformer: Language Models Can Teach Themselves to Use Tools",
+        "url": "https://arxiv.org/abs/2302.04761"
+      },
+      {
+        "title": "PromptForge Compendium \u2014 Toolformer",
+        "url": "https://promptforgeai.internal/compendium#toolformer"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

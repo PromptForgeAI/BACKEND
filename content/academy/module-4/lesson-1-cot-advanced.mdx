@@ -1,0 +1,92 @@
+---
+id: "m4-l1-cot-advanced"
+title: "Chain-of-Thought Advanced"
+module: "Module 4 — Advanced Prompting Strategies"
+xp: 100
+durationMinutes: 25
+isPremium: true
+labPresets:
+  - id: "lab-4-cot-advanced"
+    preset: "Oracle - Full Upgrade"
+    initialPrompt: |
+      Solve this reasoning task step by step and provide confidence scoring for each step.
+      Task: A farmer has 17 cows. All but 8 run away. How many cows are left?
+examples:
+  - "If there are 12 pencils and I give away 5, how many are left? Explain step by step with confidence levels."
+  - "A shopkeeper buys 3 pens at $2 each and sells them for $10 total. What is the profit? Walk through the reasoning step by step."
+quiz:
+  - q: "True or False: Advanced Chain-of-Thought often includes confidence scoring or self-verification steps."
+    type: "tf"
+    answer: true
+  - q: "Which advanced feature enhances CoT prompting for improved reliability?"
+    type: "mcq"
+    choices: ["Confidence scoring","Role prompting","Random token pruning","Translation"]
+    answer: "Confidence scoring"
+references:
+  - title: "Wei et al., 2022 — Chain-of-Thought Prompting Elicits Reasoning"
+    url: "https://arxiv.org/abs/2201.11903"
+  - title: "Kojima et al., 2022 — Large Language Models are Zero-Shot Reasoners"
+    url: "https://arxiv.org/abs/2205.11916"
+---
+
+<LessonHeader title="Chain-of-Thought Advanced" xp={100} duration={25} belt="Purple" />
+
+## Explainer
+
+Advanced Chain-of-Thought (CoT) prompting goes beyond the basic “step by step” instruction by incorporating techniques like **confidence scoring, multiple reasoning paths, and self-checking mechanisms**. These approaches improve reliability and robustness when solving multi-step or complex reasoning tasks.
+
+By generating reasoning chains with confidence scores or comparing multiple reasoning paths, models can reduce errors and provide more trustworthy outputs. This is especially useful for mathematics, logical puzzles, and decision-making tasks.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Example 1: Confidence scoring
+If there are 12 pencils and I give away 5, how many are left? Explain step by step and provide confidence levels for each step.
+
+# Example 2: Profit calculation
+A shopkeeper buys 3 pens at $2 each and sells them for $10 total. What is the profit? Solve step by step.
+
+# Example 3: Logic puzzle
+A farmer has 17 cows. All but 8 run away. How many cows remain? Think step by step and explain the reasoning.
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Apply advanced CoT prompting with confidence scoring and multiple reasoning paths.
+
+1. Open **OraclePlayground** with preset `lab-4-cot-advanced`.
+2. Run the farmer puzzle example.
+3. Review the reasoning chain and confidence scores.
+4. Modify the problem to introduce ambiguity (e.g., word problems with multiple interpretations).
+5. Compare results with and without confidence scoring.
+
+**Completion Criteria:** Model produces step-by-step reasoning with added confidence or verification signals.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Create a CoT prompt that solves: “A train leaves at 2 PM and travels at 60 km/h. Another train leaves the same station at 3 PM traveling at 90 km/h. At what time will the second train catch up?”
+
+**Acceptance Criteria:**
+- Output includes step-by-step reasoning.
+- Model clearly explains time-distance calculation.
+- Reasoning includes confidence or verification check.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** Advanced Chain-of-Thought often includes confidence scoring or self-verification steps. → **True**
+2. **MCQ:** Which advanced feature enhances CoT prompting for improved reliability? → “Confidence scoring.”
+
+---
+
+## References
+
+- Wei et al., 2022 — *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*.  
+- Kojima et al., 2022 — *Large Language Models are Zero-Shot Reasoners*.

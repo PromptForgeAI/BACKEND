@@ -1,0 +1,51 @@
+{
+  "id": "m5-l1-rag",
+  "frontmatter": {
+    "id": "m5-l1-rag",
+    "title": "Retrieval-Augmented Generation (RAG)",
+    "module": "Module 5 \u2014 Augmenting LLMs",
+    "xp": 120,
+    "durationMinutes": 25,
+    "isPremium": true,
+    "labPresets": [
+      {
+        "id": "lab-5-rag",
+        "preset": "Oracle - Full Upgrade",
+        "initialPrompt": "Retrieve relevant information about climate change from the knowledge base and generate a structured summary in 3 bullet points.\n"
+      }
+    ],
+    "examples": [
+      "Retrieve the top 3 recent developments in quantum computing and summarize them in bullet points.",
+      "Use retrieval to answer: What are the health benefits of meditation?"
+    ],
+    "quiz": [
+      {
+        "q": "True or False: Retrieval-Augmented Generation (RAG) combines external data retrieval with generative capabilities.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which component of RAG is responsible for fetching relevant documents?",
+        "type": "mcq",
+        "choices": [
+          "Retriever",
+          "Generator",
+          "Tokenizer",
+          "Optimizer"
+        ],
+        "answer": "Retriever"
+      }
+    ],
+    "references": [
+      {
+        "title": "Lewis et al., 2020 \u2014 Retrieval-Augmented Generation",
+        "url": "https://arxiv.org/abs/2005.11401"
+      },
+      {
+        "title": "PromptForge Compendium \u2014 RAG",
+        "url": "https://promptforgeai.internal/compendium#rag"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

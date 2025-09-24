@@ -1,0 +1,536 @@
+{
+  "version": "2.1.0",
+  "engine": "demon_engine",
+  "updated_at": "2025-08-27T00:00:00Z",
+  "description": "Operational compendium for technique selection, PFCL command mapping, composition rules, and evaluation for Demon Engine. This file is machine-consumable and used by matcher, planner, and pipeline stages.",
+  "defaults": {
+    "surfaces": ["web", "chrome", "vscode", "cursor", "agent"],
+    "tiers": ["free", "pro"],
+    "budget_tokens": {"free": 1.0, "pro": 2.0},
+    "max_reasoning_expensive": 1,
+    "retry_policy": {"retries": 2, "backoff": "exponential", "base_ms": 200},
+    "llm": {"provider": "openai", "model_free": "gpt-4o-mini", "model_pro": "gpt-4.1"},
+    "cache": {"enable_transform_cache": true, "ttl_seconds": 86400}
+  },
+  "pfcl": {
+    "commands": {
+      "/clean": {"maps_to": ["rephrase_and_respond"], "modifiers": {"preserve_intent": true}},
+      "/structure": {"maps_to": ["json_schema_guided"], "modifiers": {"preserve_intent": true}},
+      "/upgrade": {"maps_to": ["step_back_prompting", "few_shot_prompting"], "modifiers": {"preserve_intent": false}},
+      "/brainstorm": {"maps_to": ["divergent_ideation"], "args": {"n": {"type": "int", "default": 10}}},
+      "/architect": {"maps_to": ["architect_planner"]},
+      "/cot": {"maps_to": ["chain_of_thought"]},
+      "/rag": {"maps_to": ["retrieval_augmented_generation"]},
+      "/tools": {"maps_to": ["toolformer"]},
+      "/critic": {"maps_to": ["critique_and_revise"]},
+      "/schema": {"maps_to": ["json_schema_guided"]},
+      "/strict": {"maps_to": [], "modifiers": {"strict_mode": true}},
+      "/preserve": {"maps_to": [], "modifiers": {"preserve_intent": true}},
+      "/shorten": {"maps_to": ["concise_rewriting"], "modifiers": {"preserve_intent": true}},
+      "/expand": {"maps_to": ["expansive_elaboration"]},
+      "/translate": {"maps_to": ["controlled_translation"], "args": {"lang": {"type": "string"}}},
+      "/audit": {"maps_to": ["security_audit"]},
+      "/threatmodel": {"maps_to": ["threat_modeling"]},
+      "/decompose": {"maps_to": ["task_decomposition"]},
+      "/fuse": {"maps_to": ["prompt_fusion"]},
+      "/weight": {"maps_to": ["prompt_fusion"], "args": {"key": {"type": "string"}, "value": {"type": "number"}}}
+    }
+  },
+  "scoring": {
+    "signals": {
+      "keyword_hit": 1.0,
+      "pfcl_alias": 2.0,
+      "surface_match": 0.2,
+      "tier_match": 0.2,
+      "ambiguity_boost": {"threshold": 0.6, "weight": 0.8},
+      "length_penalty": {"min_chars": 50, "penalty": -0.4}
+    },
+    "budget_weights": {"tokens": 1.0, "tools": 1.0},
+    "selection": {"max_techniques": 6, "prefer_complements": true}
+  },
+  "evaluation": {
+    "metrics": [
+      "schema_accuracy", "valid_json_rate", "reasoning_consistency", "novelty_score",
+      "readability", "task_success", "latency_ms", "tokens_total", "repair_attempts",
+      "user_satisfaction_proxy"
+    ],
+    "quality_checks": [
+      "valid_json", "schema_compliance", "intent_preserved", "no_sensitive_leakage",
+      "no_policy_violation", "grounding_references_present"
+    ]
+  },
+  "categories": [
+    "foundational", "problem_decomposition_and_step_wise_reasoning", "data_and_context",
+    "output_structuring_and_control", "quality_and_critique", "retrieval_and_tools",
+    "planning_and_architecture", "safety_and_security"
+  ],
+  "fragments_index": {
+    "structure/system_schema_guard.j2": "// System: Output MUST satisfy the provided JSON Schema. Return ONLY JSON.",
+    "structure/user_schema_guard.j2": "You must output JSON that validates against this schema: {{ json_schema }}",
+    "foundations/system_role_minimal.j2": "You are a precise assistant. Keep intent and constraints.",
+    "reasoning/step_back.j2": "Before answering, restate the objective and constraints succinctly, then plan steps.",
+    "reasoning/cot_hidden.j2": "Think through the problem internally. Provide only the final answer unless rationale explicitly requested.",
+    "quality/critic.j2": "Critique the draft on: clarity, coverage, risks, testability. Provide actionable revisions.",
+    "fusion/combine.j2": "Fuse elements with weights: {{ weights }}. Preserve constraints and instruction hierarchy.",
+    "architect/plan.j2": "Produce architecture: objectives, components, data model, APIs, infra, milestones, risks.",
+    "security/audit.j2": "Analyze for vulnerabilities. Include CWE tags, likelihood, impact, and fixes.",
+    "retrieval/rag_inject.j2": "Use the following retrieved snippets as ground truth with citations: {{ contexts }}"
+  },
+  "techniques": [
+    {
+      "id": "rephrase_and_respond",
+      "name": "Rephrase & Respond (Clean Preserving Intent)",
+      "category": "foundational",
+      "aliases": ["/clean", "/preserve"],
+      "phase": ["pre", "post"],
+      "surfaces": ["web", "chrome", "vscode", "cursor", "agent"],
+      "tiers": ["free", "pro"],
+      "cost_estimate": {"tokens": 0.6, "tools": 0},
+      "core_principle": "Improve clarity/grammar without altering intent.",
+      "inputs_required": ["prompt_text"],
+      "template_fragments": {
+        "system": "foundations/system_role_minimal.j2",
+        "user": "Rephrase for clarity without changing meaning. Original: {{ prompt_text }}"
+      },
+      "matcher_rules": {
+        "signals": [
+          {"type": "pfcl", "any": ["/clean"]},
+          {"type": "keyword", "any": ["clean", "grammar", "clarity", "tidy", "fix spelling"]}
+        ],
+        "contra": [
+          {"type": "length_chars", "lt": 10}
+        ]
+      },
+      "conflicts_with": ["divergent_ideation"],
+      "complements": ["json_schema_guided", "instruction_hierarchy"],
+      "evaluation": {
+        "quality_checks": ["intent_preserved"],
+        "metrics": ["readability", "tokens_total", "latency_ms"]
+      }
+    },
+    {
+      "id": "json_schema_guided",
+      "name": "JSON Schema-Guided Output",
+      "category": "output_structuring_and_control",
+      "aliases": ["/structure", "/schema", "/strict"],
+      "phase": ["post"],
+      "surfaces": ["web", "vscode", "chrome", "cursor", "agent"],
+      "tiers": ["free", "pro"],
+      "cost_estimate": {"tokens": 1.1, "tools": 0},
+      "core_principle": "Constrain model output to a strict JSON schema with auto-repair attempts.",
+      "inputs_required": ["json_schema"],
+      "template_fragments": {
+        "system": "structure/system_schema_guard.j2",
+        "user": "structure/user_schema_guard.j2"
+      },
+      "matcher_rules": {
+        "signals": [
+          {"type": "pfcl", "any": ["/structure", "/schema", "/strict"]},
+          {"type": "keyword", "any": ["json", "schema", "contract", "valid json", "keys:"]}
+        ],
+        "contra": [
+          {"type": "length_chars", "lt": 40}
+        ]
+      },
+      "conflicts_with": ["self_consistency"],
+      "complements": ["few_shot_prompting", "role_playing_persona"],
+      "evaluation": {
+        "quality_checks": ["valid_json", "schema_compliance"],
+        "metrics": ["schema_accuracy", "repair_attempts", "latency_ms"]
+      }
+    },
+    {
+      "id": "few_shot_prompting",
+      "name": "Few-Shot Prompting",
+      "category": "foundational",
+      "aliases": ["/upgrade"],
+      "phase": ["intra"],
+      "surfaces": ["web", "vscode", "agent"],
+      "tiers": ["free", "pro"],
+      "cost_estimate": {"tokens": 1.2, "tools": 0},
+      "core_principle": "Provide k exemplars to shape task behavior and style.",
+      "inputs_required": ["examples?"],
+      "template_fragments": {
+        "user": "Using the following examples, perform the task. Examples: {{ examples }}. Task: {{ prompt_text }}"
+      },
+      "matcher_rules": {
+        "signals": [
+          {"type": "pfcl", "any": ["/upgrade"]},
+          {"type": "keyword", "any": ["like this", "example", "pattern", "format like"]}
+        ]
+      },
+      "conflicts_with": [],
+      "complements": ["json_schema_guided", "instruction_hierarchy", "step_back_prompting"],
+      "evaluation": {"metrics": ["task_success", "tokens_total"]}
+    },
+    {
+      "id": "role_playing_persona",
+      "name": "Role-Playing Persona",
+      "category": "foundational",
+      "aliases": [],
+      "phase": ["pre"],
+      "surfaces": ["web", "chrome", "vscode", "cursor", "agent"],
+      "tiers": ["free", "pro"],
+      "cost_estimate": {"tokens": 0.3, "tools": 0},
+      "core_principle": "Set system role with task-aligned persona and tone.",
+      "inputs_required": ["persona?"],
+      "template_fragments": {"system": "You are {{ persona or 'a precise expert assistant' }}."},
+      "matcher_rules": {"signals": [{"type": "keyword", "any": ["as an expert", "act as", "role:"]}]},
+      "conflicts_with": [],
+      "complements": ["json_schema_guided", "few_shot_prompting"],
+      "evaluation": {"metrics": ["user_satisfaction_proxy"]}
+    },
+    {
+      "id": "step_back_prompting",
+      "name": "Step-Back Prompting",
+      "category": "problem_decomposition_and_step_wise_reasoning",
+      "aliases": ["/upgrade"],
+      "phase": ["pre"],
+      "surfaces": ["web", "agent"],
+      "tiers": ["free", "pro"],
+      "cost_estimate": {"tokens": 0.8, "tools": 0},
+      "core_principle": "Summarize the objective and constraints, then outline a minimal plan before answering.",
+      "template_fragments": {"user": "Objective: {{ objective }}. Constraints: {{ constraints }}. Provide a brief plan then the answer."},
+      "matcher_rules": {"signals": [{"type": "keyword", "any": ["plan", "steps", "before answering"]}]},
+      "conflicts_with": [],
+      "complements": ["chain_of_thought", "critique_and_revise"],
+      "evaluation": {"metrics": ["reasoning_consistency", "latency_ms"]}
+    },
+    {
+      "id": "chain_of_thought",
+      "name": "Chain-of-Thought (Hidden)",
+      "category": "problem_decomposition_and_step_wise_reasoning",
+      "aliases": ["/cot", "/think"],
+      "phase": ["intra"],
+      "surfaces": ["web", "agent"],
+      "tiers": ["pro"],
+      "cost_estimate": {"tokens": 1.6, "tools": 0},
+      "risk": "verbosity",
+      "pfcl_defaults": {"show_rationale": false},
+      "template_fragments": {"system": "reasoning/cot_hidden.j2"},
+      "matcher_rules": {
+        "signals": [
+          {"type": "pfcl", "any": ["/cot"]},
+          {"type": "keyword", "any": ["multi-step", "reason about", "explain steps"]},
+          {"type": "ambiguity", "gte": 0.6}
+        ]
+      },
+      "conflicts_with": ["self_consistency"],
+      "complements": ["critique_and_revise", "step_back_prompting"],
+      "evaluation": {"metrics": ["reasoning_consistency"]}
+    },
+    {
+      "id": "self_consistency",
+      "name": "Self-Consistency Sampling",
+      "category": "problem_decomposition_and_step_wise_reasoning",
+      "aliases": [],
+      "phase": ["intra"],
+      "surfaces": ["web", "agent"],
+      "tiers": ["pro"],
+      "cost_estimate": {"tokens": 1.9, "tools": 0},
+      "core_principle": "Sample multiple reasoning paths and aggregate final answers.",
+      "template_fragments": {"user": "Produce K candidate solutions; then choose the consensus."},
+      "matcher_rules": {"signals": [{"type": "keyword", "any": ["confidence", "verify", "multiple answers"]}]},
+      "conflicts_with": ["json_schema_guided"],
+      "complements": ["critique_and_revise"],
+      "evaluation": {"metrics": ["consistency_rate", "tokens_total"]}
+    },
+    {
+      "id": "divergent_ideation",
+      "name": "Divergent Ideation (Brainstorm)",
+      "category": "planning_and_architecture",
+      "aliases": ["/brainstorm"],
+      "phase": ["intra"],
+      "surfaces": ["web", "chrome", "agent"],
+      "tiers": ["free", "pro"],
+      "cost_estimate": {"tokens": 1.1, "tools": 0},
+      "core_principle": "Generate a wide set of options along axes (domain, audience, novelty).",
+      "inputs_required": ["n?", "axes?"],
+      "template_fragments": {"user": "Generate {{ n or 10 }} distinct options across axes: {{ axes or 'domain,audience,novelty' }}."},
+      "matcher_rules": {"signals": [{"type": "pfcl", "any": ["/brainstorm"]}]},
+      "conflicts_with": ["rephrase_and_respond"],
+      "complements": ["critique_and_revise", "json_schema_guided"],
+      "evaluation": {"metrics": ["novelty_score", "user_satisfaction_proxy"]}
+    },
+    {
+      "id": "critique_and_revise",
+      "name": "Critique & Revise",
+      "category": "quality_and_critique",
+      "aliases": ["/critic"],
+      "phase": ["post"],
+      "surfaces": ["web", "vscode", "agent"],
+      "tiers": ["free", "pro"],
+      "cost_estimate": {"tokens": 0.9, "tools": 0},
+      "template_fragments": {"system": "quality/critic.j2"},
+      "matcher_rules": {"signals": [{"type": "pfcl", "any": ["/critic"]}, {"type": "keyword", "any": ["review", "critique", "improve"]}]},
+      "conflicts_with": [],
+      "complements": ["json_schema_guided", "few_shot_prompting"],
+      "evaluation": {"metrics": ["readability", "task_success"]}
+    },
+    {
+      "id": "retrieval_augmented_generation",
+      "name": "Retrieval-Augmented Generation (RAG)",
+      "category": "retrieval_and_tools",
+      "aliases": ["/rag"],
+      "phase": ["pre", "intra"],
+      "surfaces": ["web", "vscode", "agent"],
+      "tiers": ["pro"],
+      "cost_estimate": {"tokens": 1.2, "tools": 0.8},
+      "inputs_required": ["query", "kb_ids?"],
+      "template_fragments": {"user": "retrieval/rag_inject.j2"},
+      "matcher_rules": {"signals": [{"type": "keyword", "any": ["docs", "knowledge base", "cite", "sources"]}]},
+      "conflicts_with": [],
+      "complements": ["json_schema_guided", "toolformer"],
+      "evaluation": {"quality_checks": ["grounding_references_present"]}
+    },
+    {
+      "id": "toolformer",
+      "name": "Toolformer (Explicit Tools)",
+      "category": "retrieval_and_tools",
+      "aliases": ["/tools"],
+      "phase": ["intra"],
+      "surfaces": ["agent", "vscode"],
+      "tiers": ["pro"],
+      "cost_estimate": {"tokens": 0.9, "tools": 1.0},
+      "inputs_required": ["tools"],
+      "template_fragments": {"user": "You may call the following tools when necessary: {{ tools }}."},
+      "matcher_rules": {"signals": [{"type": "pfcl", "any": ["/tools"]}]},
+      "conflicts_with": [],
+      "complements": ["retrieval_augmented_generation", "architect_planner"],
+      "evaluation": {"metrics": ["task_success", "latency_ms"]}
+    },
+    {
+      "id": "architect_planner",
+      "name": "Architect Planner",
+      "category": "planning_and_architecture",
+      "aliases": ["/architect"],
+      "phase": ["intra"],
+      "surfaces": ["web", "agent"],
+      "tiers": ["free", "pro"],
+      "cost_estimate": {"tokens": 1.4, "tools": 0.3},
+      "inputs_required": ["project_desc", "stack?", "style?"],
+      "template_fragments": {"user": "architect/plan.j2"},
+      "matcher_rules": {"signals": [{"type": "pfcl", "any": ["/architect"]}, {"type": "keyword", "any": ["architecture", "roadmap", "milestones"]}]},
+      "conflicts_with": [],
+      "complements": ["task_decomposition", "json_schema_guided", "toolformer"],
+      "evaluation": {"metrics": ["task_success", "readability"]}
+    },
+    {
+      "id": "task_decomposition",
+      "name": "Task Decomposition",
+      "category": "planning_and_architecture",
+      "aliases": ["/decompose"],
+      "phase": ["pre"],
+      "surfaces": ["web", "agent"],
+      "tiers": ["free", "pro"],
+      "cost_estimate": {"tokens": 0.7, "tools": 0},
+      "template_fragments": {"user": "Break the problem into steps/stories with acceptance criteria."},
+      "matcher_rules": {"signals": [{"type": "pfcl", "any": ["/decompose"]}]},
+      "conflicts_with": [],
+      "complements": ["architect_planner", "json_schema_guided"],
+      "evaluation": {"metrics": ["task_success"]}
+    },
+    {
+      "id": "concise_rewriting",
+      "name": "Concise Rewriting",
+      "category": "foundational",
+      "aliases": ["/shorten"],
+      "phase": ["post"],
+      "surfaces": ["web", "chrome", "vscode", "cursor"],
+      "tiers": ["free", "pro"],
+      "cost_estimate": {"tokens": 0.5, "tools": 0},
+      "template_fragments": {"user": "Rewrite concisely while preserving all constraints and key asks."},
+      "matcher_rules": {"signals": [{"type": "pfcl", "any": ["/shorten"]}]},
+      "conflicts_with": [],
+      "complements": ["json_schema_guided"],
+      "evaluation": {"metrics": ["readability"]}
+    },
+    {
+      "id": "expansive_elaboration",
+      "name": "Expansive Elaboration",
+      "category": "foundational",
+      "aliases": ["/expand"],
+      "phase": ["post"],
+      "surfaces": ["web", "agent"],
+      "tiers": ["free", "pro"],
+      "cost_estimate": {"tokens": 0.9, "tools": 0},
+      "template_fragments": {"user": "Expand the prompt with missing constraints, examples, and evaluation criteria."},
+      "matcher_rules": {"signals": [{"type": "pfcl", "any": ["/expand"]}]},
+      "conflicts_with": [],
+      "complements": ["critique_and_revise", "json_schema_guided"]
+    },
+    {
+      "id": "controlled_translation",
+      "name": "Controlled Translation",
+      "category": "data_and_context",
+      "aliases": ["/translate"],
+      "phase": ["post"],
+      "surfaces": ["web", "chrome", "vscode"],
+      "tiers": ["free", "pro"],
+      "cost_estimate": {"tokens": 0.8, "tools": 0},
+      "inputs_required": ["lang"],
+      "template_fragments": {"user": "Translate to {{ lang }}. Preserve tone and constraints; keep code/JSON unchanged."},
+      "matcher_rules": {"signals": [{"type": "pfcl", "any": ["/translate"]}]},
+      "conflicts_with": [],
+      "complements": ["json_schema_guided"]
+    },
+    {
+      "id": "instruction_hierarchy",
+      "name": "Instruction Hierarchy (Priority Rules)",
+      "category": "output_structuring_and_control",
+      "aliases": [],
+      "phase": ["pre"],
+      "surfaces": ["web", "agent"],
+      "tiers": ["free", "pro"],
+      "cost_estimate": {"tokens": 0.4, "tools": 0},
+      "template_fragments": {"system": "Follow this priority: safety > user constraints > format > style."},
+      "matcher_rules": {"signals": [{"type": "keyword", "any": ["priority", "must", "should", "rules"]}]},
+      "conflicts_with": [],
+      "complements": ["json_schema_guided", "few_shot_prompting"]
+    },
+    {
+      "id": "prompt_fusion",
+      "name": "Prompt Fusion (Weighted Blend)",
+      "category": "planning_and_architecture",
+      "aliases": ["/fuse", "/weight"],
+      "phase": ["intra"],
+      "surfaces": ["web"],
+      "tiers": ["pro"],
+      "cost_estimate": {"tokens": 1.0, "tools": 0},
+      "inputs_required": ["elements", "weights?", "mode?"],
+      "template_fragments": {"user": "fusion/combine.j2"},
+      "matcher_rules": {"signals": [{"type": "pfcl", "any": ["/fuse"]}]},
+      "conflicts_with": [],
+      "complements": ["json_schema_guided", "critique_and_revise"]
+    },
+    {
+      "id": "security_audit",
+      "name": "Security Audit",
+      "category": "safety_and_security",
+      "aliases": ["/audit"],
+      "phase": ["intra"],
+      "surfaces": ["web", "vscode", "agent"],
+      "tiers": ["free", "pro"],
+      "cost_estimate": {"tokens": 0.9, "tools": 0.5},
+      "inputs_required": ["code|text"],
+      "template_fragments": {"user": "security/audit.j2"},
+      "matcher_rules": {"signals": [{"type": "pfcl", "any": ["/audit"]}, {"type": "keyword", "any": ["vulnerability", "CWE", "security"]}]},
+      "conflicts_with": [],
+      "complements": ["threat_modeling"],
+      "evaluation": {"metrics": ["task_success"]}
+    },
+    {
+      "id": "threat_modeling",
+      "name": "Threat Modeling",
+      "category": "safety_and_security",
+      "aliases": ["/threatmodel"],
+      "phase": ["intra"],
+      "surfaces": ["web", "agent"],
+      "tiers": ["pro"],
+      "cost_estimate": {"tokens": 1.1, "tools": 0.2},
+      "template_fragments": {"user": "Create STRIDE-style threats, mitigations, and priority."},
+      "matcher_rules": {"signals": [{"type": "pfcl", "any": ["/threatmodel"]}]},
+      "conflicts_with": [],
+      "complements": ["security_audit"]
+    },
+    {
+      "id": "json_repair",
+      "name": "JSON Repair",
+      "category": "output_structuring_and_control",
+      "aliases": [],
+      "phase": ["post"],
+      "surfaces": ["web", "vscode", "agent"],
+      "tiers": ["free", "pro"],
+      "cost_estimate": {"tokens": 0.3, "tools": 0},
+      "template_fragments": {"user": "If JSON invalid, minimally repair to satisfy schema without hallucinating new fields."},
+      "matcher_rules": {"signals": [{"type": "keyword", "any": ["json", "invalid", "repair"]}]},
+      "conflicts_with": [],
+      "complements": ["json_schema_guided"]
+    },
+    {
+      "id": "oracle_idea_axes",
+      "name": "Oracle Idea Axes",
+      "category": "planning_and_architecture",
+      "aliases": ["/brainstorm"],
+      "phase": ["intra"],
+      "surfaces": ["web", "chrome"],
+      "tiers": ["free", "pro"],
+      "cost_estimate": {"tokens": 1.0, "tools": 0},
+      "inputs_required": ["categories?", "complexity?"],
+      "template_fragments": {"user": "Generate ideas across categories={{ categories or 'all' }}, complexity={{ complexity or 'any' }}."},
+      "matcher_rules": {"signals": [{"type": "keyword", "any": ["idea", "categories", "complexity"]}]},
+      "conflicts_with": [],
+      "complements": ["critique_and_revise", "json_schema_guided"]
+    },
+    {
+      "id": "model_comparison",
+      "name": "Model Comparison (Gauntlet)",
+      "category": "safety_and_security",
+      "aliases": ["/compare"],
+      "phase": ["intra"],
+      "surfaces": ["web"],
+      "tiers": ["pro"],
+      "cost_estimate": {"tokens": 1.5, "tools": 0.2},
+      "template_fragments": {"user": "Run prompt through models {{ models }} and summarize divergences, risks, and best pick."},
+      "matcher_rules": {"signals": [{"type": "keyword", "any": ["compare models", "side-by-side"]}]},
+      "conflicts_with": [],
+      "complements": ["security_audit"]
+    },
+    {
+      "id": "deliberate_sampling",
+      "name": "Deliberate Sampling",
+      "category": "problem_decomposition_and_step_wise_reasoning",
+      "aliases": [],
+      "phase": ["intra"],
+      "surfaces": ["web", "agent"],
+      "tiers": ["pro"],
+      "cost_estimate": {"tokens": 1.3, "tools": 0},
+      "template_fragments": {"user": "Generate deliberate options with rationales; pick best against criteria."},
+      "matcher_rules": {"signals": [{"type": "keyword", "any": ["trade-offs", "options", "criteria"]}]},
+      "conflicts_with": [],
+      "complements": ["critique_and_revise", "json_schema_guided"]
+    },
+    {
+      "id": "debate_duel_of_experts",
+      "name": "Debate / Duel of Experts",
+      "category": "quality_and_critique",
+      "aliases": [],
+      "phase": ["intra"],
+      "surfaces": ["web", "agent"],
+      "tiers": ["pro"],
+      "cost_estimate": {"tokens": 1.8, "tools": 0},
+      "template_fragments": {"user": "Two experts debate approaches; a judge selects the superior plan."},
+      "matcher_rules": {"signals": [{"type": "keyword", "any": ["debate", "pros and cons", "argue"]}]},
+      "conflicts_with": ["self_consistency"],
+      "complements": ["critique_and_revise"]
+    },
+    {
+      "id": "evaluator_optimizer_loop",
+      "name": "Evaluator–Optimizer Loop",
+      "category": "quality_and_critique",
+      "aliases": [],
+      "phase": ["post"],
+      "surfaces": ["web", "agent"],
+      "tiers": ["pro"],
+      "cost_estimate": {"tokens": 1.7, "tools": 0},
+      "template_fragments": {"user": "Evaluate output against rubric then optimize until threshold or max_iters."},
+      "matcher_rules": {"signals": [{"type": "keyword", "any": ["optimize", "evaluate", "score", "rubric"]}]},
+      "conflicts_with": [],
+      "complements": ["json_schema_guided", "few_shot_prompting"]
+    },
+    {
+      "id": "oracle_constraint_enrichment",
+      "name": "Oracle Constraint Enrichment",
+      "category": "planning_and_architecture",
+      "aliases": [],
+      "phase": ["intra"],
+      "surfaces": ["web"],
+      "tiers": ["free", "pro"],
+      "cost_estimate": {"tokens": 0.9, "tools": 0},
+      "template_fragments": {"user": "Enrich idea with constraints: audience, success criteria, risks, metrics."},
+      "matcher_rules": {"signals": [{"type": "keyword", "any": ["constraints", "audience", "success criteria"]}]},
+      "conflicts_with": [],
+      "complements": ["divergent_ideation", "critique_and_revise"]
+    }
+  ]
+}

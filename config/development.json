@@ -1,0 +1,45 @@
+{
+  "api": {
+    "base_url": "http://localhost:8000",
+    "version": "v1",
+    "timeout": 10000
+  },
+  "frontend": {
+    "url": "http://localhost:3000"
+  },
+  "database": {
+    "mongodb_url": "mongodb://localhost:27017/promptforge_dev"
+  },
+  "auth": {
+    "jwt_secret": "development_secret_key",
+    "token_expiry": 86400
+  },
+  "billing": {
+    "paddle": {
+      "environment": "sandbox",
+      "vendor_id": "PADDLE_SANDBOX_VENDOR_ID"
+    },
+    "razorpay": {
+      "environment": "test"
+    }
+  },
+  "security": {
+    "cors_origins": [
+      "http://localhost:3000",
+      "http://localhost:3001",
+      "http://127.0.0.1:3000",
+      "chrome-extension://*"
+    ],
+    "rate_limiting": {
+      "enabled": false
+    }
+  },
+  "features": {
+    "telemetry": false,
+    "offline_mode": true,
+    "auto_upgrade": false
+  },
+  "monitoring": {
+    "log_level": "DEBUG"
+  }
+}

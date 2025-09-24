@@ -1,0 +1,55 @@
+{
+  "id": "m4-l5-complex-reasoning",
+  "frontmatter": {
+    "id": "m4-l5-complex-reasoning",
+    "title": "Lab: Complex Reasoning Prompts",
+    "module": "Module 4 \u2014 Advanced Prompting Strategies",
+    "xp": 120,
+    "durationMinutes": 30,
+    "isPremium": true,
+    "labPresets": [
+      {
+        "id": "lab-4-complex-reasoning",
+        "preset": "Oracle - Full Upgrade",
+        "initialPrompt": "Solve this reasoning task using advanced prompting techniques (CoT, self-consistency, Vote-K).\nProblem: A library has 480 books. 1/4 are fiction, the rest are non-fiction. Half of the non-fiction books are history. How many history books are there?\n"
+      }
+    ],
+    "examples": [
+      "A farmer plants 120 trees. 1/3 are apple, 1/4 are mango, the rest are orange. How many orange trees are there?",
+      "A box contains 10 red, 15 blue, and 20 green balls. If 5 are removed at random, what is the probability at least 3 are green? Solve step by step with self-consistency."
+    ],
+    "quiz": [
+      {
+        "q": "True or False: Complex reasoning prompts may combine multiple advanced techniques for improved reliability.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which combination is best for complex reasoning tasks?",
+        "type": "mcq",
+        "choices": [
+          "Zero-shot only",
+          "Role prompting + Translation",
+          "CoT + Self-consistency + Vote-K",
+          "Instructional + Poetry generation"
+        ],
+        "answer": "CoT + Self-consistency + Vote-K"
+      }
+    ],
+    "references": [
+      {
+        "title": "Wei et al., 2022 \u2014 Chain-of-Thought Prompting",
+        "url": "https://arxiv.org/abs/2201.11903"
+      },
+      {
+        "title": "Wang et al., 2022 \u2014 Self-Consistency Improves Reasoning",
+        "url": "https://arxiv.org/abs/2203.11171"
+      },
+      {
+        "title": "PromptForge Compendium \u2014 Complex Reasoning",
+        "url": "https://promptforgeai.internal/compendium#complexreasoning"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

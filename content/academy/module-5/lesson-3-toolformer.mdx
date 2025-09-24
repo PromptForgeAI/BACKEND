@@ -1,0 +1,90 @@
+---
+id: "m5-l3-toolformer"
+title: "Toolformer & API-Augmented Models"
+module: "Module 5 — Augmenting LLMs"
+xp: 120
+durationMinutes: 25
+isPremium: true
+labPresets:
+  - id: "lab-5-toolformer"
+    preset: "Oracle - Full Upgrade"
+    initialPrompt: |
+      Use Toolformer-style prompting to call an external calculator API and solve: 248 * 37.
+examples:
+  - "Query a weather API: What is the temperature in Paris right now?"
+  - "Use a calculator tool to compute: (145 + 27) / 12."
+quiz:
+  - q: "True or False: Toolformer enables models to call external APIs during inference."
+    type: "tf"
+    answer: true
+  - q: "Which of the following is an example of Toolformer use?"
+    type: "mcq"
+    choices: ["Writing a poem","Calling an API to fetch stock prices","Summarizing text without references","Generating fictional stories"]
+    answer: "Calling an API to fetch stock prices"
+references:
+  - title: "Schick et al., 2023 — Toolformer: Language Models Can Teach Themselves to Use Tools"
+    url: "https://arxiv.org/abs/2302.04761"
+  - title: "PromptForge Compendium — Toolformer"
+    url: "https://promptforgeai.internal/compendium#toolformer"
+---
+
+<LessonHeader title="Toolformer & API-Augmented Models" xp={120} duration={25} belt="Brown" />
+
+## Explainer
+
+Toolformer is an approach where language models learn to call external tools and APIs as part of their reasoning process. Instead of producing all answers internally, the model identifies when and how to use external functions — such as calculators, search engines, or databases.
+
+This augmentation expands the model’s capabilities beyond static training data, enabling real-time knowledge access and precise computations. Toolformer demonstrates how LLMs can become orchestration engines that intelligently decide when to delegate tasks.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Example 1: Math API call
+Use Toolformer-style prompting to call an external calculator API and solve: 248 * 37.
+
+# Example 2: Weather query
+Query a weather API: What is the temperature in Paris right now?
+
+# Example 3: Stock prices
+Fetch today’s stock price for Apple using an external API.
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Practice Toolformer-style prompting to integrate external APIs.
+
+1. Open **OraclePlayground** with preset `lab-5-toolformer`.
+2. Run the multiplication example with the calculator API.
+3. Try a different task (e.g., weather or stock price query).
+4. Compare the output with what the model alone would generate.
+
+**Completion Criteria:** Model successfully integrates external API results into its reasoning.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Create a Toolformer-style prompt that uses an external dictionary API to fetch the definition of “resilience.”
+
+**Acceptance Criteria:**
+- Prompt correctly instructs API usage.
+- Output contains the accurate definition from the API.
+- Model integrates result seamlessly into its final response.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** Toolformer enables models to call external APIs during inference. → **True**
+2. **MCQ:** Which of the following is an example of Toolformer use? → “Calling an API to fetch stock prices.”
+
+---
+
+## References
+
+- Schick et al., 2023 — *Toolformer: Language Models Can Teach Themselves to Use Tools*.  
+- PromptForge Compendium — Toolformer.

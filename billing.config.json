@@ -1,0 +1,102 @@
+{
+  "tiers": {
+    "free": {
+      "price_month_usd": 0,
+      "monthly_credits": 0,
+      "starter_credits": 25,
+      "rollover": false,
+      "daily_cap": 10,
+      "routes": ["chat.free.*", "editor.free.vscode", "web.free.*"]
+    },
+    "pro": {
+      "price_month_usd": 12,
+      "monthly_credits": 500,
+      "starter_credits": 0,
+      "rollover": true,
+      "daily_cap": null,
+      "routes": ["chat.pro.*", "editor.pro.vscode", "web.pro.*", "agent.pro.cursor"],
+      "burst": { "count": 5, "per_seconds": 10 },
+      "paddle_price_id": "pri_01k3tkqh8xb2ntqke4c5pmnz0n"
+    },
+    "team": {
+      "price_month_usd": 49,
+      "monthly_credits": 2000,
+      "starter_credits": 0,
+      "rollover": true,
+      "daily_cap": null,
+      "routes": ["*"],
+      "shared": true,
+      "burst": { "count": 10, "per_seconds": 10 },
+      "paddle_price_id": "pri_01k3tskgwvddn6d1vehrvqgq02"
+    }
+  },
+  "costs": {
+    "chat.free.*": 1,
+    "editor.free.vscode": 1,
+    "web.free.*": 1,
+    "chat.pro.*": 2,
+    "editor.pro.vscode": 2,
+    "web.pro.*": 2,
+    "agent.pro.cursor": 3,
+    "demon.route": 5,
+    "demon.upgrade_v2": 3,
+    "brain.quick_upgrade": 2,
+    "brain.full_upgrade": 8,
+    "ai_features.chat": 1,
+    "ai_features.analyze": 4,
+    "agent.advanced": 10,
+    "_explain_addon": 1
+  },
+  "rate_limits": {
+    "free": {
+      "requests_per_minute": 10,
+      "requests_per_hour": 100,
+      "requests_per_day": 500,
+      "burst_limit": 5,
+      "routes": {
+        "demon.route": {"per_minute": 3, "per_hour": 20},
+        "demon.upgrade_v2": {"per_minute": 3, "per_hour": 20},
+        "brain.quick_upgrade": {"per_minute": 5, "per_hour": 30},
+        "brain.full_upgrade": {"per_minute": 2, "per_hour": 10},
+        "ai_features": {"per_minute": 8, "per_hour": 60}
+      }
+    },
+    "pro": {
+      "requests_per_minute": 50,
+      "requests_per_hour": 1000,
+      "requests_per_day": 10000,
+      "burst_limit": 20,
+      "routes": {
+        "demon.route": {"per_minute": 30, "per_hour": 500},
+        "demon.upgrade_v2": {"per_minute": 30, "per_hour": 500},
+        "brain.quick_upgrade": {"per_minute": 40, "per_hour": 600},
+        "brain.full_upgrade": {"per_minute": 20, "per_hour": 300},
+        "ai_features": {"per_minute": 40, "per_hour": 800}
+      }
+    },
+    "team": {
+      "requests_per_minute": 100,
+      "requests_per_hour": 5000,
+      "requests_per_day": 50000,
+      "burst_limit": 50,
+      "routes": {
+        "demon.route": {"per_minute": 80, "per_hour": 2000},
+        "demon.upgrade_v2": {"per_minute": 80, "per_hour": 2000},
+        "brain.quick_upgrade": {"per_minute": 90, "per_hour": 3000},
+        "brain.full_upgrade": {"per_minute": 60, "per_hour": 1500}
+      }
+    },
+    "enterprise": {
+      "requests_per_minute": 500,
+      "requests_per_hour": 20000,
+      "requests_per_day": 200000,
+      "burst_limit": 100,
+      "routes": {
+        "demon.route": {"per_minute": 400, "per_hour": 10000},
+        "demon.upgrade_v2": {"per_minute": 400, "per_hour": 10000},
+        "brain.quick_upgrade": {"per_minute": 450, "per_hour": 15000},
+        "brain.full_upgrade": {"per_minute": 300, "per_hour": 8000}
+      }
+    }
+  }
+}

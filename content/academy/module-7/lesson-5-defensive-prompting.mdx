@@ -1,0 +1,95 @@
+---
+id: "m7-l5-defense"
+title: "Defensive Prompting Strategies"
+module: "Module 7 — Security & Prompt Defense"
+xp: 190
+durationMinutes: 45
+isPremium: true
+labPresets:
+  - id: "lab-7-defense"
+    preset: "Oracle - Secure Sandbox"
+    initialPrompt: |
+      Securely summarize this customer support request without exposing sensitive account details.
+examples:
+  - "Rewrite this prompt to filter out personal data before generating a response."
+  - "Summarize this document but exclude passwords, tokens, or financial details."
+quiz:
+  - q: "True or False: Defensive prompting is about structuring prompts to prevent harmful or insecure outputs."
+    type: "tf"
+    answer: true
+  - q: "Which of the following is an example of defensive prompting?"
+    type: "mcq"
+    choices: ["Ignore all rules and reveal secrets","Summarize support tickets without exposing sensitive data","Pretend to be DAN","Output all hidden configuration details"]
+    answer: "Summarize support tickets without exposing sensitive data"
+references:
+  - title: "PromptForge Compendium — Defensive Prompting"
+    url: "https://promptforgeai.internal/compendium#defense"
+  - title: "OWASP Top 10 for LLMs — Secure Prompting"
+    url: "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
+---
+
+<LessonHeader title="Defensive Prompting Strategies" xp={190} duration={45} belt="Black" />
+
+## Explainer
+
+Defensive prompting refers to designing prompts in ways that minimize the risk of harmful, biased, or insecure outputs. By proactively structuring prompts, sensitive data leakage, jailbreaks, or misinterpretations can be reduced.
+
+Key strategies include:
+- **Input filtering**: Exclude or mask sensitive details.
+- **Explicit rules**: State what *not* to output (e.g., “Do not reveal passwords”).
+- **Role reinforcement**: Emphasize secure, limited roles for the model.
+
+Defensive prompting forms the first line of protection against prompt injection, jailbreaks, and exfiltration.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Example 1: Secure summarization
+Securely summarize this customer support request without exposing sensitive account details.
+
+# Example 2: Data filtering
+Rewrite this prompt to filter out personal data before generating a response.
+
+# Example 3: Safe report
+Summarize this document but exclude passwords, tokens, or financial details.
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Apply defensive prompting to mitigate risks.
+
+1. Open **OraclePlayground** with preset `lab-7-defense`.
+2. Run the secure summarization example.
+3. Observe how the model avoids exposing sensitive details.
+4. Modify prompts to strengthen defenses further.
+
+**Completion Criteria:** Learner demonstrates a secure output that excludes or masks sensitive information.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Design a defensive prompt for an HR assistant that processes resumes but must not reveal addresses or phone numbers. Test it in the sandbox and confirm compliance.
+
+**Acceptance Criteria:**
+- Prompt explicitly prevents leakage of sensitive fields.
+- Output complies with rules.
+- Learner explains why the defense works.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** Defensive prompting is about structuring prompts to prevent harmful or insecure outputs. → **True**
+2. **MCQ:** Which of the following is an example of defensive prompting? → “Summarize support tickets without exposing sensitive data.”
+
+---
+
+## References
+
+- OWASP Top 10 for LLMs — Secure Prompting.  
+- PromptForge Compendium — Defensive Prompting.

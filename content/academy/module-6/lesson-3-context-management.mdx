@@ -1,0 +1,98 @@
+---
+id: "m6-l3-context"
+title: "Context Management & Truncation"
+module: "Module 6 — Dynamic & Meta Prompting"
+xp: 140
+durationMinutes: 30
+isPremium: true
+labPresets:
+  - id: "lab-6-context"
+    preset: "Oracle - Full Upgrade"
+    initialPrompt: |
+      Manage context to summarize the following text within a 500-token limit. Provide only the most relevant details.
+      Text: "Artificial Intelligence is rapidly evolving with applications across healthcare, finance, and education..."
+examples:
+  - "Summarize this 2,000-word essay in less than 200 words, preserving key insights."
+  - "Extract only the top 3 arguments from this debate transcript while staying under 300 tokens."
+quiz:
+  - q: "True or False: Context management ensures prompts remain effective within token limits."
+    type: "tf"
+    answer: true
+  - q: "Which strategy helps manage long inputs effectively?"
+    type: "mcq"
+    choices: ["Adding role prompting","Using truncation and summarization","Randomizing inputs","Expanding token count"]
+    answer: "Using truncation and summarization"
+references:
+  - title: "PromptForge Compendium — Context Management"
+    url: "https://promptforgeai.internal/compendium#context"
+  - title: "Beltagy et al., 2020 — Longformer: The Long-Document Transformer"
+    url: "https://arxiv.org/abs/2004.05150"
+---
+
+<LessonHeader title="Context Management & Truncation" xp={140} duration={30} belt="Red" />
+
+## Explainer
+
+Context management is the practice of handling long inputs within the token limits of language models. Since models cannot process unlimited text, prompts must be carefully structured, truncated, or summarized to preserve relevance.
+
+Key strategies include:
+- **Summarization**: Condense large inputs while retaining essential details.
+- **Truncation**: Cut less relevant portions of text to fit within context limits.
+- **Chunking**: Break long documents into smaller, sequential parts.
+
+Effective context management ensures the model produces coherent and accurate outputs without exceeding token constraints.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Example 1: Summarization
+Summarize this 2,000-word essay in less than 200 words, preserving key insights.
+
+# Example 2: Debate transcript
+Extract only the top 3 arguments from this debate transcript while staying under 300 tokens.
+
+# Example 3: Truncated article
+Manage context to summarize the following text within a 500-token limit.
+Text: "Artificial Intelligence is rapidly evolving with applications across healthcare, finance, and education..."
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Practice handling long inputs within model token limits.
+
+1. Open **OraclePlayground** with preset `lab-6-context`.
+2. Run the AI applications example.
+3. Observe how the model balances detail with brevity.
+4. Test with your own long text input.
+5. Compare outputs at different token constraints.
+
+**Completion Criteria:** Model produces coherent summaries or truncations that respect token limits.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Use context management to condense a long Wikipedia article (choose any topic) into exactly 5 bullet points under 300 tokens.
+
+**Acceptance Criteria:**
+- Output fits within the token budget.
+- Only the most relevant details are preserved.
+- Structure is clear and easy to read.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** Context management ensures prompts remain effective within token limits. → **True**
+2. **MCQ:** Which strategy helps manage long inputs effectively? → “Using truncation and summarization.”
+
+---
+
+## References
+
+- Beltagy et al., 2020 — *Longformer: The Long-Document Transformer*.  
+- PromptForge Compendium — Context Management.

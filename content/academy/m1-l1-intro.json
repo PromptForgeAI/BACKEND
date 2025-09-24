@@ -1,0 +1,51 @@
+{
+  "id": "m1-l1-intro",
+  "frontmatter": {
+    "id": "m1-l1-intro",
+    "title": "Introduction to Prompt Engineering",
+    "module": "Module 1 \u2014 The Basics of Prompting",
+    "xp": 50,
+    "durationMinutes": 12,
+    "isPremium": false,
+    "labPresets": [
+      {
+        "id": "lab-1-simple-oracle",
+        "preset": "Oracle - Quick Upgrade (Sandbox)",
+        "initialPrompt": "You are PromptForge Oracle \u2014 convert the user's intent into a clear, copy-paste prompt that will produce **concise, structured, and actionable** output from a large language model. Return only the upgraded prompt inside triple backticks.\nUser intent: \"Explain chain-of-thought (CoT) in 3 bullet points for a beginner and give one tiny example.\"\n"
+      }
+    ],
+    "examples": [
+      "Explain the difference between zero-shot and few-shot prompting in 2 sentences.",
+      "Create a role prompt where the assistant acts as a strict code reviewer."
+    ],
+    "quiz": [
+      {
+        "q": "True or False: Few-shot prompting always requires fine-tuning the model.",
+        "type": "tf",
+        "answer": false
+      },
+      {
+        "q": "Which technique adds example inputs & outputs to the prompt to guide behavior?",
+        "type": "mcq",
+        "choices": [
+          "Context Windowing",
+          "Few-shot prompting",
+          "Token pruning",
+          "Model ensembling"
+        ],
+        "answer": "Few-shot prompting"
+      }
+    ],
+    "references": [
+      {
+        "title": "Brown et al., 2020 \u2014 Language Models are Few-Shot Learners",
+        "url": "https://arxiv.org/abs/2005.14165"
+      },
+      {
+        "title": "Prompting Basics \u2014 Compendium",
+        "url": "https://promptforgeai.internal/compendium#prompting-basics"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

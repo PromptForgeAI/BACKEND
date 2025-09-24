@@ -1,0 +1,51 @@
+{
+  "id": "m2-l4-structured",
+  "frontmatter": {
+    "id": "m2-l4-structured",
+    "title": "Structured Outputs",
+    "module": "Module 2 \u2014 Getting More from Your Prompts",
+    "xp": 90,
+    "durationMinutes": 20,
+    "isPremium": false,
+    "labPresets": [
+      {
+        "id": "lab-2-structured",
+        "preset": "Oracle - Quick Upgrade (Sandbox)",
+        "initialPrompt": "Extract the following information and return it in JSON format: Name, Age, and Occupation.\nText: Sarah, a 29-year-old data scientist, works at a startup.\n"
+      }
+    ],
+    "examples": [
+      "Provide a bulleted list of three challenges in project management.",
+      "Output the following movie details as JSON: Title, Director, Year."
+    ],
+    "quiz": [
+      {
+        "q": "True or False: Structured output prompting helps ensure consistent response formatting.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which of the following is an example of a structured output format?",
+        "type": "mcq",
+        "choices": [
+          "A paragraph of free text",
+          "A JSON object with keys and values",
+          "A casual conversation",
+          "A poem"
+        ],
+        "answer": "A JSON object with keys and values"
+      }
+    ],
+    "references": [
+      {
+        "title": "Prompting Basics \u2014 Compendium",
+        "url": "https://promptforgeai.internal/compendium#structured"
+      },
+      {
+        "title": "OpenAI Cookbook \u2014 Structured Outputs",
+        "url": "https://github.com/openai/openai-cookbook"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "m5-l4-api-orchestration",
+  "frontmatter": {
+    "id": "m5-l4-api-orchestration",
+    "title": "Orchestrating External APIs",
+    "module": "Module 5 \u2014 Augmenting LLMs",
+    "xp": 130,
+    "durationMinutes": 30,
+    "isPremium": true,
+    "labPresets": [
+      {
+        "id": "lab-5-api",
+        "preset": "Oracle - Full Upgrade",
+        "initialPrompt": "Use multiple APIs (weather + calendar) to plan an outdoor team event. Output must include location, time, and weather forecast.\n"
+      }
+    ],
+    "examples": [
+      "Combine a maps API and a traffic API to suggest the fastest route to the airport.",
+      "Use a stock API and a news API to summarize today\u2019s market outlook."
+    ],
+    "quiz": [
+      {
+        "q": "True or False: API orchestration refers to coordinating multiple APIs in a single workflow.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which of the following best describes API orchestration in LLM workflows?",
+        "type": "mcq",
+        "choices": [
+          "Chaining multiple API calls for a task",
+          "Training a new model",
+          "Compressing prompts",
+          "Running zero-shot tasks"
+        ],
+        "answer": "Chaining multiple API calls for a task"
+      }
+    ],
+    "references": [
+      {
+        "title": "PromptForge Compendium \u2014 API Orchestration",
+        "url": "https://promptforgeai.internal/compendium#apiorchestration"
+      },
+      {
+        "title": "Toolformer Extensions for API Chaining",
+        "url": "https://arxiv.org/abs/2302.04761"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

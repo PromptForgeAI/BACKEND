@@ -1,0 +1,91 @@
+---
+id: "m4-l2-self-consistency"
+title: "Self-Consistency Decoding"
+module: "Module 4 — Advanced Prompting Strategies"
+xp: 100
+durationMinutes: 25
+isPremium: true
+labPresets:
+  - id: "lab-4-self-consistency"
+    preset: "Oracle - Full Upgrade"
+    initialPrompt: |
+      Solve the problem: A farmer has 30 apples, sells 12, then buys 5 more. How many apples does he have? Use step-by-step reasoning and provide at least 3 reasoning paths.
+examples:
+  - "What is 25 + 47? Solve step by step and generate multiple reasoning paths."
+  - "If a store sells pencils at 3 for $1, how many pencils can I buy with $4? Provide reasoning in multiple paths and vote on the final answer."
+quiz:
+  - q: "True or False: Self-consistency involves sampling multiple reasoning chains and selecting the most consistent final answer."
+    type: "tf"
+    answer: true
+  - q: "Which strategy improves reliability by comparing multiple reasoning paths?"
+    type: "mcq"
+    choices: ["Role prompting","Self-consistency decoding","Few-shot prompting","Instructional prompting"]
+    answer: "Self-consistency decoding"
+references:
+  - title: "Wang et al., 2022 — Self-Consistency Improves Chain-of-Thought Reasoning"
+    url: "https://arxiv.org/abs/2203.11171"
+  - title: "Prompting Basics — Compendium"
+    url: "https://promptforgeai.internal/compendium#selfconsistency"
+---
+
+<LessonHeader title="Self-Consistency Decoding" xp={100} duration={25} belt="Purple" />
+
+## Explainer
+
+Self-consistency decoding is an advanced prompting technique that increases reliability by sampling multiple reasoning paths and then selecting the most common or consistent final answer. Instead of relying on a single reasoning chain (which may be flawed), the model generates several solutions and aggregates them.
+
+This method is particularly effective in mathematics, logic problems, and tasks where a single reasoning path might introduce bias or errors. By comparing multiple outputs, self-consistency reduces variance and improves accuracy.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Example 1: Arithmetic
+What is 25 + 47? Solve step by step and generate multiple reasoning paths.
+
+# Example 2: Word problem
+A farmer has 30 apples, sells 12, then buys 5 more. How many apples does he have? Generate at least 3 reasoning paths and choose the consistent answer.
+
+# Example 3: Pencils problem
+A store sells pencils at 3 for $1. How many pencils can I buy with $4? Provide reasoning in multiple paths and vote on the final answer.
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Explore how self-consistency improves reliability.
+
+1. Open **OraclePlayground** with preset `lab-4-self-consistency`.
+2. Run the apples problem example.
+3. Observe multiple reasoning paths generated.
+4. Identify the most consistent final answer.
+5. Compare accuracy against a single CoT reasoning chain.
+
+**Completion Criteria:** Demonstrate that aggregated answers are more accurate and consistent than single-path reasoning.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Create a prompt that solves: “There are 24 students in a class. If each student shakes hands with every other student once, how many handshakes occur?” Use self-consistency by generating at least 3 reasoning paths and then selecting the final answer.
+
+**Acceptance Criteria:**
+- Model generates multiple reasoning paths.
+- Final answer is derived from the majority vote.
+- Reasoning is clear and interpretable.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** Self-consistency involves sampling multiple reasoning chains and selecting the most consistent final answer. → **True**
+2. **MCQ:** Which strategy improves reliability by comparing multiple reasoning paths? → “Self-consistency decoding.”
+
+---
+
+## References
+
+- Wang et al., 2022 — *Self-Consistency Improves Chain-of-Thought Reasoning*.  
+- Prompting Basics — Academy Compendium.

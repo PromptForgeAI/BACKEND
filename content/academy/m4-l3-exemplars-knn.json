@@ -1,0 +1,51 @@
+{
+  "id": "m4-l3-exemplars-knn",
+  "frontmatter": {
+    "id": "m4-l3-exemplars-knn",
+    "title": "Exemplars & KNN Selection",
+    "module": "Module 4 \u2014 Advanced Prompting Strategies",
+    "xp": 110,
+    "durationMinutes": 25,
+    "isPremium": true,
+    "labPresets": [
+      {
+        "id": "lab-4-exemplars",
+        "preset": "Oracle - Full Upgrade",
+        "initialPrompt": "Select the 3 most relevant examples from the dataset to demonstrate sentiment classification.\nInput: \"The movie was thrilling and well-acted.\"\n"
+      }
+    ],
+    "examples": [
+      "Choose the most relevant examples to classify this review: 'The food was cold and tasteless.'",
+      "Given a dataset of math problems, pick 2 exemplars that best guide solving: 'What is 12 * 8?'"
+    ],
+    "quiz": [
+      {
+        "q": "True or False: KNN-based exemplar selection automatically chooses the most similar examples for few-shot prompting.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "What is the main purpose of exemplar selection in prompting?",
+        "type": "mcq",
+        "choices": [
+          "Reduce token count",
+          "Provide relevant examples to guide the model",
+          "Eliminate the need for instructions",
+          "Force deterministic outputs"
+        ],
+        "answer": "Provide relevant examples to guide the model"
+      }
+    ],
+    "references": [
+      {
+        "title": "Liu et al., 2021 \u2014 What Makes Good In-Context Examples for GPT-3?",
+        "url": "https://arxiv.org/abs/2101.06804"
+      },
+      {
+        "title": "PromptForge Compendium \u2014 Exemplars & Retrieval",
+        "url": "https://promptforgeai.internal/compendium#exemplars"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

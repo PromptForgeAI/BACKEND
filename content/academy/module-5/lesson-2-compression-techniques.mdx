@@ -1,0 +1,93 @@
+---
+id: "m5-l2-compression"
+title: "Prompt Compression Techniques"
+module: "Module 5 — Augmenting LLMs"
+xp: 110
+durationMinutes: 25
+isPremium: true
+labPresets:
+  - id: "lab-5-compression"
+    preset: "Oracle - Full Upgrade"
+    initialPrompt: |
+      Compress the following long prompt into a shorter version without losing key instructions: "Write a 3-paragraph essay explaining renewable energy, covering solar, wind, and hydro."
+examples:
+  - "Shorten this prompt: 'Summarize the last 5 years of AI research in 3 bullet points with references.'"
+  - "Compress this query: 'Explain the process of photosynthesis in detail suitable for high school students.'"
+quiz:
+  - q: "True or False: Prompt compression reduces input length while preserving meaning."
+    type: "tf"
+    answer: true
+  - q: "Which of the following is a benefit of prompt compression?"
+    type: "mcq"
+    choices: ["Lower latency and token costs","Automatic fact-checking","Training new models","Eliminating the need for instructions"]
+    answer: "Lower latency and token costs"
+references:
+  - title: "PromptForge Compendium — Prompt Compression"
+    url: "https://promptforgeai.internal/compendium#compression"
+  - title: "Shi et al., 2023 — Large Language Model Compression via Prompt Engineering"
+    url: "https://arxiv.org/abs/2302.07800"
+---
+
+<LessonHeader title="Prompt Compression Techniques" xp={110} duration={25} belt="Brown" />
+
+## Explainer
+
+Prompt compression is the practice of shortening long prompts while retaining their essential meaning and instructions. This technique reduces token usage, improves efficiency, and can make prompts easier for models to process.
+
+Compression strategies include rephrasing, removing redundancy, and encoding instructions more compactly. Effective compression balances brevity with clarity: overly compressed prompts risk losing necessary detail, while uncompressed prompts can waste tokens and slow inference.
+
+---
+
+## Examples — Copy & Run
+
+```text
+# Example 1: Essay compression
+Compress the following prompt into a shorter version without losing key instructions:
+"Write a 3-paragraph essay explaining renewable energy, covering solar, wind, and hydro."
+
+# Example 2: AI research summary
+Shorten this prompt:
+"Summarize the last 5 years of AI research in 3 bullet points with references."
+
+# Example 3: Photosynthesis
+Compress this query:
+"Explain the process of photosynthesis in detail suitable for high school students."
+```
+
+---
+
+## Lab — Guided Practice
+
+**Objective:** Practice compressing verbose prompts into efficient versions.
+
+1. Open **OraclePlayground** with preset `lab-5-compression`.
+2. Run the renewable energy essay example.
+3. Compare original vs. compressed prompts.
+4. Test additional prompts of your own.
+
+**Completion Criteria:** Compressed prompts achieve shorter length while preserving clarity and essential instructions.
+
+---
+
+## Mini-Quest — Applied Challenge
+
+**Task:** Compress this verbose instruction: “Provide a detailed analysis of how machine learning is applied in healthcare, including diagnosis, treatment personalization, and predictive analytics, in a concise summary.”
+
+**Acceptance Criteria:**
+- Compressed prompt is significantly shorter.
+- Key topics (diagnosis, personalization, analytics) are preserved.
+- Output demonstrates no loss of critical meaning.
+
+---
+
+## Quiz — Knowledge Check
+
+1. **True / False:** Prompt compression reduces input length while preserving meaning. → **True**
+2. **MCQ:** Which of the following is a benefit of prompt compression? → “Lower latency and token costs.”
+
+---
+
+## References
+
+- Shi et al., 2023 — *Large Language Model Compression via Prompt Engineering*.  
+- PromptForge Compendium — Prompt Compression.

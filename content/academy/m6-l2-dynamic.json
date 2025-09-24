@@ -1,0 +1,51 @@
+{
+  "id": "m6-l2-dynamic",
+  "frontmatter": {
+    "id": "m6-l2-dynamic",
+    "title": "Dynamic Prompt Optimization",
+    "module": "Module 6 \u2014 Dynamic & Meta Prompting",
+    "xp": 140,
+    "durationMinutes": 30,
+    "isPremium": true,
+    "labPresets": [
+      {
+        "id": "lab-6-dynamic",
+        "preset": "Oracle - Full Upgrade",
+        "initialPrompt": "Optimize this prompt dynamically for better performance:\n\"Summarize the article about climate change in 5 bullet points.\"\n"
+      }
+    ],
+    "examples": [
+      "Dynamically optimize: 'Explain blockchain technology to a beginner in 3 sentences.'",
+      "Improve efficiency: 'Write a Python script to calculate Fibonacci numbers.'"
+    ],
+    "quiz": [
+      {
+        "q": "True or False: Dynamic prompt optimization adapts prompts automatically based on performance feedback.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which of the following best describes dynamic prompt optimization?",
+        "type": "mcq",
+        "choices": [
+          "Static rewriting of prompts",
+          "Adapting prompts using feedback and iteration",
+          "Compressing tokens to reduce cost",
+          "Applying role prompting"
+        ],
+        "answer": "Adapting prompts using feedback and iteration"
+      }
+    ],
+    "references": [
+      {
+        "title": "PromptForge Compendium \u2014 Dynamic Optimization",
+        "url": "https://promptforgeai.internal/compendium#dynamic"
+      },
+      {
+        "title": "Zhou et al., 2023 \u2014 Large Language Models Are Human-Level Prompt Optimizers",
+        "url": "https://arxiv.org/abs/2305.18290"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}

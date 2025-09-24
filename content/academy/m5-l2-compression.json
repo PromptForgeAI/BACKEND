@@ -1,0 +1,51 @@
+{
+  "id": "m5-l2-compression",
+  "frontmatter": {
+    "id": "m5-l2-compression",
+    "title": "Prompt Compression Techniques",
+    "module": "Module 5 \u2014 Augmenting LLMs",
+    "xp": 110,
+    "durationMinutes": 25,
+    "isPremium": true,
+    "labPresets": [
+      {
+        "id": "lab-5-compression",
+        "preset": "Oracle - Full Upgrade",
+        "initialPrompt": "Compress the following long prompt into a shorter version without losing key instructions: \"Write a 3-paragraph essay explaining renewable energy, covering solar, wind, and hydro.\"\n"
+      }
+    ],
+    "examples": [
+      "Shorten this prompt: 'Summarize the last 5 years of AI research in 3 bullet points with references.'",
+      "Compress this query: 'Explain the process of photosynthesis in detail suitable for high school students.'"
+    ],
+    "quiz": [
+      {
+        "q": "True or False: Prompt compression reduces input length while preserving meaning.",
+        "type": "tf",
+        "answer": true
+      },
+      {
+        "q": "Which of the following is a benefit of prompt compression?",
+        "type": "mcq",
+        "choices": [
+          "Lower latency and token costs",
+          "Automatic fact-checking",
+          "Training new models",
+          "Eliminating the need for instructions"
+        ],
+        "answer": "Lower latency and token costs"
+      }
+    ],
+    "references": [
+      {
+        "title": "PromptForge Compendium \u2014 Prompt Compression",
+        "url": "https://promptforgeai.internal/compendium#compression"
+      },
+      {
+        "title": "Shi et al., 2023 \u2014 Large Language Model Compression via Prompt Engineering",
+        "url": "https://arxiv.org/abs/2302.07800"
+      }
+    ]
+  },
+  "html": "<compiled-html-here>"
+}
