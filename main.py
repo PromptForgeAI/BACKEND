@@ -83,7 +83,15 @@ app.add_exception_handler(Exception, global_exception_handler)
 config = get_config()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:8080"],
+     allow_origins=[
+        "http://localhost:8080",
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "http://127.0.0.1:3000",
+        "https://www.promptforgeai.tech",
+        "https://promptforgeai.tech",
+        "chrome-extension://*"
+    ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allow_headers=["Authorization", "Content-Type", "X-Request-ID", "X-Client-Version"],
