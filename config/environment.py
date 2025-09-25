@@ -114,7 +114,7 @@ class EnvironmentConfig:
     @property
     def database_url(self) -> str:
         """Get database URL for current environment"""
-    return self.get("database.mongodb_url", "mongodb+srv://shivadeepakdev_db_user:IazHjfnuOfLEnw40@testpfai.uoiqsww.mongodb.net/?retryWrites=true&w=majority&appName=testpfai")
+        return self.get("database.mongodb_url", "mongodb+srv://shivadeepakdev_db_user:IazHjfnuOfLEnw40@testpfai.uoiqsww.mongodb.net/?retryWrites=true&w=majority&appName=testpfai")
     
     @property
     def cors_origins(self) -> list:
